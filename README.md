@@ -22,7 +22,7 @@
   </li>
   <li>Year II
     <ul>
-    <li>:open_file_folder:1st Semester
+    <li>:open_file_folder:3rd Semester
       <ul>
       <li><a href="https://github.com/paulhideg/University-Projects/tree/main/Semester%203/Advanced%20Programming%20Methods">Advanced Programming Methods</a></li>
        <li><a href="https://github.com/paulhideg/University-Projects/tree/main/Semester%203/Databases">Databases</a></li>
@@ -30,7 +30,7 @@
       <li><a href="https://github.com/paulhideg/University-Projects/tree/main/Semester%203/Computer%20Networks">Computer Networks</a></li>
       </ul>
     </li>
-    <li>:open_file_folder:2nd Semester
+    <li>:open_file_folder:4th Semester
       <ul>
         <li><a href="https://github.com/paulhideg/University-Projects/tree/main/Semester%204/Artificial%20Intelligence">Artificial Intelligence</a></li>
         <li><a href="https://github.com/paulhideg/University-Projects/tree/main/Semester%204/Database%20Management%20Systems">Database Management Systems</a></li>
@@ -43,7 +43,7 @@
   </li>
   <li>Year III
     <ul>
-      <li>:open_file_folder:1st Semester
+      <li>:open_file_folder:5th Semester
     <ul>
       <li><a href="https://github.com/paulhideg/University-Projects/tree/main/Semester%205/Formal%20Languages%20and%20Compiler%20Design">Formal Languages and Compiler Design</a></li>
       <li><a href="">Mobile Applications</a></li>
@@ -52,7 +52,7 @@
       <li><a href="https://github.com/paulhideg/University-Projects/tree/main/Semester%205/Specialized%20Protocols%20in%20Computer%20Networks">Specialized Protocols in Computer Networks</a></li>
     </ul>
       </li>
-      <li>:open_file_folder:2nd Semester
+      <li>:open_file_folder:6th Semester
       </li>
     </ul>
   </li>
