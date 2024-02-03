@@ -6,7 +6,7 @@
     <ul>
       <li>:open_file_folder:1st Semester
          <ul>
-           <li><a href="https://github.com/913-Hideg-Paul/University-Projects/tree/main/Semester%201/Computer%20Systems%20Architecture">Computer Systems Architecture</a></li>
+           <li><a href="https://github.com/paulhideg/University-Projects/tree/main/Semester%201/Computer%20Systems%20Architecture">Computer Systems Architecture</a></li>
            <li><a href="https://github.com/913-Hideg-Paul/University-Projects/tree/main/Semester%201/Fundamentals%20of%20Programming">Fundamentals Of Programming</a></li>
         </ul>
       </li>
