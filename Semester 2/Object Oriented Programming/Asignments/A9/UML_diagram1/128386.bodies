@@ -1,0 +1,46 @@
+class Tutorial
+!!!129922.cpp!!!	Tutorial()
+
+!!!130050.cpp!!!	Tutorial(in title : std::string, in presenter : std::string, in duration : std::string, in likes : size_t, in link : std::string)
+
+!!!130178.cpp!!!	~Tutorial()
+
+!!!130306.cpp!!!	GetTitle() : std::string
+
+	return this->title;
+!!!130434.cpp!!!	GetPresenter() : std::string
+
+	return this->presenter;
+!!!130562.cpp!!!	GetDuration() : std::string
+
+	return this->duration;
+!!!130690.cpp!!!	GetLikes() : size_t
+
+	return this->likes;
+!!!130818.cpp!!!	GetLink() : std::string
+
+	return this->link;
+!!!130946.cpp!!!	SetTitle(in title : std::string) : void
+
+	this->title = title;
+!!!131074.cpp!!!	SetPresenter(in presenter : std::string) : void
+
+	this->presenter = presenter;
+!!!131202.cpp!!!	SetDuration(in durationoftutorial : std::string) : void
+
+	this->duration = durationoftutorial;
+!!!131330.cpp!!!	SetLikes(in likes : size_t) : void
+
+	this->likes = likes;
+!!!131458.cpp!!!	SetLink(in link : std::string) : void
+
+	this->link = link;
+!!!131586.cpp!!!	operator ==(in other : Tutorial) : bool
+
+	return this->title == other.title;
+!!!131714.cpp!!!	operator <<(inout os : std::ostream, in tutorial : Tutorial) : std::ostream
+
+	return os << tutorial.title << " " << tutorial.presenter << " " << tutorial.duration << " " << tutorial.likes << " " << tutorial.link<< '\n';
+!!!131842.cpp!!!	operator >>(inout is : std::istream, inout tutorial : Tutorial) : std::istream
+
+	return is >> tutorial.title >> tutorial.presenter>> tutorial.duration>> tutorial.likes >> tutorial.link;

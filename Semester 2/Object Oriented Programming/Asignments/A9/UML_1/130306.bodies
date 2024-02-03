@@ -1,0 +1,6 @@
+class ValidationExceptionInherited
+!!!141570.cpp!!!	ValidationExceptionInherited(in _message : std::string)
+
+!!!141698.cpp!!!	what() : char
+
+	return message.c_str();

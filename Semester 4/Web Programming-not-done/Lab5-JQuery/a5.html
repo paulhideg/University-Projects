@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>jQuery Drag and Drop</title>
+    <style>
+        #stack {
+            width: 200px;
+            height: 300px;
+            border: 1px solid black;
+        }
+
+        .box {
+            width: 180px;
+            height: 50px;
+            margin: 10px;
+            background-color: lightblue;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var draggedElement;
+            $(".box").on("mousedown", function (event) {
+                draggedElement = $(this);
+                $(this).css("position", "absolute");
+                $(this).css("z-index", 1000);
+                moveAt(event.pageX, event.pageY);// moves it at the current position of the mouse
+                function moveAt(pageX, pageY) {
+                    draggedElement.css("left", pageX - draggedElement.outerWidth() / 2 + "px");
+                    draggedElement.css("top", pageY - draggedElement.outerHeight() / 2 + "px");
+                }
+                $(document).on("mousemove", function (event) {  //tracks the mouse movement and moves the element accordingly
+                    moveAt(event.pageX, event.pageY);
+                });
+                $(document).on("mouseup", function () {    //stops tracking the mouse movement and places the element
+                    $(document).off("mousemove");       //in the closest box
+                    var closestBox = null;
+                    var minDistance = Infinity;
+                    $(".box").each(function () {
+                        if ($(this).is(draggedElement)) return;
+                        var distance = Math.abs($(this).offset().top - draggedElement.offset().top);    //calculates the distance between the element and the box
+                        if (distance < minDistance) {
+                            closestBox = $(this);
+                            minDistance = distance;
+                        }
+                    });
+                    if (closestBox) {
+                        if (draggedElement.offset().top < closestBox.offset().top) {
+                            closestBox.before(draggedElement);
+                        } else {
+                            closestBox.after(draggedElement);
+                        }
+                    }
+                    draggedElement.css("position", "static");
+                    draggedElement.css("z-index", "auto");
+                    draggedElement = null;
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="stack">
+        <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+        <div class="box">Box 3</div>
+        <div class="box">Box 4</div>
+    </div>
+</body>
+
+</html>

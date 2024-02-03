@@ -1,0 +1,60 @@
+class TutorialTests
+!!!131970.cpp!!!	TestAllTutorial() : void
+
+	TestConstructorsAndGettersTutorial();
+	TestSettersTutorial();
+	TestEqualityTutorial();
+	TestExtractionOperator();
+!!!132098.cpp!!!	TestConstructorsAndGettersTutorial() : void
+
+	/*Movie m1;
+	assert(m1.GetTitle() == "");
+	assert(m1.GetGenre() == "");
+	assert(m1.GetTrailer() == "");
+	assert(m1.GetYear() == 0);
+	assert(m1.GetLikes() == 0);
+
+	Movie m2("It", "comedy", 2010, 10, "youtube.com");
+	assert(m2.GetTitle() == "It");
+	assert(m2.GetGenre() == "comedy");
+	assert(m2.GetTrailer() == "youtube.com");
+	assert(m2.GetYear() == 2010);
+	assert(m2.GetLikes() == 10);*/
+!!!132226.cpp!!!	TestSettersTutorial() : void
+
+	/*Movie m;
+	m.SetTitle("It");
+	m.SetGenre("comedy");
+	m.SetTrailer("youtube.com");
+	m.SetYear(2010);
+	m.SetLikes(10);
+
+	assert(m.GetTitle() == "It");
+	assert(m.GetGenre() == "comedy");
+	assert(m.GetTrailer() == "youtube.com");
+	assert(m.GetYear() == 2010);
+	assert(m.GetLikes() == 10);*/
+!!!132354.cpp!!!	TestEqualityTutorial() : void
+
+	/*Movie m;
+	m.SetTitle("It");
+	m.SetGenre("comedy");
+	m.SetTrailer("youtube.com");
+	m.SetYear(2010);
+	m.SetLikes(10);
+
+	Movie n("It", "comedy", 2010, 10, "youtube.com");
+
+	assert(m == n);*/
+!!!132482.cpp!!!	TestExtractionOperator() : void
+
+	/*Movie m;
+	m.SetTitle("It");
+	m.SetGenre("comedy");
+	m.SetTrailer("youtube.com");
+	m.SetYear(2010);
+	m.SetLikes(10);
+	std::stringbuf buffer;
+	std::ostream os(&buffer);
+	os << m;
+	assert(buffer.str() == "Title: It | Genre: comedy | Year: 2010 | Likes: 10\n\tTrailer: youtube.com\n");*/

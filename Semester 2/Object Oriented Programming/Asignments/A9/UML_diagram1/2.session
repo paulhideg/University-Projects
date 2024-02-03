@@ -1,0 +1,12 @@
+window_sizes 2025 1197 339 1679 1135 0
+
+diagrams
+  active  classdiagram_ref 128002 // UML_class
+    1040 1122 68 A3 0 0
+end
+show_stereotypes
+selected class_ref 131074 // Validator
+open
+  class_ref 129154 // RepositoryTests
+end
+end

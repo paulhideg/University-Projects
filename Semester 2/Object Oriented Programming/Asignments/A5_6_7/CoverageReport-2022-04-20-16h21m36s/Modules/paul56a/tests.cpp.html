@@ -1,0 +1,260 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+        <meta charset="utf-8"/>
+	    <title>tests.cpp</title>
+	    <link href="../../third-party/google-code-prettify/prettify-CppCoverage.css" type="text/css" rel="stylesheet" />
+	    <script type="text/javascript" src="../../third-party/google-code-prettify/prettify.js"></script>
+	</head>
+    <body onload="prettyPrint()">
+        <h4></h4>
+        <pre class="prettyprint lang-cpp linenums">
+#include "tests.h"
+
+<span style = "background-color:#fdd">Testing::~Testing() = default;</span>
+
+<span style = "background-color:#dfd">void Testing::test_array() {</span>
+
+
+<span style = "background-color:#dfd">    Array &lt;Tutorial&gt; test_dynamic_array(2);
+    Array &lt;Tutorial&gt; test_dynamic_array2(2);</span>
+
+<span style = "background-color:#dfd">    std::string link = "www.ro.com";
+    std::string title = "title";
+    std::string presenter = "desc";
+    std::string duration = "59:59";
+    Tutorial test_tutorial(link, title, presenter, duration, 45);
+    test_dynamic_array.append_array(test_tutorial);</span>
+
+    test_tutorial + test_dynamic_array2;
+    assert(test_dynamic_array2.get_size() == 1);
+
+<span style = "background-color:#dfd">    Array &lt;Tutorial&gt; test_dynamic_array1(test_dynamic_array);
+    assert(test_dynamic_array1.get_size() == 1);</span>
+}
+<span style = "background-color:#dfd">
+
+void Testing::test_domain() {</span>
+
+    Tutorial default_tuorial{};
+<span style = "background-color:#dfd"></span>
+    std::string link = "www.1.com";
+<span style = "background-color:#dfd">    std::string title = "title";</span>
+    std::string presenter = "pres";
+<span style = "background-color:#dfd">    std::string duration = "59:59";
+    Tutorial test_tutorial(link, title, presenter, duration, 45);
+
+    assert(test_tutorial.get_link() == link);
+    assert(test_tutorial.get_title() == title);</span>
+    assert(test_tutorial.get_presenter() == presenter);
+<span style = "background-color:#dfd">    assert(test_tutorial.get_duration() == duration);
+    assert(test_tutorial.get_likes_number() == 45);
+
+    std::string link1 = "www.2.com";
+    std::string title1 = "title";</span>
+    std::string presenter1 = "pres";
+<span style = "background-color:#dfd">    std::string duration1 = "12:12";
+    Tutorial test_tutorial1(link1, title1, presenter1, duration1, 90);
+
+    std::string new_title = "new title";
+    test_tutorial.set_title(new_title);</span>
+    assert(test_tutorial.get_title() == new_title);
+<span style = "background-color:#dfd">
+    std::string new_presenter= "new presenter";
+    test_tutorial.set_presenter(new_presenter);</span>
+    assert(test_tutorial.get_presenter() == new_presenter);
+<span style = "background-color:#dfd">
+    std::string new_duration = "new duration";
+    test_tutorial.set_duration(new_duration);</span>
+    assert(test_tutorial.get_duration() == new_duration);
+<span style = "background-color:#dfd">
+    test_tutorial.set_likes_number(80);
+    assert(test_tutorial.get_likes_number() == 80);</span>
+
+<span style = "background-color:#dfd">    std::stringstream string_tutorial;
+    string_tutorial &lt;&lt; test_tutorial;</span>
+    assert(string_tutorial.str() == "www.1.com | new title | new presenter | new duration | 80\n");
+<span style = "background-color:#dfd">}
+
+void Testing::test_repo() {
+</span>
+    Array&lt;Tutorial&gt; test_dynamic_array(1);
+<span style = "background-color:#dfd">    Tutorial_Repo test_tutorial_repo(test_dynamic_array);</span>
+    Tutorial default_tutorial{};
+<span style = "background-color:#dfd">
+    std::string link = "www.1.com";
+    std::string title = "title";</span>
+    std::string presenter = "pres";
+<span style = "background-color:#dfd">    std::string duration = "12:12";
+    Tutorial test_tutorial(link, title, presenter, duration, 45);
+
+    test_tutorial_repo.add(test_tutorial);
+    assert(test_tutorial_repo.get_tutorial_number() == 1);</span>
+
+<span style = "background-color:#dfd">    try {
+        test_tutorial_repo.add(test_tutorial);</span>
+    }
+    catch (RepoError&amp; re) {
+<span style = "background-color:#dfd">        assert(true);</span>
+    }
+<span style = "background-color:#dfd"></span>
+    std::string link1 = "www.2.com";
+<span style = "background-color:#dfd">    Tutorial test_tutorial1(link1, title, presenter, duration, 80);</span>
+
+<span style = "background-color:#dfd">    try {
+        test_tutorial_repo.update(test_tutorial1);</span>
+    }
+    catch (RepoError&amp; re) {
+<span style = "background-color:#dfd">        assert(true);</span>
+    }
+<span style = "background-color:#dfd"></span>
+    test_tutorial_repo.update(test_tutorial);
+<span style = "background-color:#dfd"></span>
+    std::string link2 = "www.3.com";
+<span style = "background-color:#dfd">    Tutorial test_tutorial2(link2, title, presenter, duration, 60);</span>
+    test_tutorial_repo.add(test_tutorial2);
+<span style = "background-color:#dfd">
+    try {
+        test_tutorial_repo.remove(test_tutorial1.get_link());</span>
+    }
+    catch (RepoError&amp; re) {
+<span style = "background-color:#dfd">        assert(true);</span>
+    }
+<span style = "background-color:#dfd"></span>
+    test_tutorial_repo.remove(test_tutorial.get_link());
+<span style = "background-color:#dfd">    assert(test_tutorial_repo.get_tutorial_number() == 1);</span>
+
+<span style = "background-color:#dfd">    //assert(test_tutorial_repo.get_tutorial
+}
+</span>
+void Testing::test_service() {
+<span style = "background-color:#dfd"></span>
+    Array&lt;Tutorial&gt; test_dynamic_array(1);
+<span style = "background-color:#dfd">    Tutorial_Repo test_tutorial_repo(test_dynamic_array);
+    Tutorial_Validation test_tutorial_validation;</span>
+    Tutorial_Service test_tutorial_service(test_tutorial_repo, test_tutorial_validation);
+<span style = "background-color:#dfd"></span>
+    std::string link = "www.1.com";
+<span style = "background-color:#dfd">    std::string title = "title";
+    std::string presenter = "pres";
+    std::string duration = "12:12";
+</span>
+    test_tutorial_service.add_tutorial(link, title, presenter, duration, 10);
+<span style = "background-color:#dfd">    assert(test_tutorial_service.get_number_tutorials() == 1);
+</span>
+    test_tutorial_service.update_tutorial(link, title, presenter, duration, 50);
+<span style = "background-color:#dfd">    assert(test_tutorial_service.list_tutorials()[0].get_likes_number() == 50);
+</span>
+    assert(test_tutorial_service.get_number_tutorials_for_presenter(presenter) == 1);
+<span style = "background-color:#dfd"></span>
+    test_tutorial_service.remove_tutorial(link);
+<span style = "background-color:#dfd">    assert(test_tutorial_service.get_number_tutorials() == 0);
+</span>
+    test_tutorial_service.populate_array();
+<span style = "background-color:#dfd">    assert(test_tutorial_service.get_number_tutorials() == 10);
+</span>
+    std::string test_presenter = "not_a_presenter";
+<span style = "background-color:#dfd">    assert(test_tutorial_service.get_number_tutorials_for_presenter(test_presenter) == 0);
+</span>
+}
+<span style = "background-color:#dfd"></span>
+void Testing::test_validation() {
+<span style = "background-color:#dfd"></span>
+    std::string link;
+<span style = "background-color:#dfd">    try {</span>
+        Tutorial_Validation::validate_link(link);
+<span style = "background-color:#dfd">    }</span>
+    catch (ValidError&amp; ve) {
+<span style = "background-color:#dfd">        assert(true);</span>
+    }
+<span style = "background-color:#dfd"></span>
+    std::string link1 = "121";
+<span style = "background-color:#dfd">    try {</span>
+        Tutorial_Validation::validate_link(link1);
+<span style = "background-color:#dfd">    }</span>
+    catch (ValidError&amp; ve) {
+<span style = "background-color:#dfd">        assert(true);</span>
+    }
+<span style = "background-color:#dfd">    std::string link2 = "ww2.olm.moc";
+    try {</span>
+        Tutorial_Validation::validate_link(link2);
+<span style = "background-color:#dfd">    }</span>
+    catch (ValidError&amp; ve) {
+<span style = "background-color:#dfd">        assert(true);</span>
+    }
+<span style = "background-color:#dfd"></span>
+    std::string link3;
+<span style = "background-color:#dfd">    std::string title;
+    std::string presenter;
+    std::string duration;
+    try {</span>
+        Tutorial_Validation::validate_tutorial(link3, title, presenter, duration);
+<span style = "background-color:#dfd">    }</span>
+    catch (ValidError&amp; ve) {
+<span style = "background-color:#dfd">        assert(true);</span>
+    }
+<span style = "background-color:#dfd"></span>
+    std::string duration0 = "123";
+<span style = "background-color:#dfd">    try {</span>
+        Tutorial_Validation::validate_tutorial(link3, title, presenter, duration0);
+<span style = "background-color:#dfd">    }</span>
+    catch (ValidError&amp; ve) {
+<span style = "background-color:#dfd">        assert(true);</span>
+    }
+<span style = "background-color:#dfd"></span>
+    std::string duration1 = "11 11";
+<span style = "background-color:#dfd">    try {</span>
+        Tutorial_Validation::validate_tutorial(link3, title, presenter, duration1);
+<span style = "background-color:#dfd">    }</span>
+    catch (ValidError&amp; ve) {
+<span style = "background-color:#dfd">        assert(true);</span>
+    }
+<span style = "background-color:#dfd"></span>
+    std::string duration2 = "00:00";
+<span style = "background-color:#dfd">    try {</span>
+        Tutorial_Validation::validate_tutorial(link3, title, presenter, duration2);
+<span style = "background-color:#dfd">    }</span>
+    catch (ValidError&amp; ve) {
+<span style = "background-color:#dfd">        assert(true);</span>
+    }
+<span style = "background-color:#dfd"></span>
+    std::string duration3 = "11:99";
+<span style = "background-color:#dfd">    try {</span>
+        Tutorial_Validation::validate_tutorial(link3, title, presenter, duration3);
+<span style = "background-color:#dfd">    }</span>
+    catch (ValidError&amp; ve) {
+<span style = "background-color:#dfd">        assert(true);</span>
+    }
+<span style = "background-color:#dfd"></span>
+    std::string duration4 = "1a:05";
+<span style = "background-color:#dfd">    try {</span>
+        Tutorial_Validation::validate_tutorial(link3, title, presenter, duration4);
+<span style = "background-color:#dfd">    }</span>
+    catch (ValidError&amp; ve) {
+<span style = "background-color:#dfd">        assert(true);</span>
+    }
+<span style = "background-color:#dfd">}
+</span>
+void Testing::run_tests() {
+<span style = "background-color:#dfd"></span>
+    test_array();
+<span style = "background-color:#dfd">    test_domain();
+    test_repo();
+    test_service();
+    test_validation();
+}</span></pre>
+        <hr />
+        <table width="100%">
+            <thead>
+                <tr>
+                    <th align="center">
+                        <small>Generated by</small>
+                        <a href="https://github.com/OpenCppCoverage/OpenCppCoverage/releases">
+                            <strong>OpenCppCoverage (Version: 0.9.9.0)</strong>
+                        </a>
+                    </th>
+                </tr>
+            </thead>
+        </table>
+    </body>
+</html>

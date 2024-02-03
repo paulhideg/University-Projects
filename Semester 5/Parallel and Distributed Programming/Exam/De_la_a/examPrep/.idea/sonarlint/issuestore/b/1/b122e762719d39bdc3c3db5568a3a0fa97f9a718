@@ -1,0 +1,12 @@
+
+z
+java:S1488,"^Immediately return this expression instead of assigning it to the temporary variable "result".(õ¬ò:8Çîñﬁ”1
+j
+java:S2095"MUse try-with-resources or close this "ExecutorService" in a "finally" clause.(ó°Ÿ£8£îñﬁ”1
+{
+java:S2142."^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(çî˝æ8ßîñﬁ”1
+A
+java:S21297"$Remove this "BigInteger" constructor(ü ˜ö8®îñﬁ”1
+A
+java:S21298"$Remove this "BigInteger" constructor(…“∂•8©îñﬁ”1
+U	java:S106="9Replace this use of System.out or System.err by a logger.(—áßÕ8©îñﬁ”1

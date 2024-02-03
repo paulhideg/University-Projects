@@ -1,0 +1,9 @@
+
+l	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬±û&8Â“ôŞÓ1
+l	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬±û&8Â“ôŞÓ1
+o
+java:S2095"MUse try-with-resources or close this "ExecutorService" in a "finally" clause.(–…¶õşÿÿÿÿ8Ì“ôŞÓ1
+{
+java:S2142!"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(”ı¾8Ï“ôŞÓ1
+Z	java:S106P"9Replace this use of System.out or System.err by a logger.(å×ñûÿÿÿÿ8›÷Ë²Ó1
+Z	java:S106R"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8›÷Ë²Ó1

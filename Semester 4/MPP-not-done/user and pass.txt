@@ -1,0 +1,11 @@
+user: paulh
+pass: d1s2a3a4
+
+python3 manage.py runserver
+
+2807
+
+server port: http://13.50.248.202:8000/api
+
+
+!!am playlist pe youtube!!

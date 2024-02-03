@@ -1,0 +1,8 @@
+create(M,N,[]):-
+    M>N,
+    !.
+create(M,N,[M|R]):-
+    M1 is M+1,
+    create(M1,N,R).
+
+

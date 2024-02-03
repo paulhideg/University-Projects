@@ -1,0 +1,16 @@
+class HTMLTable
+!!!134018.cpp!!!	HTMLTable()
+
+!!!134914.cpp!!!	AddRow(in newRow : HTMLTable::Row) : void
+
+	rows.push_back(newRow);
+!!!135042.cpp!!!	operator <<(inout os : std::ostream, in table : HTMLTable) : std::ostream
+
+	os << "<table border=\"2\">";
+	for (auto& elem : table.rows)
+	{
+		os << HTMLTable::Row(elem);
+	}
+	os << "</table>";
+
+	return os;

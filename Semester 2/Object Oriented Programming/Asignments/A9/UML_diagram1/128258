@@ -1,0 +1,3758 @@
+format 224
+"paul9a" // UML__1::paul9a::paul9a
+  revision 1
+  modified_by 2 "paulh"
+  // class settings
+  
+  classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
+  
+  usecasediagramsettings end
+  
+  sequencediagramsettings end
+  
+  collaborationdiagramsettings end
+  
+  objectdiagramsettings end
+  
+  objectcompositediagramsettings end
+  
+  componentdiagramsettings
+   end
+  
+  deploymentdiagramsettings
+   end
+  
+  statediagramsettings
+   end
+  
+  activitydiagramsettings
+   end
+  
+  cpp_h_dir "D:/1.School/OOP/a9hp/paul9a/paul9a/"
+  cpp_src_dir "D:/1.School/OOP/a9hp/paul9a/paul9a/"
+  classview 128002 "paul9a"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    class 128002 "AdminServices"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 128002 "AdminServices"
+	preserve_cpp_body_indent public explicit_return_type ""
+	nparams 1
+	  param inout name "repo" type class_ref 128130 // Repository
+	cpp_decl "    ${comment}${inline}${name}${(}${t0} & ${p0}${v0}${)}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${class}::${name}${(}${t0} & ${p0}${)} :
+	repository{ repo }
+${throw}{
+${body}}
+"
+	
+	
+	
+	
+	comment "/ <summary>
+/ Constructor for the Services class
+/ </summary>
+/ <param name=\"repo\">The repository on which the services class operates</param>"
+      end
+
+      operation 128130 "AddTutorial"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 5
+	  param in name "title" explicit_type "std::string"
+	  param in name "presenter" explicit_type "std::string"
+	  param in name "duration" explicit_type "std::string"
+	  param in name "likes" explicit_type "size_t"
+	  param in name "link" explicit_type "std::string"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}, ${t2} ${p2}${v2}, ${t3} ${p3}${v3}, ${t4} ${p4}${v4}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "/ <summary>
+/ Adds a new tutorial to the repository
+/ Also performs data validation
+/ </summary>
+/ <param name=\"title\">The title of tutorial</param>
+/ <param name=\"presenter\">The presenter of the tutorial</param>
+/ <param name=\"duration\">The duration of the tutorial</param>
+/ <param name=\"likes\">The number of likes of the tutorial</param>
+/ <param name=\"link\">The link of the tutorial</param>"
+      end
+
+      operation 128258 "RemoveTutorial"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 1
+	  param in name "title" explicit_type "std::string"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "/ <summary>
+/ Removes a tutorial from the repository
+/ </summary>
+/ <param name=\"title\">The title of the tutorial which will be removed</param>"
+      end
+
+      operation 128386 "UpdateTutorialTitle"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 2
+	  param in name "oldTitle" explicit_type "std::string"
+	  param in name "newTitle" explicit_type "std::string"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "/ <summary>
+/ Updates the title of a tutorial from the repository
+/ Performs data validation for the new title
+/ </summary>
+/ <param name=\"oldTitle\">The old title of the tutorial</param>
+/ <param name=\"newTitle\">The new title of the tutorial</param>"
+      end
+
+      operation 128514 "UpdateTutorialPresenter"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 2
+	  param in name "title" explicit_type "std::string"
+	  param in name "newPresenter" explicit_type "std::string"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "/ <summary>
+/ Updates the presenter of a tutorial from the repository
+/ Performs data validation for the new presenter
+/ </summary>
+/ <param name=\"title\">The title of the tutorial</param>
+/ <param name=\"newPresenter\">The new presenter of the tutorial</param>"
+      end
+
+      operation 128642 "UpdateTutorialDuration"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 2
+	  param in name "title" explicit_type "std::string"
+	  param in name "newDuration" explicit_type "std::string"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "/ <summary>
+/ Updates the duration of a tutorial from the repository
+/ Performs data validation for the new duration
+/ </summary>
+/ <param name=\"title\">The title of the tutorial</param>
+/ <param name=\"newDuration\">The new duration of the tutorial</param>"
+      end
+
+      operation 128770 "UpdateTutorialLikes"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 2
+	  param in name "title" explicit_type "std::string"
+	  param in name "newLikes" explicit_type "size_t"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "/ <summary>
+/ Updates the likes of a tutorial from the repository
+/ Performs data validation for the new likes
+/ </summary>
+/ <param name=\"title\">The title of the tutorial</param>
+/ <param name=\"newLikes\">The new likes of the tutorial</param>"
+      end
+
+      operation 128898 "UpdateTutorialLink"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 2
+	  param in name "title" explicit_type "std::string"
+	  param in name "newLink" explicit_type "std::string"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "/ <summary>
+/ Updates the link of a tutorial from the repository
+/ Performs data validation for the new link
+/ </summary>
+/ <param name=\"title\">The title of the tutorial</param>
+/ <param name=\"newLink\">The new link of the tutorial</param>"
+      end
+
+      operation 129026 "GetRepo"
+	preserve_cpp_body_indent const public return_type class_ref 128130 // Repository
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "/ <summary>
+/ Prints the contents of the repository
+/ </summary>"
+      end
+
+      operation 129154 "InitializeRepo"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "/ <summary>
+/ Adds 10 entries to the repository
+/ </summary>"
+      end
+
+      classrelation 128002 // <dependency>
+	relation 128002 -_->
+	  stereotype "friend"
+	  a public
+	    cpp default "Generated"
+	    classrelation_ref 128002 // <dependency>
+	  b parent class_ref 128258 // AdminServicesTests
+      end
+
+      classrelation 128130 // repository (<unidirectional association>)
+	relation 128130 --->
+	  a role_name "repository" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} & ${name}${value};
+"
+	    classrelation_ref 128130 // repository (<unidirectional association>)
+	  b parent class_ref 128130 // Repository
+      end
+    end
+
+    class 128130 "Repository"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 135170 "Repository"
+	preserve_cpp_body_indent public explicit_return_type ""
+	nparams 0
+	cpp_decl "    ${comment}${inline}${name}${(}${)}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${class}::${name}${(}${)}${volatile}${throw} {
+  ${body}}
+"
+	
+	
+	
+	
+	comment "/ <summary>
+/ Default constructor for the repository class
+/ </summary>"
+      end
+
+      operation 135298 "~Repository"
+	preserve_cpp_body_indent public explicit_return_type ""
+	nparams 0
+	cpp_decl "    ${comment}${inline}${virtual}${name}${(}${)}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${class}::${name}${(}${)}${volatile}${throw} {
+  ${body}}
+"
+	
+	
+	
+	
+	comment "/ <summary>
+/ Destructor for the repository
+/ </summary>"
+      end
+
+      operation 135426 "AddElement"
+	preserve_cpp_body_indent cpp_virtual public explicit_return_type "void"
+	nparams 1
+	  param in name "newTutorial" type class_ref 128386 // Tutorial
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "/ <summary>
+/ Adds a new tutorial to the repository
+/ </summary>
+/ <param name=\"newTutorial\">The new tutorial to be added</param>"
+      end
+
+      operation 135554 "RemoveElement"
+	preserve_cpp_body_indent cpp_virtual public explicit_return_type "void"
+	nparams 1
+	  param in name "position" explicit_type "size_t"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "/ <summary>
+/ Removes an element from the repo by position
+/ </summary>
+/ <param name=\"position\">The position of the element to be removed</param>"
+      end
+
+      operation 135682 "FindElementByTitle"
+	preserve_cpp_body_indent const cpp_virtual public explicit_return_type "size_t"
+	nparams 1
+	  param in name "title" explicit_type "std::string"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "/ <summary>
+/ Finds a tutorial in the repo by its title
+/ </summary>
+/ <param name=\"title\">The name of the tutorial</param>
+/ <returns>The position of the tutorial</returns>"
+      end
+
+      operation 135810 "FindElementByPresenter"
+	preserve_cpp_body_indent const cpp_virtual public explicit_return_type "bool"
+	nparams 1
+	  param in name "presenter" explicit_type "std::string"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "/ <summary>
+/ Finds a tutorial in the repo by its presenter
+/ </summary>
+/ <param name=\"title\">The presenter of the tutorial</param>
+/ <returns>The position of the tutorial</returns>"
+      end
+
+      operation 135938 "UpdateElementTitle"
+	preserve_cpp_body_indent cpp_virtual public explicit_return_type "void"
+	nparams 2
+	  param in name "position" explicit_type "size_t"
+	  param in name "newTitle" explicit_type "std::string"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "/ <summary>
+/ Updates the title of a tutorial
+/ </summary>
+/ <param name=\"position\">The position of the tutorial</param>
+/ <param name=\"newTitle\">The new title of the tutorial</param>"
+      end
+
+      operation 136066 "UpdateElementPresenter"
+	preserve_cpp_body_indent cpp_virtual public explicit_return_type "void"
+	nparams 2
+	  param in name "position" explicit_type "size_t"
+	  param in name "newPresenter" explicit_type "std::string"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "/ <summary>
+/ Updates the presenter of a tutorial
+/ </summary>
+/ <param name=\"position\">The position of the tutorial</param>
+/ <param name=\"newPresenter\">The new presenter of the tutorial</param>"
+      end
+
+      operation 136194 "UpdateElementDuration"
+	preserve_cpp_body_indent cpp_virtual public explicit_return_type "void"
+	nparams 2
+	  param in name "position" explicit_type "size_t"
+	  param in name "newDuration" explicit_type "std::string"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "/ <summary>
+/ Updates the duration of a tutorial
+/ </summary>
+/ <param name=\"position\">The position of the tutorial</param>
+/ <param name=\"newDuration\">The new duration of the tutorial</param>"
+      end
+
+      operation 136322 "UpdateElementLikes"
+	preserve_cpp_body_indent cpp_virtual public explicit_return_type "void"
+	nparams 2
+	  param in name "position" explicit_type "size_t"
+	  param in name "newLikes" explicit_type "size_t"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "/ <summary>
+/ Updates the number of likes of a tutorial
+/ </summary>
+/ <param name=\"position\">The position of the tutorial</param>
+/ <param name=\"newLikes\">The new likes of the tutorial</param>"
+      end
+
+      operation 136450 "UpdateElementLink"
+	preserve_cpp_body_indent cpp_virtual public explicit_return_type "void"
+	nparams 2
+	  param in name "position" explicit_type "size_t"
+	  param in name "newLink" explicit_type "std::string"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "/ <summary>
+/ Updates the link of a tutorial
+/ </summary>
+/ <param name=\"position\"></param>
+/ <param name=\"newLink\"></param>"
+      end
+
+      operation 136578 "GetSize"
+	preserve_cpp_body_indent const public explicit_return_type "size_t"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 136706 "GetArray"
+	preserve_cpp_body_indent const public explicit_return_type "std::vector<Tutorial>"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 136834 "operator <<"
+	preserve_cpp_body_indent friend public explicit_return_type "std::ostream"
+	nparams 2
+	  param inout name "os" explicit_type "std::ostream"
+	  param in name "repo" type class_ref 128130 // Repository
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} & ${name}${(}${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 128642 // <dependency>
+	relation 128642 -_->
+	  stereotype "friend"
+	  a public
+	    cpp default "Generated"
+	    classrelation_ref 128642 // <dependency>
+	  b parent class_ref 129154 // RepositoryTests
+      end
+
+      classrelation 128770 // elementsArray (<directional composition>)
+	relation 128770 *-->
+	  stereotype "std::vector"
+	  a role_name "elementsArray" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 128770 // elementsArray (<directional composition>)
+	  b parent class_ref 128386 // Tutorial
+      end
+    end
+
+    class 128258 "AdminServicesTests"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 129282 "TestAll"
+	class_operation public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 129410 "TestConstructors"
+	class_operation public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 129538 "TestAdd"
+	class_operation public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 129666 "TestRemove"
+	class_operation public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 129794 "TestUpdate"
+	class_operation public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 128386 "Tutorial"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 128002 "title"
+	private explicit_type "std::string"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 128130 "presenter"
+	private explicit_type "std::string"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 128258 "duration"
+	private explicit_type "std::string"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 128386 "likes"
+	private explicit_type "size_t"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 128514 "link"
+	private explicit_type "std::string"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 129922 "Tutorial"
+	preserve_cpp_body_indent public explicit_return_type ""
+	nparams 0
+	cpp_decl "    ${comment}${inline}${name}${(}${)}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${class}::${name}${(}${)} : title{ \"\" }, presenter{ \"\" }, duration{ \"\"}, likes{0}, link{\"\"}
+${throw}{
+${body}}
+"
+	
+	
+	
+	
+	comment "/ <summary>
+/ Default constructor for the Tutorial class
+/ </summary>"
+      end
+
+      operation 130050 "Tutorial"
+	preserve_cpp_body_indent public explicit_return_type ""
+	nparams 5
+	  param in name "title" explicit_type "std::string"
+	  param in name "presenter" explicit_type "std::string"
+	  param in name "duration" explicit_type "std::string"
+	  param in name "likes" explicit_type "size_t"
+	  param in name "link" explicit_type "std::string"
+	cpp_decl "    ${comment}${inline}${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}, ${t2} ${p2}${v2}, ${t3} ${p3}${v3}, ${t4} ${p4}${v4}${)}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}, ${t3} ${p3}, ${t4} ${p4}${)} :
+	title{ title }, presenter{ presenter }, duration{ duration }, likes{ likes }, link{ link }
+${throw}{
+${body}}
+"
+	
+	
+	
+	
+	comment "/ <summary>
+/ Constructor for the tutorial class with initializers for all fields
+/ </summary>
+/ <param name=\"title\">The title of tutorial</param>
+/ <param name=\"presenter\">The presenter of the tutorial</param>
+/ <param name=\"duration\">The duration of the tutorial</param>
+/ <param name=\"likes\">The number of likes of the tutorial</param>
+/ <param name=\"link\">The link of the tutorial</param>"
+      end
+
+      operation 130178 "~Tutorial"
+	preserve_cpp_body_indent public explicit_return_type ""
+	nparams 0
+	cpp_decl "    ${comment}${inline}${virtual}${name}${(}${)}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${class}::${name}${(}${)}${volatile}${throw} {
+  ${body}}
+"
+	
+	
+	
+	
+	comment "/ <summary>
+/ Destructor for the tutorial
+/ </summary>"
+      end
+
+      operation 130306 "GetTitle"
+	preserve_cpp_body_indent const public explicit_return_type "std::string"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "/ Getters"
+      end
+
+      operation 130434 "GetPresenter"
+	preserve_cpp_body_indent const public explicit_return_type "std::string"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 130562 "GetDuration"
+	preserve_cpp_body_indent const public explicit_return_type "std::string"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 130690 "GetLikes"
+	preserve_cpp_body_indent const public explicit_return_type "size_t"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 130818 "GetLink"
+	preserve_cpp_body_indent const public explicit_return_type "std::string"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 130946 "SetTitle"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 1
+	  param in name "title" explicit_type "std::string"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "/ Setters"
+      end
+
+      operation 131074 "SetPresenter"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 1
+	  param in name "presenter" explicit_type "std::string"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 131202 "SetDuration"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 1
+	  param in name "durationoftutorial" explicit_type "std::string"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 131330 "SetLikes"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 1
+	  param in name "likes" explicit_type "size_t"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 131458 "SetLink"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 1
+	  param in name "link" explicit_type "std::string"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 131586 "operator =="
+	preserve_cpp_body_indent const public explicit_return_type "bool"
+	nparams 1
+	  param in name "other" type class_ref 128386 // Tutorial
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "/ <summary>
+/ Equality operator for the tutorial class
+/ </summary>
+/ <param name=\"other\">The tutorial to compare the current object with</param>
+/ <returns>True if the tutorials are identical, false otherwise</returns>"
+      end
+
+      operation 131714 "operator <<"
+	preserve_cpp_body_indent friend public explicit_return_type "std::ostream"
+	nparams 2
+	  param inout name "os" explicit_type "std::ostream"
+	  param in name "tutorial" type class_ref 128386 // Tutorial
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} & ${name}${(}${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "//std::ostream& operator<<(std::ostream& os, const Movie& movie)
+//{
+//	return os << \"Title: \" << movie.title << \" | Genre: \" << movie.genre << \" | Year: \" << movie.year << \" | Likes: \" << movie.likes << \"\\n\\tTrailer: \" << movie.trailer << \"\\n\";
+//}
+
+${inline}${typeprefix}${type} & ${class}::${name}${(}${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}{
+${body}}
+"
+	
+	
+	
+	
+	comment "/ <summary>
+/ Insertion operator for the tutorial class
+/ </summary>
+/ <param name=\"os\">The stream object to write the data of the tutorial to</param>
+/ <param name=\"is\">The tutorial whose fields will be written</param>
+/ <returns>A stream object which contains the data of the tutorial</returns>"
+      end
+
+      operation 131842 "operator >>"
+	preserve_cpp_body_indent friend public explicit_return_type "std::istream"
+	nparams 2
+	  param inout name "is" explicit_type "std::istream"
+	  param inout name "tutorial" type class_ref 128386 // Tutorial
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} & ${name}${(}${t0} & ${p0}${v0}, ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 128258 // <dependency>
+	relation 128258 -_->
+	  stereotype "friend"
+	  a public
+	    cpp default "Generated"
+	    classrelation_ref 128258 // <dependency>
+	  b parent class_ref 128514 // TutorialTests
+      end
+    end
+
+    class 128514 "TutorialTests"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 131970 "TestAllTutorial"
+	class_operation preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 132098 "TestConstructorsAndGettersTutorial"
+	class_operation preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 132226 "TestSettersTutorial"
+	class_operation preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 132354 "TestEqualityTutorial"
+	class_operation preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 132482 "TestExtractionOperator"
+	class_operation preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 128642 "FileRepository"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 128386 // <generalisation>
+	relation 128386 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 128386 // <generalisation>
+	  b parent class_ref 128130 // Repository
+      end
+
+      operation 132610 "FileRepository"
+	preserve_cpp_body_indent public explicit_return_type ""
+	nparams 2
+	  param in name "path" explicit_type "std::string"
+	  param in name "initialize" explicit_type "bool"
+	    defaultvalue "false"
+	cpp_decl "    ${comment}${inline}${name}${(}const ${t0} & ${p0}${v0}, ${t1} ${p1}${v1}${)}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${class}::${name}${(}const ${t0} & ${p0}, ${t1} ${p1}${)} :
+	Repository{ Repository() },
+	filePath{ path },
+	initialize{ initialize }
+${throw}{
+${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 132738 "AddElement"
+	preserve_cpp_body_indent cpp_override public explicit_return_type "void"
+	nparams 1
+	  param in name "newTutorial" type class_ref 128386 // Tutorial
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 132866 "RemoveElement"
+	preserve_cpp_body_indent cpp_override public explicit_return_type "void"
+	nparams 1
+	  param in name "position" explicit_type "size_t"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 132994 "UpdateElementTitle"
+	preserve_cpp_body_indent cpp_override public explicit_return_type "void"
+	nparams 2
+	  param in name "position" explicit_type "size_t"
+	  param in name "newTitle" explicit_type "std::string"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 133122 "UpdateElementPresenter"
+	preserve_cpp_body_indent cpp_override public explicit_return_type "void"
+	nparams 2
+	  param in name "position" explicit_type "size_t"
+	  param in name "newPresenter" explicit_type "std::string"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 133250 "UpdateElementDuration"
+	preserve_cpp_body_indent cpp_override public explicit_return_type "void"
+	nparams 2
+	  param in name "position" explicit_type "size_t"
+	  param in name "newDuration" explicit_type "std::string"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 133378 "UpdateElementLikes"
+	preserve_cpp_body_indent cpp_override public explicit_return_type "void"
+	nparams 2
+	  param in name "position" explicit_type "size_t"
+	  param in name "newLikes" explicit_type "size_t"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 133506 "UpdateElementLink"
+	preserve_cpp_body_indent cpp_override public explicit_return_type "void"
+	nparams 2
+	  param in name "position" explicit_type "size_t"
+	  param in name "newLink" explicit_type "std::string"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 133634 "IsInitializable"
+	preserve_cpp_body_indent const public explicit_return_type "bool"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      attribute 128642 "filePath"
+	protected explicit_type "std::string"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 128770 "initialize"
+	protected explicit_type "bool"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 133762 "ReadData"
+	preserve_cpp_body_indent private explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 133890 "WriteData"
+	preserve_cpp_body_indent private explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 128770 "HTMLTable"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 134018 "HTMLTable"
+	preserve_cpp_body_indent public explicit_return_type ""
+	nparams 0
+	cpp_decl "    ${comment}${inline}${name}${(}${)}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${class}::${name}${(}${)}${volatile}${throw} {
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      class 128898 "Cell"
+	visibility package 
+	cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+	java_decl ""
+	php_decl ""
+	python_2_2 python_decl ""
+	idl_decl ""
+	explicit_switch_type ""
+	mysql_decl ""
+	
+	operation 134146 "Cell"
+	  preserve_cpp_body_indent public explicit_return_type ""
+	  nparams 1
+	    param in name "data" explicit_type "std::string"
+	  cpp_decl "    ${comment}${inline}${name}${(}const ${t0} & ${p0}${v0}${)}${volatile}${throw}${abstract};
+"
+	  cpp_def "${comment}${inline}${typeprefix}${class}::${name}${(}const ${t0} & ${p0}${)} :
+	content{ data }
+${throw}{
+${body}}
+"
+	  
+	  
+	  
+	  
+	end
+
+	operation 134274 "operator <<"
+	  preserve_cpp_body_indent friend public explicit_return_type "std::ostream"
+	  nparams 2
+	    param inout name "os" explicit_type "std::ostream"
+	    param in name "c" type class_ref 128898 // Cell
+	  cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} & ${name}${(}${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	  cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	  
+	  
+	  
+	  
+	end
+
+	attribute 128898 "content"
+	  const_attribute private explicit_type "std::string"
+	  cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} & ${name}${value};
+"
+	  java_decl ""
+	  php_decl ""
+	  python_decl ""
+	  idl_decl ""
+	  mysql_decl ""
+	  MysqlColumn
+	end
+      end
+
+      class 129026 "Row"
+	visibility package 
+	cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+	java_decl ""
+	php_decl ""
+	python_2_2 python_decl ""
+	idl_decl ""
+	explicit_switch_type ""
+	mysql_decl ""
+	
+	operation 134402 "Row"
+	  preserve_cpp_body_indent public explicit_return_type ""
+	  nparams 0
+	  cpp_decl "    ${comment}${inline}${name}${(}${)}${volatile}${throw}${abstract};
+"
+	  cpp_def "${comment}${inline}${typeprefix}${class}::${name}${(}${)} :
+	elements{ std::vector<std::string>() }
+${throw}{
+${body}}
+"
+	  
+	  
+	  
+	  
+	end
+
+	operation 134530 "Row"
+	  preserve_cpp_body_indent public explicit_return_type ""
+	  nparams 1
+	    param in name "elements" explicit_type "std::vector<std::string>"
+	  cpp_decl "    ${comment}${inline}${name}${(}const ${t0} & ${p0}${v0}${)}${volatile}${throw}${abstract};
+"
+	  cpp_def "${comment}${inline}${typeprefix}${class}::${name}${(}const ${t0} & ${p0}${)} :
+	elements{ elements }
+${throw}{
+${body}}
+"
+	  
+	  
+	  
+	  
+	end
+
+	operation 134658 "AddToRow"
+	  preserve_cpp_body_indent public explicit_return_type "void"
+	  nparams 1
+	    param in name "newElement" explicit_type "std::string"
+	  cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	  cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	  
+	  
+	  
+	  
+	end
+
+	operation 134786 "operator <<"
+	  preserve_cpp_body_indent friend public explicit_return_type "std::ostream"
+	  nparams 2
+	    param inout name "os" explicit_type "std::ostream"
+	    param in name "row" type class_ref 129026 // Row
+	  cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} & ${name}${(}${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	  cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	  
+	  
+	  
+	  
+	end
+
+	attribute 129026 "elements"
+	  private explicit_type "std::string"
+	  stereotype "std::vector"
+	  cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
+"
+	  java_decl ""
+	  php_decl ""
+	  python_decl ""
+	  idl_decl ""
+	  mysql_decl ""
+	  MysqlColumn
+	end
+      end
+
+      operation 134914 "AddRow"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 1
+	  param in name "newRow" type class_ref 129026 // Row
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 135042 "operator <<"
+	preserve_cpp_body_indent friend public explicit_return_type "std::ostream"
+	nparams 2
+	  param inout name "os" explicit_type "std::ostream"
+	  param in name "table" type class_ref 128770 // HTMLTable
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} & ${name}${(}${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 128514 // rows (<directional composition>)
+	relation 128514 *-->
+	  stereotype "std::vector"
+	  a role_name "rows" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 128514 // rows (<directional composition>)
+	  b parent class_ref 129026 // Row
+      end
+    end
+
+    class 129154 "RepositoryTests"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 129282 "TextTable"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      class 129410 "Alignment"
+	visibility package stereotype "enum_class"
+	cpp_decl "${comment}enum class ${name} {
+${items}};
+"
+	java_decl ""
+	php_decl ""
+	python_2_2 python_decl ""
+	idl_decl ""
+	explicit_switch_type ""
+	mysql_decl ""
+	
+	attribute 129154 "LEFT"
+	  public type class_ref 129410 // Alignment
+	  cpp_decl "  ${name}${value},${comment}"
+	  java_decl ""
+	  php_decl ""
+	  python_decl ""
+	  idl_decl ""
+	  mysql_decl ""
+	  MysqlColumn
+	end
+
+	attribute 129282 "RIGHT"
+	  public type class_ref 129410 // Alignment
+	  cpp_decl "  ${name}${value},${comment}"
+	  java_decl ""
+	  php_decl ""
+	  python_decl ""
+	  idl_decl ""
+	  mysql_decl ""
+	  MysqlColumn
+	end
+      end
+
+      class 129538 "Row"
+	visibility package stereotype "typedef" explicit_base_type "std::vector< std::string >"
+	cpp_decl "${comment}typedef ${type} ${name};
+"
+	java_decl ""
+	php_decl ""
+	python_2_2 python_decl ""
+	idl_decl ""
+	explicit_switch_type ""
+	mysql_decl ""
+	
+      end
+
+      operation 136962 "TextTable"
+	cpp_inline public explicit_return_type ""
+	nparams 0
+	cpp_decl "    ${comment}${inline}${name}${(}${)}${volatile}${throw}${abstract} :
+        _horizontal('-'),
+        _vertical('|'),
+        _corner('+'),
+        _has_ruler(true)
+    {};
+"
+	
+	
+	
+	
+      end
+
+      operation 137090 "TextTable"
+	cpp_inline public explicit_return_type ""
+	nparams 3
+	  param in name "horizontal" explicit_type "char"
+	  param in name "vertical" explicit_type "char"
+	  param in name "corner" explicit_type "char"
+	cpp_decl "    ${comment}${inline}${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}, ${t2} ${p2}${v2}${)}${volatile}${throw}${abstract} :
+        _horizontal(horizontal),
+        _vertical(vertical),
+        _corner(corner),
+        _has_ruler(true)
+    {};
+"
+	
+	
+	
+	
+      end
+
+      operation 137218 "TextTable"
+	cpp_inline public explicit_return_type ""
+	nparams 1
+	  param in name "vertical" explicit_type "char"
+	cpp_decl "    ${comment}${inline}explicit ${name}${(}${t0} ${p0}${v0}${)}${volatile}${throw}${abstract} :
+        _horizontal('\\0'),
+        _vertical(vertical),
+        _corner('\\0'),
+        _has_ruler(false)
+    {};
+"
+	
+	
+	
+	
+      end
+
+      operation 137346 "setAlignment"
+	cpp_inline public explicit_return_type "void"
+	nparams 2
+	  param in name "i" explicit_type "uint"
+	  param in name "alignment" type class_ref 129410 // Alignment
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract} {
+        _alignment[i] = alignment;
+    };
+"
+	
+	
+	
+	
+      end
+
+      operation 137474 "alignment"
+	const cpp_inline public return_type class_ref 129410 // Alignment
+	nparams 1
+	  param in name "i" explicit_type "uint"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract} {
+        return _alignment[i];
+    };
+"
+	
+	
+	
+	
+      end
+
+      operation 137602 "vertical"
+	const cpp_inline public explicit_return_type "char"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract} {
+        return _vertical;
+    };
+"
+	
+	
+	
+	
+      end
+
+      operation 137730 "horizontal"
+	const cpp_inline public explicit_return_type "char"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract} {
+        return _horizontal;
+    };
+"
+	
+	
+	
+	
+      end
+
+      operation 137858 "add"
+	cpp_inline public explicit_return_type "void"
+	nparams 1
+	  param in name "content" explicit_type "std::string"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract} {
+        _current.push_back(content);
+    };
+"
+	
+	
+	
+	
+      end
+
+      operation 137986 "endOfRow"
+	cpp_inline public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract} {
+        _rows.push_back(_current);
+        _current.assign(0, \"\");
+    };
+"
+	
+	
+	
+	
+      end
+
+      operation 138114 "addRow"
+	stereotype "template"
+	cpp_inline public explicit_return_type "void"
+	nparams 2
+	  param in name "begin" explicit_type "Iterator"
+	  param in name "end" explicit_type "Iterator"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract} {
+        for (auto i = begin; i != end; ++i) {
+            add(*i);
+        }
+        endOfRow();
+    };
+"
+	nformals 1
+	formal name "Iterator" type "typename" explicit_default_value ""
+	  explicit_extends ""
+	
+	
+	
+	
+      end
+
+      operation 138242 "addRow"
+	stereotype "template"
+	cpp_inline public explicit_return_type "void"
+	nparams 1
+	  param in name "container" explicit_type "Container"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract} {
+        addRow(container.begin(), container.end());
+    };
+"
+	nformals 1
+	formal name "Container" type "typename" explicit_default_value ""
+	  explicit_extends ""
+	
+	
+	
+	
+      end
+
+      operation 138370 "rows"
+	const constvalue cpp_inline public explicit_return_type "std::vector< Row >"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} & ${name}${(}${)}${const}${volatile}${throw}${abstract} {
+        return _rows;
+    };
+"
+	
+	
+	
+	
+      end
+
+      operation 138498 "setup"
+	const cpp_inline public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract} {
+        determineWidths();
+        setupAlignment();
+    };
+"
+	
+	
+	
+	
+      end
+
+      operation 138626 "ruler"
+	const cpp_inline public explicit_return_type "std::string"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract} {
+        std::string result;
+        result += _corner;
+        for (auto width = _width.begin(); width != _width.end(); ++width) {
+            result += repeat(*width, _horizontal);
+            result += _corner;
+        }
+
+        return result;
+    };
+"
+	
+	
+	
+	
+      end
+
+      operation 138754 "width"
+	const cpp_inline public explicit_return_type "int"
+	nparams 1
+	  param in name "i" explicit_type "uint"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract} {
+        return _width[i];
+    };
+"
+	
+	
+	
+	
+      end
+
+      operation 138882 "has_ruler"
+	const cpp_inline public explicit_return_type "bool"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract} { return _has_ruler; };
+"
+	
+	
+	
+	
+      end
+
+      operation 139010 "correctDistance"
+	const cpp_inline public explicit_return_type "int"
+	nparams 1
+	  param in name "string_to_correct" explicit_type "std::string"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract} {
+        return static_cast<int>(string_to_correct.size()) - static_cast<int>(glyphLength(string_to_correct));
+    };
+"
+	
+	
+	
+	
+      end
+
+      attribute 129410 "_horizontal"
+	const_attribute private explicit_type "char"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 129538 "_vertical"
+	const_attribute private explicit_type "char"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 129666 "_corner"
+	const_attribute private explicit_type "char"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 129794 "_has_ruler"
+	const_attribute private explicit_type "bool"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      classrelation 128898 // _current (<directional composition>)
+	relation 128898 *-->
+	  a role_name "_current" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 128898 // _current (<directional composition>)
+	  b parent class_ref 129538 // Row
+      end
+
+      classrelation 129026 // _rows (<directional composition>)
+	relation 129026 *-->
+	  stereotype "std::vector"
+	  a role_name "_rows" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 129026 // _rows (<directional composition>)
+	  b parent class_ref 129538 // Row
+      end
+
+      attribute 129922 "_width"
+	private explicit_type " unsigned "
+	stereotype "std::vector"
+	cpp_mutable cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 130050 "_utf8width"
+	private explicit_type " unsigned "
+	stereotype "std::vector"
+	cpp_mutable cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      classrelation 129154 // _alignment (<directional composition>)
+	relation 129154 *-->
+	  stereotype "std::map"
+	  a role_name "_alignment" private
+	    cpp mutable default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${stereotype}<unsigned,${type}> ${name}${value};
+"
+	    classrelation_ref 129154 // _alignment (<directional composition>)
+	  b parent class_ref 129410 // Alignment
+      end
+
+      operation 139138 "repeat"
+	class_operation cpp_inline private explicit_return_type "std::string"
+	nparams 2
+	  param in name "times" explicit_type "uint"
+	  param in name "c" explicit_type "char"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract} {
+        std::string result;
+        for (; times > 0; --times)
+            result += c;
+
+        return result;
+    };
+"
+	
+	
+	
+	
+      end
+
+      operation 139266 "columns"
+	const cpp_inline private explicit_return_type "uint"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract} {
+        return _rows[0].size();
+    };
+"
+	
+	
+	
+	
+      end
+
+      operation 139394 "glyphLength"
+	const cpp_inline private explicit_return_type "uint"
+	nparams 1
+	  param in name "s" explicit_type "std::string"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract} {
+        unsigned int _byteLength = s.length();
+#ifdef TEXTTABLE_ENCODE_MULTIBYTE_STRINGS
+#ifdef TEXTTABLE_USE_EN_US_UTF8
+        std::setlocale(LC_ALL, \"en_US.utf8\");
+#else
+#error You need to specify the encoding if the TextTable library uses multybyte string encoding!
+#endif
+        unsigned int u = 0;
+        const char* c_str = s.c_str();
+        unsigned _glyphLength = 0;
+        while (u < _byteLength)
+        {
+            u += std::mblen(&c_str[u], _byteLength - u);
+            _glyphLength += 1;
+        }
+        return _glyphLength;
+#else
+        return _byteLength;
+#endif
+    };
+"
+	
+	
+	
+	
+      end
+
+      operation 139522 "determineWidths"
+	const cpp_inline private explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract} {
+        _width.assign(columns(), 0);
+        _utf8width.assign(columns(), 0);
+        for (auto rowIterator = _rows.begin(); rowIterator != _rows.end(); ++rowIterator) {
+            Row const& row = *rowIterator;
+            for (unsigned i = 0; i < row.size(); ++i) {
+                _width[i] = _width[i] > glyphLength(row[i]) ? _width[i] : glyphLength(row[i]);
+            }
+        }
+    };
+"
+	
+	
+	
+	
+      end
+
+      operation 139650 "setupAlignment"
+	const cpp_inline private explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract} {
+        for (unsigned i = 0; i < columns(); ++i) {
+            if (_alignment.find(i) == _alignment.end()) {
+                _alignment[i] = Alignment::LEFT;
+            }
+        }
+    };
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 129666 "TutorialList"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 139778 "TutorialList"
+	preserve_cpp_body_indent public explicit_return_type ""
+	nparams 0
+	cpp_decl "    ${comment}${inline}${name}${(}${)}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${class}::${name}${(}${)} :
+	tutorialList{ std::vector<Tutorial>() }
+${throw}{
+${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 139906 "AddTutorial"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 1
+	  param in name "tut" type class_ref 128386 // Tutorial
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 140034 "DeleteTutorial"
+	preserve_cpp_body_indent public explicit_return_type "int"
+	nparams 1
+	  param in name "tut" type class_ref 128386 // Tutorial
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 140162 "GetSize"
+	preserve_cpp_body_indent public explicit_return_type "int"
+	nparams 1
+	  param in name "tutorial" type class_ref 128386 // Tutorial
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 140290 "GetList"
+	preserve_cpp_body_indent const constvalue public explicit_return_type "std::vector<Tutorial>"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} & ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 129282 // tutorialList (<directional composition>)
+	relation 129282 *-->
+	  stereotype "std::vector"
+	  a role_name "tutorialList" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 129282 // tutorialList (<directional composition>)
+	  b parent class_ref 128386 // Tutorial
+      end
+    end
+
+    class 129794 "TutorialListWriter"
+      abstract visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 140418 "WriteToFile"
+	abstract cpp_virtual public explicit_return_type "void"
+	nparams 1
+	  param in name "tutorialList" type class_ref 129666 // TutorialList
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 140546 "GetFileName"
+	preserve_cpp_body_indent const constvalue public explicit_return_type "std::string"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} & ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 140674 "SetFileName"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 1
+	  param in name "newFile" explicit_type "std::string"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      attribute 130178 "fileName"
+	protected explicit_type "std::string"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+    end
+
+    class 129922 "CSVTutorialListWriter"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 129410 // <generalisation>
+	relation 129410 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 129410 // <generalisation>
+	  b parent class_ref 129794 // TutorialListWriter
+      end
+
+      operation 140802 "CSVTutorialListWriter"
+	preserve_cpp_body_indent public explicit_return_type ""
+	nparams 1
+	  param in name "fileName" explicit_type "std::string"
+	cpp_decl "    ${comment}${inline}${name}${(}const ${t0} & ${p0}${v0}${)}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${class}::${name}${(}${)}${volatile}${throw} {
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 140930 "WriteToFile"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 1
+	  param in name "tutorialList" type class_ref 129666 // TutorialList
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 130050 "HTMLTutorialListWriter"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 129538 // <generalisation>
+	relation 129538 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 129538 // <generalisation>
+	  b parent class_ref 129794 // TutorialListWriter
+      end
+
+      operation 141058 "HTMLTutorialListWriter"
+	preserve_cpp_body_indent public explicit_return_type ""
+	nparams 1
+	  param in name "fileName" explicit_type "std::string"
+	cpp_decl "    ${comment}${inline}${name}${(}const ${t0} & ${p0}${v0}${)}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${class}::${name}${(}${)}${volatile}${throw} {
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 141186 "WriteToFile"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 1
+	  param in name "tutorialList" type class_ref 129666 // TutorialList
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 130178 "ValidationException"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 130306 "message"
+	private explicit_type "std::string"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 141314 "ValidationException"
+	preserve_cpp_body_indent public explicit_return_type ""
+	nparams 1
+	  param in name "_message" explicit_type "std::string"
+	cpp_decl "    ${comment}${inline}${name}${(}${t0} ${p0}${v0}${)}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${class}::${name}${(}${t0} ${p0}${)} : message{ _message }
+${throw}{
+${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 141442 "getMessage"
+	preserve_cpp_body_indent const public explicit_return_type "std::string"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 130306 "ValidationExceptionInherited"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 129666 // <generalisation>
+	relation 129666 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 129666 // <generalisation>
+	  b parent class_ref 130434 // typedef1
+      end
+
+      attribute 130434 "message"
+	private explicit_type "std::string"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 141570 "ValidationExceptionInherited"
+	preserve_cpp_body_indent public explicit_return_type ""
+	nparams 1
+	  param in name "_message" explicit_type "std::string"
+	cpp_decl "    ${comment}${inline}${name}${(}${t0} ${p0}${v0}${)}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${class}::${name}${(}${t0} ${p0}${)} : message{ _message }
+${throw}{
+${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 141698 "what"
+	preserve_cpp_body_indent const constvalue cpp_noexcept public explicit_return_type "char"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 130434 "typedef1"
+      visibility package stereotype "typedef" explicit_base_type "std::exception"
+      cpp_decl "${comment}typedef ${type} ${name};
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 130562 "TutorialValidator"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 141826 "validate"
+	class_operation preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 1
+	  param in name "s" type class_ref 128386 // Tutorial
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 130690 "Console"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 141954 "Console"
+	preserve_cpp_body_indent public explicit_return_type ""
+	nparams 2
+	  param inout name "adminServices" type class_ref 128002 // AdminServices
+	  param inout name "userservices" type class_ref 130818 // UserServices
+	cpp_decl "    ${comment}${inline}${name}${(}${t0} & ${p0}${v0}, ${t1} & ${p1}${v1}${)}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${class}::${name}${(}${t0} & ${p0}, ${t1} & ${p1}${)} :
+	adminServices{ adminServices }, userServices{ userservices }
+${throw}{
+${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 142082 "Start"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 142210 "SelectMode"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 142338 "SelectWriteMode"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 142466 "MainLoopUser"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 142594 "MainLoopAdministrator"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 142722 "AddTutorial"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 142850 "RemoveTutorial"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 142978 "UpdateTutorial"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 143106 "UpdateTutorialTitle"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 2
+	  param in name "oldTitle" explicit_type "std::string"
+	  param in name "newTitle" explicit_type "std::string"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 143234 "UpdateTutorialPresenter"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 2
+	  param in name "title" explicit_type "std::string"
+	  param in name "newPresenter" explicit_type "std::string"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 143362 "UpdateTutorialDuration"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 2
+	  param in name "title" explicit_type "std::string"
+	  param in name "newDuration" explicit_type "std::string"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 143490 "UpdateTutorialLikes"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 2
+	  param in name "title" explicit_type "std::string"
+	  param in name "newLikes" explicit_type "size_t"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 143618 "UpdateTutorialLink"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 2
+	  param in name "title" explicit_type "std::string"
+	  param in name "newLink" explicit_type "std::string"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 143746 "PrintAllTutorials"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 143874 "WatchListNoFilter"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 144002 "WatchListFilter"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 144130 "PrintWatchList"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 144258 "AddTutorialToWatchList"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 144386 "DoNotAddTutorialToWatchList"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 144514 "FilterByPresenter"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 144642 "UserInitializeTutorialList"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 144770 "UserWatchTutorial"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 144898 "PrintAdminMenu"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 145026 "PrintUserMenu"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 129794 // adminServices (<directional composition>)
+	relation 129794 *-->
+	  a role_name "adminServices" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 129794 // adminServices (<directional composition>)
+	  b parent class_ref 128002 // AdminServices
+      end
+
+      classrelation 129922 // userServices (<directional composition>)
+	relation 129922 *-->
+	  a role_name "userServices" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 129922 // userServices (<directional composition>)
+	  b parent class_ref 130818 // UserServices
+      end
+    end
+
+    class 130818 "UserServices"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 130050 // repo (<unidirectional association>)
+	relation 130050 --->
+	  a role_name "repo" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} & ${name}${value};
+"
+	    classrelation_ref 130050 // repo (<unidirectional association>)
+	  b parent class_ref 128130 // Repository
+      end
+
+      classrelation 130178 // tutoriallist (<directional composition>)
+	relation 130178 *-->
+	  stereotype "std::vector"
+	  a role_name "tutoriallist" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 130178 // tutoriallist (<directional composition>)
+	  b parent class_ref 128386 // Tutorial
+      end
+
+      classrelation 130306 // tutorials (<directional composition>)
+	relation 130306 *-->
+	  a role_name "tutorials" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 130306 // tutorials (<directional composition>)
+	  b parent class_ref 129666 // TutorialList
+      end
+
+      classrelation 130434 // writer (<unidirectional association>)
+	relation 130434 --->
+	  a role_name "writer" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 130434 // writer (<unidirectional association>)
+	  b parent class_ref 129794 // TutorialListWriter
+      end
+
+      classrelation 130562 // watchlist (<directional composition>)
+	relation 130562 *-->
+	  stereotype "std::vector"
+	  a role_name "watchlist" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 130562 // watchlist (<directional composition>)
+	  b parent class_ref 128386 // Tutorial
+      end
+
+      attribute 130562 "index"
+	private explicit_type "size_t"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 130690 "writeMode"
+	private explicit_type "std::string"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 145154 "UserServices"
+	preserve_cpp_body_indent public explicit_return_type ""
+	nparams 1
+	  param inout name "repo" type class_ref 128130 // Repository
+	cpp_decl "    ${comment}${inline}${name}${(}${t0} & ${p0}${v0}${)}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${class}::${name}${(}${t0} & ${p0}${)} :
+	repo{ repo },
+	tutoriallist{ repo.GetArray() },
+	watchlist{ std::vector<Tutorial>(1) }, index{ 0 },
+	writer{ nullptr },
+	writeMode{ \"\" },
+	tutorials{ TutorialList() }
+${throw}{
+${body}}
+"
+	
+	
+	
+	
+	comment "/ <summary>
+/ The constrcutor for the user service class
+/ </summary>
+/ <param name=\"repo\"></param>"
+      end
+
+      operation 145282 "InitializeTutorialList"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "/ <summary>
+/ Initializez the current tutorial list to the list in repo and sets the index to 0
+/ </summary>"
+      end
+
+      operation 145410 "AddToWatchList"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 1
+	  param in name "tutorial" type class_ref 128386 // Tutorial
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "/ <summary>
+/ adds a tutorial to watch list
+/ </summary>
+/ <param name=\"movie\">the tutorial to be added</param>"
+      end
+
+      operation 145538 "FilterByPresenter"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 1
+	  param in name "presenter" explicit_type "std::string"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "/ <summary>
+/ filters the tutorials in repo by presenter
+/ </summary>
+/ <param name=\"presenter\">the presenter of the tutorial</param>"
+      end
+
+      operation 145666 "IsPresenter"
+	preserve_cpp_body_indent public explicit_return_type "bool"
+	nparams 1
+	  param in name "presenter" explicit_type "std::string"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "/ <summary>
+/ verifies if the presenter introduced by the user is valid
+/ </summary>
+/ <param name=\"presenter\">the presenter introduced by the user</param>
+/ <returns>True if it exists in repo, false otherwise</returns>"
+      end
+
+      operation 145794 "NextTutorial"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "/ <summary>
+/ moves the index to the next tutorial in the list
+/ </summary>"
+      end
+
+      operation 145922 "RateWatchedTutorial"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 1
+	  param in name "title" explicit_type "std::string"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "/ <summary>
+/ likes a tutorial watched by the user
+/ </summary>
+/ <param name=\"title\">the title of the tutorial to be liked</param>"
+      end
+
+      operation 146050 "WatchTutorial"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 2
+	  param in name "title" explicit_type "std::string"
+	  param in name "rate" explicit_type "bool"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "/ <summary>
+/ it deletes the tutorial from watch list and gives the user the posibility to like that tutorial
+/ </summary>
+/ <param name=\"title\">the title of the tutorial</param>
+/ <param name=\"rate\">yes/no like</param>"
+      end
+
+      operation 146178 "~UserServices"
+	preserve_cpp_body_indent public explicit_return_type ""
+	nparams 0
+	cpp_decl "    ${comment}${inline}${virtual}${name}${(}${)}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${class}::${name}${(}${)}${volatile}${throw} {
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 146306 "WriteData"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 146434 "GetCurrentTutorial"
+	preserve_cpp_body_indent const public return_type class_ref 128386 // Tutorial
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "/ Getters"
+      end
+
+      operation 146562 "SeeWatchList"
+	preserve_cpp_body_indent const public explicit_return_type "std::vector<Tutorial>"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 146690 "GetFileName"
+	preserve_cpp_body_indent const constvalue public explicit_return_type "std::string"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} & ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 146818 "GetWriteMode"
+	preserve_cpp_body_indent const constvalue public explicit_return_type "std::string"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} & ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 146946 "SetWriteMode"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 1
+	  param in name "newMode" explicit_type "std::string"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 130690 // <dependency>
+	relation 130690 -_->
+	  stereotype "friend"
+	  a public
+	    cpp default "Generated"
+	    classrelation_ref 130690 // <dependency>
+	  b parent class_ref 130946 // UserServicesTests
+      end
+    end
+
+    class 130946 "UserServicesTests"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 147074 "TestAll"
+	class_operation preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 147202 "TestConstructor"
+	class_operation public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 147330 "TestSkippingAndAddingToWatchList"
+	class_operation public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 147458 "TestFilteringAndReinitialization"
+	class_operation public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 147586 "TestRateMovieandDeteleFromWatchList"
+	class_operation public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 147714 "TestGetters"
+	class_operation public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 131074 "Validator"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 147842 "ValidTutorialAttributes"
+	class_operation preserve_cpp_body_indent public explicit_return_type "bool"
+	nparams 5
+	  param in name "title" explicit_type "std::string"
+	  param in name "presenter" explicit_type "std::string"
+	  param in name "duration" explicit_type "std::string"
+	  param in name "likes" explicit_type "size_t"
+	  param in name "link" explicit_type "std::string"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}, ${t2} ${p2}${v2}, ${t3} ${p3}${v3}, ${t4} ${p4}${v4}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 147970 "ValidTutorialTitle"
+	class_operation preserve_cpp_body_indent public explicit_return_type "bool"
+	nparams 1
+	  param in name "title" explicit_type "std::string"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 148098 "ValidTutorialPresenter"
+	class_operation preserve_cpp_body_indent public explicit_return_type "bool"
+	nparams 1
+	  param in name "presenter" explicit_type "std::string"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 148226 "ValidTutorialDuration"
+	class_operation preserve_cpp_body_indent public explicit_return_type "bool"
+	nparams 1
+	  param in name "duration" explicit_type "std::string"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 148354 "ValidTutorialLikes"
+	class_operation preserve_cpp_body_indent public explicit_return_type "bool"
+	nparams 1
+	  param in name "likes" explicit_type "size_t"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 148482 "ValidTutorialLink"
+	class_operation preserve_cpp_body_indent public explicit_return_type "bool"
+	nparams 1
+	  param in name "link" explicit_type "std::string"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    classdiagram 128002 "UML_class"
+      classdiagramsettings member_max_width 0 end
+      size A3
+    end
+  end
+
+  deploymentview 128002 "paul9a"
+    //deployment diagram settings
+    deploymentdiagramsettings
+     end
+    artifact 128002 "adminservice"
+      stereotype "source"
+      cpp_h "#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}"
+      associated_elems
+	class_ref 128002 // AdminServices
+	class_ref 128258 // AdminServicesTests
+      end
+    end
+
+    artifact 128130 "domain"
+      stereotype "source"
+      cpp_h "#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}"
+      associated_elems
+	class_ref 128386 // Tutorial
+	class_ref 128514 // TutorialTests
+      end
+    end
+
+    artifact 128258 "FileRepository"
+      stereotype "source"
+      cpp_h "#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}"
+      associated_elems
+	class_ref 128642 // FileRepository
+      end
+    end
+
+    artifact 128386 "HTMLTable"
+      stereotype "source"
+      cpp_h "#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}"
+      associated_elems
+	class_ref 128770 // HTMLTable
+      end
+    end
+
+    artifact 128514 "repository"
+      stereotype "source"
+      cpp_h "#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}"
+      associated_elems
+	class_ref 128130 // Repository
+	class_ref 129154 // RepositoryTests
+      end
+    end
+
+    artifact 128642 "TextTable"
+      stereotype "source"
+      cpp_h "#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}"
+      associated_elems
+	class_ref 129282 // TextTable
+      end
+    end
+
+    artifact 128770 "TutorialList"
+      stereotype "source"
+      cpp_h "#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}"
+      associated_elems
+	class_ref 129666 // TutorialList
+	class_ref 129794 // TutorialListWriter
+	class_ref 129922 // CSVTutorialListWriter
+	class_ref 130050 // HTMLTutorialListWriter
+      end
+    end
+
+    artifact 128898 "TutorialValidator"
+      stereotype "source"
+      cpp_h "#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}"
+      associated_elems
+	class_ref 130178 // ValidationException
+	class_ref 130434 // typedef1
+	class_ref 130306 // ValidationExceptionInherited
+	class_ref 130562 // TutorialValidator
+      end
+    end
+
+    artifact 129026 "ui"
+      stereotype "source"
+      cpp_h "#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}"
+      associated_elems
+	class_ref 130690 // Console
+      end
+    end
+
+    artifact 129154 "userservice"
+      stereotype "source"
+      cpp_h "#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}"
+      associated_elems
+	class_ref 130818 // UserServices
+	class_ref 130946 // UserServicesTests
+      end
+    end
+
+    artifact 129282 "validators"
+      stereotype "source"
+      cpp_h "#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}"
+      associated_elems
+	class_ref 131074 // Validator
+      end
+    end
+
+    artifact 129410 "main"
+      stereotype "source"
+      cpp_src "int main()
+{
+    //MovieTests::TestAllMovie();
+    //RepositoryTests::TestAll();
+    //AdminServicesTests::TestAll();
+    //UserServicesTests::TestAll();
+
+    //Repository* repo = new Repository{};
+    FileRepository* repo = new FileRepository(\"tutorialsfile.txt\");
+
+    AdminServices* adminServices = new AdminServices(*repo);
+    UserServices* userServices = new UserServices(*repo);
+    Console* console = new Console(*adminServices, *userServices);
+
+    console->Start();
+
+    delete console;
+    delete userServices;
+    delete adminServices;
+    delete repo;
+
+    int c = _CrtDumpMemoryLeaks();
+    std::cout << c;
+}
+"
+      associated_elems
+      end
+    end
+  end
+end

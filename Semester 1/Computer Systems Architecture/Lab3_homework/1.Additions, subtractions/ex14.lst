@@ -1,0 +1,54 @@
+     1                                  bits 32 
+     2                                  global start        
+     3                                  extern exit               
+     4                                  import exit msvcrt.dll    
+     5                                  segment data use32 class=data
+     6                                          ;variables:
+     7 00000000 03                              a db 3h
+     8 00000001 0500                            b dw 5h
+     9 00000003 06000000                        c dd 6h
+    10 00000007 0800000000000000                d dq 8h
+    11                                  
+    12                                  segment code use32 class=code
+    13                                      start:
+    14                                          ;exercise 14: (a+d)-(c-b)+c
+    15                                          
+    16 00000000 A0[00000000]                    mov AL,[a]  ;AL=a
+    17 00000005 B400                            mov AH,0    ;converting AL → AX
+    18 00000007 66BA0000                        mov DX,0    ;converting AX → DX:AX
+    19 0000000B 6650                            push AX
+    20 0000000D 6652                            push DX
+    21 0000000F 58                              pop EAX     ;EAX=a
+    22 00000010 BA00000000                      mov EDX,0   ;EAX ->quad --> EDX:EAX = a
+    23                                          
+    24 00000015 8B1D[07000000]                  mov EBX,dword[d] ;EBX=d
+    25 0000001B 8B0D[0B000000]                  mov ECX,dword[d+4]  ;ECX=d(part2)
+    26 00000021 01D3                            add EBX,EDX         ;d+a
+    27 00000023 01C1                            add ECX,EAX         ;d+a
+    28                                          
+    29 00000025 8B15[03000000]                  mov EDX,[c] ;ECX=c
+    30                                          
+    31 0000002B 66A1[01000000]                  mov AX,[b]  ;AX=b
+    32 00000031 66BA0000                        mov DX,0    ;converting AX → DX:AX = b
+    33 00000035 6650                            push AX
+    34 00000037 6652                            push DX
+    35 00000039 58                              pop EAX     ;EAX=b
+    36                                          
+    37 0000003A 29C2                            sub EDX,EAX ;EDX=EDX-EAX=c-b
+    38 0000003C 89D0                            mov EAX,EDX     
+    39 0000003E BA00000000                      mov EDX,0   ;EAX -->EDX:EAX = c-b
+    40                                          
+    41 00000043 29D3                            sub EBX,EDX     ;EBX=(d+a)-(c-b)
+    42 00000045 19C1                            sbb ECX,EAX     ;ECX=(d+a)-(c-b)
+    43                                          
+    44                                         
+    45                                          
+    46 00000047 A1[03000000]                    mov EAX,[c] ;EAX=c
+    47 0000004C BA00000000                      mov EDX,0   ;EAX --> EDX:EAX = c
+    48                                          
+    49 00000051 01D3                            add EBX,EDX     ;EBX=[(d+a)-(c-b)]+c
+    50 00000053 11C1                            adc ECX,EAX     ;ECX=[(d+a)-(c-b)]+c
+    51                                          
+    52                                          
+    53 00000055 6A00                            push    dword 0      
+    54 00000057 FF15[00000000]                  call    [exit]       

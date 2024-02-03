@@ -1,0 +1,56 @@
+     1                                  bits 32
+     2                                  
+     3                                  global start        
+     4                                  
+     5                                  extern exit,scanf,printf
+     6                                  import exit msvcrt.dll
+     7                                  
+     8                                  import scanf msvcrt.dll
+     9                                  import printf msvcrt.dll
+    10                                  
+    11                                  segment data use32 class=data
+    12                                      ; 14. Read two numbers a and b (in base 16) from the keyboard and calculate a+b. Display the result in base 10
+    13 00000000 00000000                    a dd 0
+    14 00000004 00000000                    b dd 0
+    15 00000008 456E746572206E756D-         message db "Enter number (in base 16): ",0  ; message for scanf
+    15 00000011 6265722028696E2062-
+    15 0000001A 617365203136293A20-
+    15 00000023 00                 
+    16 00000024 257800                      format_read db "%x",0           ; format for reading with scanf
+    17 00000027 2564202B202564203D-         format_write db "%d + %d = %d",0    ; format for printing with printf
+    17 00000030 20256400           
+    18                                  ; our code starts here
+    19                                  segment code use32 class=code
+    20                                      start:
+    21                                          ; int printf(const char *format [,argument]...);
+    22 00000000 68[08000000]                    push dword message
+    23 00000005 FF15[00000000]                  call [printf]   ; show nice message for user interaction
+    24 0000000B 83C404                          add esp,4   ; we pushed one dword to the stack which decreased esp with 4, so we increase it with 4
+    25                                          
+    26 0000000E 68[00000000]                    push dword a
+    27 00000013 68[24000000]                    push dword format_read
+    28 00000018 FF15[00000000]                  call [scanf]    ; read first number
+    29 0000001E 83C408                          add esp,4*2
+    30                                          
+    31 00000021 68[08000000]                    push dword message
+    32 00000026 FF15[00000000]                  call [printf]
+    33 0000002C 83C404                          add esp,4
+    34                                          
+    35 0000002F 68[04000000]                    push dword b
+    36 00000034 68[24000000]                    push dword format_read
+    37 00000039 FF15[00000000]                  call [scanf]    ; read second number
+    38 0000003F 83C408                          add esp,4*2
+    39                                          
+    40 00000042 A1[00000000]                    mov eax,[a]
+    41 00000047 8B1D[04000000]                  mov ebx,[b]
+    42 0000004D 01D8                            add eax,ebx ; eax=a+b
+    43                                          
+    44 0000004F 50                              push dword eax
+    45 00000050 FF35[04000000]                  push dword [b]
+    46 00000056 FF35[00000000]                  push dword [a]
+    47 0000005C 68[27000000]                    push dword format_write
+    48 00000061 FF15[00000000]                  call [printf]   ; print result
+    49 00000067 83C410                          add esp,4*4
+    50                                          
+    51 0000006A 6A00                            push    dword 0      ; push the parameter for exit onto the stack
+    52 0000006C FF15[00000000]                  call    [exit]       ; call exit to terminate the program

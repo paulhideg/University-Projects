@@ -1,0 +1,18 @@
+class Row
+!!!134402.cpp!!!	Row()
+
+!!!134530.cpp!!!	Row(in elements : std::vector<std::string>)
+
+!!!134658.cpp!!!	AddToRow(in newElement : std::string) : void
+
+	elements.push_back(newElement);
+!!!134786.cpp!!!	operator <<(inout os : std::ostream, in row : HTMLTable::Row) : std::ostream
+
+	os << "<tr>";
+	for (auto& elem : row.elements)
+	{
+		os << HTMLTable::Cell(elem);
+	}
+	os << "</tr>";
+
+	return os;

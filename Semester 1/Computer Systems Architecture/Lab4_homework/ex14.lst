@@ -1,0 +1,46 @@
+     1                                  
+     2                                  
+     3                                  bits 32 
+     4                                  global start        
+     5                                  extern exit               
+     6                                  import exit msvcrt.dll    
+     7                                  segment data use32 class=data
+     8                                          ;variables:
+     9 00000000 EFA964AE                        A dd 10101110011001001010100111101111b
+    10 00000004 00000000                        B dd 0
+    11 00000008 00000000                        C dd 0
+    12                                    
+    13                                  segment code use32 class=code
+    14                                      start:
+    15                                          ;Given the doubleword A, obtain the integer number n represented on the bits 14-17 of A. 
+    16                                          ;Then obtain the doubleword B by rotating A n positions to the left. 
+    17                                          ;Finally, obtain the byte C as follows:
+    18                                          ;the bits 0-5 of C are the same as the bits 1-6 of B
+    19                                          ;the bits 6-7 of C are the same as the bits 17-18 of B
+    20 00000000 B800000000                      mov EAX,0
+    21 00000005 B900000000                      mov ECX,0
+    22 0000000A A1[00000000]                    mov EAX,[A]                                 ;EAX=A
+    23 0000000F 2500C00300                      and EAX, 00000000000000111100000000000000b  ;we keep only the 14-17 bits of A
+    24 00000014 C1C80E                          ror EAX,14                                  ;rotates A 14 bits to the right
+    25 00000017 88C1                            mov CL,AL                                   ;CL=n
+    26                                          
+    27 00000019 8B15[00000000]                  mov EDX,[A]                                 ;EDX=A
+    28 0000001F D3C2                            rol EDX,CL                                  ;rotate to left A with 
+    29 00000021 8915[04000000]                  mov [B],EDX         ;B                      :EDX=B
+    30                                          
+    31 00000027 B900000000                      mov ECX,0            ;C
+    32 0000002C A1[04000000]                    mov EAX,[B]                                 ;EAX=B
+    33 00000031 83E07E                          and EAX, 0000000000000000000000001111110b   ;we only keep the 1-6 bits of B
+    34 00000034 D1C8                            ror EAX,1
+    35 00000036 08C1                            or CL,AL
+    36                                          
+    37 00000038 A1[04000000]                    mov EAX,[B]
+    38 0000003D 2500600000                      and EAX, 0000000000000000110000000000000b
+    39 00000042 B110                            mov CL,16
+    40 00000044 D3C8                            ror EAX,CL
+    41 00000046 08C1                            OR CL,AL
+    42 00000048 880D[08000000]                  mov [C],CL
+    43                                          
+    44                                          
+    45 0000004E 6A00                            push    dword 0      
+    46 00000050 FF15[00000000]                  call    [exit]    

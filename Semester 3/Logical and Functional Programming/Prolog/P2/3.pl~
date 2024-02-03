@@ -1,0 +1,14 @@
+merge([],[],[]).
+merge(A,[],A).
+merge([],B,B).
+merge([A|T1],[B|T2],[A|R]):-
+    A<B,
+    !,
+    merge(T1,[B|T2],R).
+merge([A|T1],[B|T2],[B|R]):-
+    A>B,
+    !,
+    merge([A|T1],T2,R).
+merge([A|T1],[B|T2],R):-
+    A=:=B,
+    merge([A|T1],T2,R).

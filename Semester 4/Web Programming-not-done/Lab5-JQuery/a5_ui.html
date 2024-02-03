@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Drag and Drop</title>
+    <style>
+        #stack {
+            width: 200px;
+            height: 300px;
+            border: 1px solid black;
+        }
+        .box {
+            width: 180px;
+            height: 50px;
+            margin: 10px;
+            background-color: lightblue;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#stack").sortable({
+                revert: true,
+                placeholder: "ui-state-highlight"
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="stack">
+        <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+        <div class="box">Box 3</div>
+        <div class="box">Box 4</div>
+    </div>
+</body>
+</html>

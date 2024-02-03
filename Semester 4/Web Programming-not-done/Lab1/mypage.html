@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ice Cream Sandwich | YouTuber</title>
+	<style>
+		#heart-svg {
+	cursor: pointer;
+	overflow: visible;
+	width: 60px;
+	margin: 20px;
+	}
+
+	svg #heart {
+	transform-origin: center;
+	animation: animateHeartOut .3s linear forwards;
+	}
+
+	svg #main-circ {
+	transform-origin: 29.5px 29.5px;
+	}
+
+	.checkbox {
+	display: none;
+	}
+
+	.checkbox:checked+label svg #heart {
+	transform: scale(0.2);
+	fill: #E2264D;
+	animation: animateHeart .3s linear forwards .25s;
+	}
+
+	.checkbox:checked+label svg #main-circ {
+	transition: all 2s;
+	animation: animateCircle .3s linear forwards;
+	opacity: 1;
+	}
+
+	.checkbox:checked+label svg #grp1 {
+	opacity: 1;
+	transition: .1s all .3s;
+	}
+
+	.checkbox:checked+label svg #grp1 #oval1 {
+	transform: scale(0) translate(0, -30px);
+	transform-origin: 0 0 0;
+	transition: .5s transform .3s;
+	}
+
+	.checkbox:checked+label svg #grp1 #oval2 {
+	transform: scale(0) translate(10px, -50px);
+	transform-origin: 0 0 0;
+	transition: 1.5s transform .3s;
+	}
+
+	.checkbox:checked+label svg #grp2 {
+	opacity: 1;
+	transition: .1s all .3s;
+	}
+
+	.checkbox:checked+label svg #grp2 #oval1 {
+	transform: scale(0) translate(30px, -15px);
+	transform-origin: 0 0 0;
+	transition: .5s transform .3s;
+	}
+
+	.checkbox:checked+label svg #grp2 #oval2 {
+	transform: scale(0) translate(60px, -15px);
+	transform-origin: 0 0 0;
+	transition: 1.5s transform .3s;
+	}
+
+	.checkbox:checked+label svg #grp3 {
+	opacity: 1;
+	transition: .1s all .3s;
+	}
+
+	.checkbox:checked+label svg #grp3 #oval1 {
+	transform: scale(0) translate(30px, 0px);
+	transform-origin: 0 0 0;
+	transition: .5s transform .3s;
+	}
+
+	.checkbox:checked+label svg #grp3 #oval2 {
+	transform: scale(0) translate(60px, 10px);
+	transform-origin: 0 0 0;
+	transition: 1.5s transform .3s;
+	}
+
+	.checkbox:checked+label svg #grp4 {
+	opacity: 1;
+	transition: .1s all .3s;
+	}
+
+	.checkbox:checked+label svg #grp4 #oval1 {
+	transform: scale(0) translate(30px, 15px);
+	transform-origin: 0 0 0;
+	transition: .5s transform .3s;
+	}
+
+	.checkbox:checked+label svg #grp4 #oval2 {
+	transform: scale(0) translate(40px, 50px);
+	transform-origin: 0 0 0;
+	transition: 1.5s transform .3s;
+	}
+
+	.checkbox:checked+label svg #grp5 {
+	opacity: 1;
+	transition: .1s all .3s;
+	}
+
+	.checkbox:checked+label svg #grp5 #oval1 {
+	transform: scale(0) translate(-10px, 20px);
+	transform-origin: 0 0 0;
+	transition: .5s transform .3s;
+	}
+
+	.checkbox:checked+label svg #grp5 #oval2 {
+	transform: scale(0) translate(-60px, 30px);
+	transform-origin: 0 0 0;
+	transition: 1.5s transform .3s;
+	}
+
+	.checkbox:checked+label svg #grp6 {
+	opacity: 1;
+	transition: .1s all .3s;
+	}
+
+	.checkbox:checked+label svg #grp6 #oval1 {
+	transform: scale(0) translate(-30px, 0px);
+	transform-origin: 0 0 0;
+	transition: .5s transform .3s;
+	}
+
+	.checkbox:checked+label svg #grp6 #oval2 {
+	transform: scale(0) translate(-60px, -5px);
+	transform-origin: 0 0 0;
+	transition: 1.5s transform .3s;
+	}
+
+	.checkbox:checked+label svg #grp7 {
+	opacity: 1;
+	transition: .1s all .3s;
+	}
+
+	.checkbox:checked+label svg #grp7 #oval1 {
+	transform: scale(0) translate(-30px, -15px);
+	transform-origin: 0 0 0;
+	transition: .5s transform .3s;
+	}
+
+	.checkbox:checked+label svg #grp7 #oval2 {
+	transform: scale(0) translate(-55px, -30px);
+	transform-origin: 0 0 0;
+	transition: 1.5s transform .3s;
+	}
+
+	.checkbox:checked+label svg #grp2 {
+	opacity: 1;
+	transition: .1s opacity .3s;
+	}
+
+	.checkbox:checked+label svg #grp3 {
+	opacity: 1;
+	transition: .1s opacity .3s;
+	}
+
+	.checkbox:checked+label svg #grp4 {
+	opacity: 1;
+	transition: .1s opacity .3s;
+	}
+
+	.checkbox:checked+label svg #grp5 {
+	opacity: 1;
+	transition: .1s opacity .3s;
+	}
+
+	.checkbox:checked+label svg #grp6 {
+	opacity: 1;
+	transition: .1s opacity .3s;
+	}
+
+	.checkbox:checked+label svg #grp7 {
+	opacity: 1;
+	transition: .1s opacity .3s;
+	}
+
+	@keyframes animateCircle {
+	40% {
+		transform: scale(10);
+		opacity: 1;
+		fill: #DD4688;
+	}
+	55% {
+		transform: scale(11);
+		opacity: 1;
+		fill: #D46ABF;
+	}
+	65% {
+		transform: scale(12);
+		opacity: 1;
+		fill: #CC8EF5;
+	}
+	75% {
+		transform: scale(13);
+		opacity: 1;
+		fill: transparent;
+		stroke: #CC8EF5;
+		stroke-width: .5;
+	}
+	85% {
+		transform: scale(17);
+		opacity: 1;
+		fill: transparent;
+		stroke: #CC8EF5;
+		stroke-width: .2;
+	}
+	95% {
+		transform: scale(18);
+		opacity: 1;
+		fill: transparent;
+		stroke: #CC8EF5;
+		stroke-width: .1;
+	}
+	100% {
+		transform: scale(19);
+		opacity: 1;
+		fill: transparent;
+		stroke: #CC8EF5;
+		stroke-width: 0;
+	}
+	}
+
+	@keyframes animateHeart {
+	0% {
+		transform: scale(0.2);
+	}
+	40% {
+		transform: scale(1.2);
+	}
+	100% {
+		transform: scale(1);
+	}
+	}
+
+	@keyframes animateHeartOut {
+	0% {
+		transform: scale(1.4);
+	}
+	100% {
+		transform: scale(1);
+	}
+	}	
+	</style>
+</head>
+<body style="background-color: black; color:white; align-items: center; text-align: center;">
+	<header>
+		<h1 style="text-align: center;">Ice Cream Sandwich</h1>
+		<nav style="text-align: left;">
+			<ul>
+                <li style="list-style-type: none;"><h3>Contents</h3></li>
+				<li><a href="#about">About</a></li>
+                <li><a href="#trivia">Trivia</a></li>
+				<li><a href="#videos">Videos</a></li>
+				<li><a href="#social">Social Media</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+        <aside>
+            <figure style="align-self: center;">
+                <img style='width: 300px; align-self: center;' src="pic2.webp">
+                <figcaption >This is him</figcaption>
+            </figure>
+            <figure style="align-self: center;">
+                <video width='240' controls loop autoplay>
+                    <source src='man_dances.mp4' type='video/mp4'>
+                    Your browser does not support the video tag.
+                </video>     
+            </figure>
+            <h3 style="font-weight: 400;">This is him dancing</h3>
+        </aside>
+		<div>
+            <audio controls>
+				<source src="man_dances.mp3" type="audio/mpeg">
+			  Your browser does not support the audio element.
+			  </audio>
+            <h3 style="font-weight: 400;">This is an audio recording of him dancing</h3>
+        </div>
+		<section id="about">
+			<h2>About Ice Cream Sandwich</h2>
+			<p>Andy (born: February 8, 1996 [age 27]), better known online as Ice Cream Sandwich, is an American YouTuber and animator best known for his animated storytime videos and webcomics.</p>
+			<p>Andy lives in the United States with his dog, Rhea. <br> He has a day job, as YouTube is not his not his only source of income. <br> Andy went to college some time during the mid 2010's, and also studied abroad in France during that time.<br> Andy has two older sisters, Becca and Krista.</p>
+		</section>
+        <article id="trivia" style="text-align: left;">
+			<h2>Trivia</h2>
+            <ul><li>Andy's favorite food-item is <b>pizza</b>.</li>
+                <li>As of April 2019, Andy had never broken a bone.</li>
+                <li>Andy doesn't really like Apple products but got a iPad Pro with a Apple Pencil.</li>
+                <li>He had his appendix removed when he was in college.</li>
+                <li>Andy has also animated for other YouTube animation channels, including Jaiden Animations</a>.</li>
+                <li>He has ADHD, and got diagnosed with it on 2021.</li>
+                <li>Andy once had a premonition dream.</li>
+                <li>Andy is married. His wife is mentioned in his videos occasionally.</li>
+                <li>Andy won a Streamys Creator Honor Award.</li></ul>
+		</article>
+		<section id="videos">
+			<h2>Videos</h2>
+			<p>Ice Cream Sandwich's videos cover a wide range of topics, but they all have one thing in common: they're fun to watch. Some of his most popular videos include:</p>
+			<ul style="list-style-type: none;">
+				<li>"The Evolution of Video Game Graphics"</li>
+				<li>"The Top 10 Games of All Time"</li>
+				<li>"Why You Should Buy a Gaming PC"</li>
+				<li>"The Best Free Games on Steam"</li>
+			</ul>
+			<p>If you're a fan of technology, video games, or just enjoy watching entertaining videos, be sure to check out Ice Cream Sandwich's channel!</p>
+		</section>
+		<section id="social">
+			<h2>Social Media</h2>
+			<p>Ice Cream Sandwich is active on social media and can be found on the following platforms:</p>
+			<input type="checkbox" class="checkbox" id="checkbox" />
+			<label for="checkbox">
+				<svg id="heart-svg" viewBox="467 392 58 57" xmlns="http://www.w3.org/2000/svg">
+					<g id="Group" fill="none" fill-rule="evenodd" transform="translate(467 392)">
+					<path id="heart" d="M29.144 20.773c-.063-.13-4.227-8.67-11.44-2.59C7.63 28.795 28.94 43.256 29.143 43.394c.204-.138 21.513-14.6 11.44-25.213-7.214-6.08-11.377 2.46-11.44 2.59z" fill="#AAB8C2"/>
+					<circle id="main-circ" fill="#E2264D" opacity="0" cx="29.5" cy="29.5" r="1.5"/>
+
+					<g id="grp7" opacity="0" transform="translate(7 6)">
+						<circle id="oval1" fill="#9CD8C3" cx="2" cy="6" r="2"/>
+						<circle id="oval2" fill="#8CE8C3" cx="5" cy="2" r="2"/>
+					</g>
+
+					<g id="grp6" opacity="0" transform="translate(0 28)">
+						<circle id="oval1" fill="#CC8EF5" cx="2" cy="7" r="2"/>
+						<circle id="oval2" fill="#91D2FA" cx="3" cy="2" r="2"/>
+					</g>
+
+					<g id="grp3" opacity="0" transform="translate(52 28)">
+						<circle id="oval2" fill="#9CD8C3" cx="2" cy="7" r="2"/>
+						<circle id="oval1" fill="#8CE8C3" cx="4" cy="2" r="2"/>
+					</g>
+
+					<g id="grp2" opacity="0" transform="translate(44 6)">
+						<circle id="oval2" fill="#CC8EF5" cx="5" cy="6" r="2"/>
+						<circle id="oval1" fill="#CC8EF5" cx="2" cy="2" r="2"/>
+					</g>
+
+					<g id="grp5" opacity="0" transform="translate(14 50)">
+						<circle id="oval1" fill="#91D2FA" cx="6" cy="5" r="2"/>
+						<circle id="oval2" fill="#91D2FA" cx="2" cy="2" r="2"/>
+					</g>
+
+					<g id="grp4" opacity="0" transform="translate(35 50)">
+						<circle id="oval1" fill="#F48EA7" cx="6" cy="5" r="2"/>
+						<circle id="oval2" fill="#F48EA7" cx="2" cy="2" r="2"/>
+					</g>
+
+					<g id="grp1" opacity="0" transform="translate(24)">
+						<circle id="oval1" fill="#9FC7FA" cx="2.5" cy="3" r="2"/>
+						<circle id="oval2" fill="#9FC7FA" cx="7.5" cy="2" r="2"/>
+					</g>
+					</g>
+				</svg>
+			</label>
+			<div style="align-self: center;">
+			<table style="border: 2px solid white; align-self: center; margin-left: 538px;">
+				<tr>
+				  <td style="border: 2px solid white; padding:10px"><a href="https://twitter.com/ICSyoutube">Twitter</a></td>
+				  <td style="border: 2px solid white;  padding:10px"><a href="https://www.instagram.com/icsyoutube/">Instagram</a></td>
+				  <td style="border: 2px solid white;  padding:10px"><a href="https://www.twitch.tv/icsyoutube">Twitch</a></td>
+				  <td style="border: 2px solid white;  padding:10px"><a href="https://www.reddit.com/r/icsyoutube">Reddit</a></td>
+				</tr>
+			</table>
+			</div>
+			<p>Be sure to follow him to stay up-to-date with his latest videos and news!</p>
+		</section>
+	</main>
+	<footer>
+		<hr>
+		<p>&copy; 2023 Ice Cream Sandwich. All rights reserved.</p>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,159 @@
+format 224
+
+classcanvas 130818 class_ref 128386 // Tutorial
+  classdiagramsettings member_max_width 0 end
+  xyz 11.23 22.26 2000
+end
+classcanvas 131074 class_ref 130946 // UserServicesTests
+  classdiagramsettings member_max_width 0 end
+  xyz 503.96 1047.77 2000
+end
+classcanvas 131202 class_ref 130818 // UserServices
+  classdiagramsettings member_max_width 0 end
+  xyz 331.24 480.07 3005
+end
+classcanvas 131714 class_ref 128514 // TutorialTests
+  classdiagramsettings member_max_width 0 end
+  xyz 182.41 26.49 2006
+end
+classcanvas 131970 class_ref 128258 // AdminServicesTests
+  classdiagramsettings member_max_width 0 end
+  xyz 979.09 771.05 2005
+end
+classcanvas 132098 class_ref 128002 // AdminServices
+  classdiagramsettings member_max_width 0 end
+  xyz 977.51 357.72 2011
+end
+classcanvas 132354 class_ref 128130 // Repository
+  classdiagramsettings member_max_width 0 end
+  xyz 550 25 3011
+end
+classcanvas 132866 class_ref 128642 // FileRepository
+  classdiagramsettings member_max_width 0 end
+  xyz 965 16 3017
+end
+classcanvas 133378 class_ref 128770 // HTMLTable
+  classdiagramsettings member_max_width 0 end
+  xyz 241 1418 2000
+end
+classcanvas 133506 class_ref 129282 // TextTable
+  classdiagramsettings member_max_width 0 end
+  xyz 23 1027 2000
+end
+classcanvas 133634 class_ref 129666 // TutorialList
+  classdiagramsettings member_max_width 0 end
+  xyz 26 790 3011
+end
+classcanvas 134018 class_ref 129794 // TutorialListWriter
+  classdiagramsettings member_max_width 0 end
+  xyz 256 1031 3011
+end
+classcanvas 134274 class_ref 129922 // CSVTutorialListWriter
+  classdiagramsettings member_max_width 0 end
+  xyz 189 1249 3017
+end
+classcanvas 134530 class_ref 130050 // HTMLTutorialListWriter
+  classdiagramsettings member_max_width 0 end
+  xyz 407 1286 3017
+end
+classcanvas 134786 class_ref 130178 // ValidationException
+  classdiagramsettings member_max_width 0 end
+  xyz 978 1295 2000
+end
+classcanvas 134914 class_ref 130306 // ValidationExceptionInherited
+  classdiagramsettings member_max_width 0 end
+  xyz 668 1294 2000
+end
+classcanvas 135042 class_ref 130562 // TutorialValidator
+  classdiagramsettings member_max_width 0 end
+  xyz 452 1416 2000
+end
+classcanvas 135170 class_ref 130690 // Console
+  classdiagramsettings member_max_width 0 end
+  xyz 619 425 3011
+end
+classcanvas 135554 class_ref 131074 // Validator
+  classdiagramsettings member_max_width 0 end
+  xyz 953 1064 2000
+end
+relationcanvas 131330 relation_ref 130178 // <directional composition>
+  from ref 131202 z 3006 stereotype "<<:vector>>" xyz 191 448.5 3006 to ref 130818
+  role_a_pos 153 337 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131458 relation_ref 130562 // <directional composition>
+  from ref 131202 z 3006 stereotype "<<:vector>>" xyz 191 448.5 3006 to ref 130818
+  role_a_pos 151 337 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131586 relation_ref 130690 // <dependency>
+  from ref 131202 z 3006 stereotype "<<friend>>" xyz 759.5 1045 3006 to ref 131074
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131842 relation_ref 128258 // <dependency>
+  from ref 130818 z 2007 stereotype "<<friend>>" xyz 110.5 94.5 2007 to ref 131714
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132226 relation_ref 128002 // <dependency>
+  from ref 132098 z 2012 stereotype "<<friend>>" xyz 1000.5 664.5 2012 to ref 131970
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132482 relation_ref 128770 // <directional composition>
+  from ref 132354 z 3012 stereotype "<<:vector>>" xyz 301 223 3012 to ref 130818
+  role_a_pos 145 222 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132610 relation_ref 130050 // <unidirectional association>
+  from ref 131202 z 3012 to ref 132354
+  role_a_pos 576 371 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132738 relation_ref 128130 // <unidirectional association>
+  from ref 132098 z 3012 to ref 132354
+  role_a_pos 764 236 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132994 relation_ref 128386 // <generalisation>
+  from ref 132866 z 3018 to ref 132354
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 133762 relation_ref 129282 // <directional composition>
+  from ref 133634 z 3012 stereotype "<<:vector>>" xyz 39.5 643 3012 to ref 130818
+  role_a_pos 92 511 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 133890 relation_ref 130306 // <directional composition>
+  from ref 131202 z 3012 to ref 133634
+  role_a_pos 162 791 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 134146 relation_ref 130434 // <unidirectional association>
+  from ref 131202 z 3012 to ref 134018
+  role_a_pos 356 1001 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 134402 relation_ref 129410 // <generalisation>
+  from ref 134274 z 3018 to ref 134018
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 134658 relation_ref 129538 // <generalisation>
+  from ref 134530 z 3018 to ref 134018
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 135298 relation_ref 129794 // <directional composition>
+  from ref 135170 z 3012 to ref 132098
+  role_a_pos 862 504 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 135426 relation_ref 129922 // <directional composition>
+  from ref 135170 z 3012 to ref 131202
+  role_a_pos 516 655 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

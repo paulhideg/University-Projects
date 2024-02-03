@@ -1,0 +1,51 @@
+
+
+
+%search(i,o)
+search([H|_],EL):-
+    H=:=EL,!.
+search([_|T],EL):-
+    search(T,EL).
+
+max([],M,M).
+max([H|T],M,R):-
+    H>M,
+    !,
+    max(T,H,R).
+max([_|T],M,R):-
+    max(T,M,R).
+
+maxW([H|T],R):-
+    max(T,H,R).
+
+remove([],_,[]).
+remove([H|T],MAX,[H|R]):-
+    H=\=MAX,
+    !,
+    remove(T,MAX,R).
+remove([_|T],MAX,R):-
+    remove(T,MAX,R).
+
+
+solve(L,R):-
+    maxW(L,MAX),
+    remove(L,MAX,R).
+
+
+count([],_,0).
+count([H|T],EL,CNT):-
+    H=:=EL,
+    !,
+    CNT1 is CNT+1,
+    count(T,EL,CNT1).
+count([_|T],EL,CNT):-
+    count(T,EL,CNT).
+
+solve2([],[_|_],[]).
+solve2([H|T],AUX,[H|R]):-
+    count(AUX,H,CNT),
+    CNT is 1,
+    !,
+    solve2(T,AUX,R).
+solve2([_|T],AUX,R):-
+    solve2(T,AUX,R).

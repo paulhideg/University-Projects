@@ -1,0 +1,26 @@
+count([],_,0).
+count([H|T],EL,CNT):-
+    H=:=EL,
+    !,
+    count(T,EL,CNT1),
+    CNT is CNT1+1.
+count([_|T],EL,CNT):-
+    count(T,EL,CNT).
+
+toSet([],[]).
+toSet([H|T],[H|R]):-
+    count(T,H,CNT),
+    CNT<1,
+    !,
+    toSet(T,R).
+toSet([_|T],R):-
+    toSet(T,R).
+
+%(i,i,o)
+gcd(A,0,A).
+gcd(A,B,R):- A>B, gcd(B,A,R).
+gcd(A,B,R):- M is B mod A, gcd(A,M,R).
+
+%(i,i,o)
+gcd2([],A,A).
+gcd2([H|T],AUX,R):- gcd(H,AUX,R2), gcd2(T,R2,R).

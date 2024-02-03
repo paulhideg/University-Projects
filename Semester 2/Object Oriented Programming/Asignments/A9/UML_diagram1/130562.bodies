@@ -1,0 +1,12 @@
+class TutorialValidator
+!!!141826.cpp!!!	validate(in s : Tutorial) : void
+
+	string errors;
+	if (s.GetTitle().size() < 2)
+		errors += string("The tutorial title cannot be less than 2 characters!\n");
+	if (s.GetPresenter().size() < 2)
+		errors += string("The tutorial presenter cannot be less than 2 characters!\n");
+	if (s.GetLikes() < 0)
+		errors += string("The tutorial can not have a negative number of likes");
+	if (errors.size() > 0)
+		throw ValidationException(errors);

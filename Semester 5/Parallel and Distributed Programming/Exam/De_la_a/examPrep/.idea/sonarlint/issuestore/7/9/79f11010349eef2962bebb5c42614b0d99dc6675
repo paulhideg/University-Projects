@@ -1,0 +1,10 @@
+
+o
+java:S2095Q"MUse try-with-resources or close this "ExecutorService" in a "finally" clause.(ÑãÖ¯ýÿÿÿÿ8†Ìµ‰Ó1
+\
+java:S1118":Add a private constructor to hide the implicit public one.(Ëêúþøÿÿÿÿ8‡Ìµ‰Ó1
+o
+java:S6204>"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹8‰Ìµ‰Ó1
+{
+java:S2142U"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(üŸ´Â8‹Ìµ‰Ó1
+Z	java:S106T"9Replace this use of System.out or System.err by a logger.(»Î›ˆÿÿÿÿÿ8‹Ìµ‰Ó1

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Properties">
+      <UniqueIdentifier>{c8a5aed4-761f-451a-960c-f072d101c95f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="domain">
+      <UniqueIdentifier>{497327b3-8a8f-4b91-a5e1-93c9f5a4500f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="impl">
+      <UniqueIdentifier>{52f8f97d-2bfa-44f9-b740-5c2ef9862a25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utils">
+      <UniqueIdentifier>{11bfce7a-9629-43ab-ae05-e5cb708ce27e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Program.cs" />
+    <None Include="App.config" />
+    <None Include="lab4.csproj" />
+    <None Include="AssemblyInfo.cs">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="CustomSocket.cs">
+      <Filter>domain</Filter>
+    </None>
+    <None Include="Callbackimpl.cs">
+      <Filter>impl</Filter>
+    </None>
+    <None Include="TaskImpl.cs">
+      <Filter>impl</Filter>
+    </None>
+    <None Include="Parser.cs">
+      <Filter>utils</Filter>
+    </None>
+  </ItemGroup>
+</Project>

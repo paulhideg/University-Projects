@@ -1,0 +1,8 @@
+class UserServicesTests
+!!!147074.cpp!!!	TestAll() : void
+
+	//TestConstructor();
+	//TestSkippingAndAddingToWatchList();
+	//TestFilteringAndReinitialization();
+	//TestRateMovieandDeteleFromWatchList(); 
+	//TestGetters();

@@ -1,0 +1,28 @@
+go
+{
+number a;
+number b;
+number c;
+a=+2;
+a=-10;
+c=154;
+number bCBCA123;
+number acb;
+cin>>a;
+cin>>b;
+cin>>c;
+number max;
+if(a>b and a>c){
+max=a;
+}
+if(b>a and b>c){
+max=b;
+}
+if(c>a and c>b){
+max=c;
+}
+while(a==b or b!=c){
+cout<<"hello";
+}
+cout<<max;
+}

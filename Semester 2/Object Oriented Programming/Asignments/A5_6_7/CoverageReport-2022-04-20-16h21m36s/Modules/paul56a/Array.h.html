@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+        <meta charset="utf-8"/>
+	    <title>Array.h</title>
+	    <link href="../../third-party/google-code-prettify/prettify-CppCoverage.css" type="text/css" rel="stylesheet" />
+	    <script type="text/javascript" src="../../third-party/google-code-prettify/prettify.js"></script>
+	</head>
+    <body onload="prettyPrint()">
+        <h4></h4>
+        <pre class="prettyprint lang-cpp linenums">
+#pragma once
+#include &lt;string&gt;
+
+/// Created a templated class for the dynamic array
+/// \tparam Element Any type of element
+template &lt;class Element&gt;
+class Array {
+private:
+
+<span style = "background-color:#dfd">    int size{}, capacity{};</span>
+    void resize_array();
+
+public:
+
+    Element* elements;
+
+    explicit Array(int capacity = 10);
+
+    Array(const Array&amp; copy_array);
+
+    ~Array();
+
+    void append_array(const Element&amp; element_to_add);
+
+    void operator+(const Element&amp; element_to_add) {
+        if (this-&gt;size == this-&gt;capacity)
+            this-&gt;resize_array();
+        this-&gt;elements[this-&gt;size++] = element_to_add;
+    }
+
+    void remove_array(int index);
+    void update_array(int index, const Element&amp; element_to_update);
+    int get_size() const;
+    Element* get_all_elements() const;
+};
+
+///  Constructor class
+/// \tparam Element Any type of element
+/// \param capacity Max size of array
+template &lt;class Element&gt;
+<span style = "background-color:#dfd">Array&lt;Element&gt;::Array(int capacity) {</span>
+
+<span style = "background-color:#dfd">    this-&gt;size = 0;
+    this-&gt;capacity = capacity;
+    this-&gt;elements = new Element[capacity];
+}</span>
+
+/// Array setter
+/// \tparam Element Any type of element
+/// \param copy_array Copy of the array
+template &lt;class Element&gt;
+<span style = "background-color:#dfd">Array&lt;Element&gt;::Array(const Array&amp; copy_array) {</span>
+
+<span style = "background-color:#dfd">    this-&gt;size = copy_array.size;
+    this-&gt;capacity = copy_array.capacity;
+    this-&gt;elements = new Element[this-&gt;capacity];</span>
+
+<span style = "background-color:#dfd">    for (int i = 0; i &lt; this-&gt;size; i++)
+        this-&gt;elements[i] = copy_array.elements[i];
+}</span>
+
+/// Destructor class
+/// \tparam Element Any type of element
+template &lt;class Element&gt;
+<span style = "background-color:#dfd">Array&lt;Element&gt;::~Array() {</span>
+
+<span style = "background-color:#dfd">    delete[] elements;
+}</span>
+
+/// Add function, adds the element at the end of the array
+/// \tparam Element Any type of element
+/// \param element_to_add Element to be added
+template &lt;class Element&gt;
+<span style = "background-color:#dfd">void Array&lt;Element&gt;::append_array(const Element&amp; element_to_add) {</span>
+
+<span style = "background-color:#dfd">    if (this-&gt;size == this-&gt;capacity)
+        this-&gt;resize_array();
+    int i = this-&gt;size++;
+    this-&gt;elements[i] = element_to_add;
+}</span>
+
+///  Remove function, removes the element at the given index
+/// \tparam Element Any type of element
+/// \param index The index of the element who is going to be removed
+template &lt;class Element&gt;
+<span style = "background-color:#dfd">void Array&lt;Element&gt;::remove_array(int index) {
+    this-&gt;size--;
+    for (int i = index; i &lt; this-&gt;size; i++)
+        this-&gt;elements[i] = this-&gt;elements[i + 1];
+}</span>
+
+/// Update function, changes the element at the given index with the given element
+/// \tparam Element Any type of element
+/// \param index The position of the element who is going to be updated
+/// \param element_to_update Element which is replacing the current element
+template &lt;class Element&gt;
+<span style = "background-color:#dfd">void Array&lt;Element&gt;::update_array(int index, const Element&amp; element_to_update) {</span>
+
+<span style = "background-color:#dfd">    this-&gt;elements[index] = element_to_update;
+}</span>
+
+/// Getter for the size of the array
+/// \tparam Element Any type of element
+/// \return Size of the array
+template &lt;class Element&gt;
+<span style = "background-color:#dfd">int Array&lt;Element&gt;::get_size() const {</span>
+
+<span style = "background-color:#dfd">    return this-&gt;size;
+}</span>
+
+/// Getter for all elements in the array
+/// \tparam Element Any type of element
+/// \return The elements of the array
+template &lt;class Element&gt;
+<span style = "background-color:#dfd">Element* Array&lt;Element&gt;::get_all_elements() const {</span>
+
+<span style = "background-color:#dfd">    return this-&gt;elements;
+}</span>
+
+/// Resize function if the size reaches the capacity, the capacity increases
+/// \tparam Element Any type of element
+template &lt;class Element&gt;
+<span style = "background-color:#dfd">void Array&lt;Element&gt;::resize_array() {</span>
+
+<span style = "background-color:#dfd">    this-&gt;capacity *= static_cast&lt;int&gt;(2);</span>
+
+<span style = "background-color:#dfd">    auto* copy_elements = new Element[this-&gt;capacity];
+    for (int i = 0; i &lt; this-&gt;size; i++)
+        copy_elements[i] = this-&gt;elements[i];</span>
+
+<span style = "background-color:#dfd">    delete[] this-&gt;elements;
+    this-&gt;elements = copy_elements;
+}</span>
+
+template &lt;class Element&gt;
+<span style = "background-color:#dfd">Array&lt;Element&gt;&amp; operator+(Element event, Array&lt;Element&gt;&amp; dynamic_array) {
+    dynamic_array.append_array(event);
+    return dynamic_array;
+}</span></pre>
+        <hr />
+        <table width="100%">
+            <thead>
+                <tr>
+                    <th align="center">
+                        <small>Generated by</small>
+                        <a href="https://github.com/OpenCppCoverage/OpenCppCoverage/releases">
+                            <strong>OpenCppCoverage (Version: 0.9.9.0)</strong>
+                        </a>
+                    </th>
+                </tr>
+            </thead>
+        </table>
+    </body>
+</html>

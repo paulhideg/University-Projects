@@ -1,0 +1,309 @@
+[Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{}
+Execution Stack:
+[Ref{int} v; new(20); Ref{Ref{int}} a; new(v); Print(v); Print(a)]
+File Table:
+{}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{}
+Execution Stack:
+[new(20); Ref{Ref{int}} a; new(v); Print(v); Print(a), Ref{int} v]
+File Table:
+{}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{}
+Execution Stack:
+[new(20); Ref{Ref{int}} a; new(v); Print(v); Print(a), Ref{int} v]
+File Table:
+{}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{v=(0,int)}
+Execution Stack:
+[new(20); Ref{Ref{int}} a; new(v); Print(v); Print(a)]
+File Table:
+{}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{v=(0,int)}
+Execution Stack:
+[new(20); Ref{Ref{int}} a; new(v); Print(v); Print(a)]
+File Table:
+{}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{v=(0,int)}
+Execution Stack:
+[Ref{Ref{int}} a; new(v); Print(v); Print(a), new(20)]
+File Table:
+{}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{v=(0,int)}
+Execution Stack:
+[Ref{Ref{int}} a; new(v); Print(v); Print(a), new(20)]
+File Table:
+{}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{v=(1,int)}
+Execution Stack:
+[Ref{Ref{int}} a; new(v); Print(v); Print(a)]
+File Table:
+{}
+Heap Table:
+{1->20
+}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{v=(1,int)}
+Execution Stack:
+[Ref{Ref{int}} a; new(v); Print(v); Print(a)]
+File Table:
+{}
+Heap Table:
+{1->20
+}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{v=(1,int)}
+Execution Stack:
+[new(v); Print(v); Print(a), Ref{Ref{int}} a]
+File Table:
+{}
+Heap Table:
+{1->20
+}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{v=(1,int)}
+Execution Stack:
+[new(v); Print(v); Print(a), Ref{Ref{int}} a]
+File Table:
+{}
+Heap Table:
+{1->20
+}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{a=(0,Ref{int}), v=(1,int)}
+Execution Stack:
+[new(v); Print(v); Print(a)]
+File Table:
+{}
+Heap Table:
+{1->20
+}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{a=(0,Ref{int}), v=(1,int)}
+Execution Stack:
+[new(v); Print(v); Print(a)]
+File Table:
+{}
+Heap Table:
+{1->20
+}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{a=(0,Ref{int}), v=(1,int)}
+Execution Stack:
+[Print(v); Print(a), new(v)]
+File Table:
+{}
+Heap Table:
+{1->20
+}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{a=(0,Ref{int}), v=(1,int)}
+Execution Stack:
+[Print(v); Print(a), new(v)]
+File Table:
+{}
+Heap Table:
+{1->20
+}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{a=(2,Ref{int}), v=(1,int)}
+Execution Stack:
+[Print(v); Print(a)]
+File Table:
+{}
+Heap Table:
+{1->20
+2->(1,int)
+}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{a=(2,Ref{int}), v=(1,int)}
+Execution Stack:
+[Print(v); Print(a)]
+File Table:
+{}
+Heap Table:
+{1->20
+2->(1,int)
+}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{a=(2,Ref{int}), v=(1,int)}
+Execution Stack:
+[Print(a), Print(v)]
+File Table:
+{}
+Heap Table:
+{1->20
+2->(1,int)
+}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{a=(2,Ref{int}), v=(1,int)}
+Execution Stack:
+[Print(a), Print(v)]
+File Table:
+{}
+Heap Table:
+{1->20
+2->(1,int)
+}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[(1,int)]
+Symbol Table:
+{a=(2,Ref{int}), v=(1,int)}
+Execution Stack:
+[Print(a)]
+File Table:
+{}
+Heap Table:
+{1->20
+2->(1,int)
+}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[(1,int)]
+Symbol Table:
+{a=(2,Ref{int}), v=(1,int)}
+Execution Stack:
+[Print(a)]
+File Table:
+{}
+Heap Table:
+{1->20
+2->(1,int)
+}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[(1,int), (2,Ref{int})]
+Symbol Table:
+{a=(2,Ref{int}), v=(1,int)}
+Execution Stack:
+[]
+File Table:
+{}
+Heap Table:
+{1->20
+2->(1,int)
+}
+--------------------------------------------------------
+]

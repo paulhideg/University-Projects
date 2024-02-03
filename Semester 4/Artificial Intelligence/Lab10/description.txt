@@ -1,0 +1,59 @@
+Proposed Solution Description - MAMDANI model for the Washing Machine problem
+
+The Mamdani model consists of the rule evaluations, namely, evaluation of consequences.
+It generally represents an estimation of COA (centroid of attraction) by using a sample of n points, namely (Pi,i = (1,2,...n), Pi = (xi, yi))
+
+The problem data, namely the points from Fig7, Fig8 and Fig9 and the problem rules, namely Table3, can all be found in the data folder under their respective names.
+The input data will be read from the input.in file, and the output will be saved in the output.out file.
+
+Algorithm iterations for 2 inputs
+
+I. Texture = 0, capacity = 2.5
+  
+  1.Fuzzification
+  
+   - for the rule : very soft, medium = > easy and when i = 0,  we get that 
+    r =  min(self.algorithm.fuzzyTexture(0,self.algorithm.problem.texture[self.algorithm.problem.rules['easy'][i][0]]),
+                          self.algorithm.fuzzyCapacity(2.5,self.algorithm.problem.capacity[self.algorithm.problem.rules['easy'][i][1]])) 
+    r = min (1.0, 1.0) 
+      = 1 
+     and r is appended to result['easy']  
+     
+   - for all the other rules, we discard the results because they are equal to 0, which renders them useless 
+  
+  2. Set of points 
+  
+  Points = {(0.4,0.66), (0.6, 0.99), (0.8, 0.5), (1,1)} are obtained by fuzzifying the cycles from 0 to 1 and taking the local maximums which are !=0, aka "aggregation method"
+  
+  3. Defuzzification 
+  
+  COA = (0.4 * 0.66 + 0.6*0.99 + 0.8*0.5 + 1) / (0.66+0.99+0.5+1) 
+      = (2.26) / (3.16)
+      =~ 0.72 = cycle value 
+
+II. Texture = 0.1, capacity = 5
+  
+  1.Fuzzification
+  
+   - for the rule : very soft, high = > normal and when i = 0,  we get that 
+    r =  min(self.algorithm.fuzzyTexture(0.1,self.algorithm.problem.texture[self.algorithm.problem.rules['normal'][i][0]]),
+                          self.algorithm.fuzzyCapacity(5,self.algorithm.problem.capacity[self.algorithm.problem.rules['normal'][i][1]])) 
+    r = min (1.0, 1.0) 
+      = 1 
+     and r is appended to result['normal']  
+     
+   - for all the other rules, we discard the results because they are equal to 0, which renders them useless 
+  
+  2. Set of points 
+  
+  Points = {(0.4,0.33), (0.6, 0.99), (0.8, 0.3)} are obtained by fuzzifying the cycles from 0 to 1 and taking the local maximums which are !=0, aka "aggregation method"
+  
+  3. Defuzzification 
+  
+  COA = (0.4 * 0.33 + 0.6*0.99 + 0.8*0.3) / (0.33+0.99+0.3) 
+      = (0.99) / (1.66)
+      =~ 0.6 = cycle value 
+      
+Alex-Ovidiu Popa 
+926
+AI Course @ UBB Cluj-Napoca, 2019-2020

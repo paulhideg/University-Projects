@@ -1,0 +1,66 @@
+PRODUCT OF 2 MATRICES
+#include <iostream>
+#include <vector>
+#include <thread>
+
+using namespace std;
+
+// Function to compute a portion of the result matrix
+void matrixMultiplyBlock(const vector<vector<int>>& A, const vector<vector<int>>& B, vector<vector<int>>& result, size_t startRow, size_t endRow) {
+    for (size_t i = startRow; i < endRow; ++i) {
+        for (size_t j = 0; j < B[0].size(); ++j) {
+            for (size_t k = 0; k < A[0].size(); ++k) {
+                result[i][j] += A[i][k] * B[k][j];
+            }
+        }
+    }
+}
+
+// Function to perform parallel matrix multiplication
+void parallelMatrixMultiply(const vector<vector<int>>& A, const vector<vector<int>>& B, vector<vector<int>>& result, size_t numThreads) {
+    size_t numRowsResult = result.size();
+
+    size_t rowsPerThread = numRowsResult / numThreads;
+    size_t startRow = 0;
+
+    vector<thread> threads;
+
+    for (size_t i = 0; i < numThreads - 1; ++i) {
+        size_t endRow = startRow + rowsPerThread;
+        threads.emplace_back(matrixMultiplyBlock, cref(A), cref(B), ref(result), startRow, endRow);
+        startRow = endRow;
+    }
+
+    // The last thread handles remaining rows
+    threads.emplace_back(matrixMultiplyBlock, cref(A), cref(B), ref(result), startRow, numRowsResult);
+
+    // Wait for all threads to finish
+    for (auto& thread : threads) {
+        thread.join();
+    }
+}
+
+int main() {
+    // Example matrices (4x4)
+    vector<vector<int>> A = { {1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16} };
+    vector<vector<int>> B = { {17, 18, 19, 20}, {21, 22, 23, 24}, {25, 26, 27, 28}, {29, 30, 31, 32} };
+
+    // Initialize the result matrix with zeros
+    vector<vector<int>> result(4, vector<int>(4, 0));
+
+    // Number of threads to use
+    size_t numThreads = 6;
+
+    // Perform parallel matrix multiplication
+    parallelMatrixMultiply(A, B, result, numThreads);
+
+    // Print the result matrix
+    for (const auto& row : result) {
+        for (int value : row) {
+            cout << value << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}

@@ -1,0 +1,64 @@
+     1                                  bits 32 
+     2                                  global start        
+     3                                  extern exit               
+     4                                  import exit msvcrt.dll    
+     5                                  segment data use32 class=data
+     6                                          ;variables:
+     7 00000000 03                              a db 3h
+     8 00000001 0500                            b dw 5h
+     9 00000003 06000000                        c dd 6h
+    10 00000007 0800000000000000                d dq 8h
+    11                                  
+    12                                  segment code use32 class=code
+    13                                      start:
+    14                                          ;exercise 14:   (a+a)-(b+b)-(c+d)+(d+d)
+    15                                          
+    16 00000000 8A35[00000000]                  mov DH,[a]
+    17 00000006 B002                            mov AL,2h
+    18 00000008 F6E6                            mul DH      ;AX=a+a
+    19                                          
+    20 0000000A 6689C3                          mov BX,AX   ;BX=a+a
+    21                                          
+    22 0000000D 66A1[01000000]                  mov AX,[b]
+    23 00000013 66BA0200                        mov DX,2h
+    24 00000017 66F7E2                          mul DX      ;DX:AX=b+b
+    25 0000001A 6652                            push DX
+    26 0000001C 6650                            push AX
+    27 0000001E 5B                              pop EBX     ;EBX=b+b
+    28                                          
+    29 0000001F 6689D8                          mov AX,BX   ;AX=a+a
+    30 00000022 98                              cwde        ;EAX=a+a
+    31                                          
+    32 00000023 29D8                            sub EAX,EBX ;EAX=(a+a)-(b+b)
+    33                                          
+    34 00000025 89C3                            mov EBX,EAX ; EBX=(a+a)-(b+b)
+    35                                          
+    36 00000027 A1[03000000]                    mov EAX,[c]
+    37 0000002C 99                              cdq         ;EDX:EAX=c
+    38 0000002D 8B0D[07000000]                  mov ECX,dword[d]
+    39 00000033 8B35[0B000000]                  mov ESI,dword[d+4]
+    40 00000039 01CA                            add EDX,ECX     
+    41 0000003B 11F0                            adc EAX,ESI     ;EDX:EAX=c+d
+    42 0000003D 89D1                            mov ECX,EDX     
+    43 0000003F 89C3                            mov EBX,EAX     ;ECX:EBX=c+d
+    44                                          
+    45 00000041 89D8                            mov EAX,EBX     ;EAX=(a+a)-(b+b)
+    46 00000043 99                              cdq             ;EDX:EAX=(a+a)-(b+b)
+    47 00000044 29CA                            sub EDX,ECX
+    48 00000046 19D8                            sbb EAX,EBX     ;EDX:EAX=[(a+a)-(b+b)]-(c+d)
+    49 00000048 89D1                            mov ECX,EDX     
+    50 0000004A 89C3                            mov EBX,EAX     ;ECX:EBX=[(a+a)-(b+b)]-(c+d)
+    51                                          
+    52 0000004C 8B15[0B000000]                  mov EDX,dword[d+4]
+    53 00000052 A1[07000000]                    mov EAX,dword[d]
+    54 00000057 8B35[0B000000]                  mov ESI,dword[d+4]
+    55 0000005D 8B3D[07000000]                  mov EDI,dword[d]
+    56 00000063 01F2                            add EDX,ESI
+    57 00000065 11F8                            adc EAX,EDI      ;EDX:EAX=d+d
+    58                                          
+    59 00000067 01D1                            add ECX,EDX
+    60 00000069 11C3                            adc EBX,EAX      ;ECX:EBX=[(a+a)-(b+b)-(c+d)]+(d+d)  
+    61                                          
+    62                                          
+    63 0000006B 6A00                            push    dword 0      
+    64 0000006D FF15[00000000]                  call    [exit]       

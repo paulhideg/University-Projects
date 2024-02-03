@@ -1,0 +1,25 @@
+﻿  UI.cpp
+D:\1.School\OOP\a56hp\paul56a\paul56a\UI.cpp(106,45): warning C4101: 'ia': unreferenced local variable
+D:\1.School\OOP\a56hp\paul56a\paul56a\UI.cpp(384,53): warning C4101: 'ia': unreferenced local variable
+  domain.cpp
+  main.cpp
+  repository.cpp
+  service.cpp
+D:\1.School\OOP\a56hp\paul56a\paul56a\service.cpp(61,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\1.School\OOP\a56hp\paul56a\paul56a\service.cpp(70,27): warning C4101: 'repo_error': unreferenced local variable
+  tests.cpp
+D:\1.School\OOP\a56hp\paul56a\paul56a\tests.cpp(86,23): warning C4101: 're': unreferenced local variable
+D:\1.School\OOP\a56hp\paul56a\paul56a\tests.cpp(96,23): warning C4101: 're': unreferenced local variable
+D:\1.School\OOP\a56hp\paul56a\paul56a\tests.cpp(109,23): warning C4101: 're': unreferenced local variable
+D:\1.School\OOP\a56hp\paul56a\paul56a\tests.cpp(156,24): warning C4101: 've': unreferenced local variable
+D:\1.School\OOP\a56hp\paul56a\paul56a\tests.cpp(164,24): warning C4101: 've': unreferenced local variable
+D:\1.School\OOP\a56hp\paul56a\paul56a\tests.cpp(171,24): warning C4101: 've': unreferenced local variable
+D:\1.School\OOP\a56hp\paul56a\paul56a\tests.cpp(182,24): warning C4101: 've': unreferenced local variable
+D:\1.School\OOP\a56hp\paul56a\paul56a\tests.cpp(190,24): warning C4101: 've': unreferenced local variable
+D:\1.School\OOP\a56hp\paul56a\paul56a\tests.cpp(198,24): warning C4101: 've': unreferenced local variable
+D:\1.School\OOP\a56hp\paul56a\paul56a\tests.cpp(206,24): warning C4101: 've': unreferenced local variable
+D:\1.School\OOP\a56hp\paul56a\paul56a\tests.cpp(214,24): warning C4101: 've': unreferenced local variable
+D:\1.School\OOP\a56hp\paul56a\paul56a\tests.cpp(222,24): warning C4101: 've': unreferenced local variable
+  validation.cpp
+  Generating Code...
+  paul56a.vcxproj -> D:\1.School\OOP\a56hp\paul56a\x64\Debug\paul56a.exe

@@ -1,0 +1,6 @@
+class Cell
+!!!134146.cpp!!!	Cell(in data : std::string)
+
+!!!134274.cpp!!!	operator <<(inout os : std::ostream, in c : HTMLTable::Cell) : std::ostream
+
+	return os << "<td>" << c.content << "</td>";

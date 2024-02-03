@@ -1,0 +1,1 @@
+OpenCppCoverage --sources paul56a -- D:\1.School\OOP\a56hp\paul56a\x64\Debug\paul56a.exe

@@ -1,0 +1,221 @@
+[--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{}
+Execution Stack:
+[boolean a; int v; a = true; if(4<5){v = 2}else{v = 3}; Print(v)]
+File table:
+{}
+--------------------------------------------------------
+][--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{}
+Execution Stack:
+[int v; a = true; if(4<5){v = 2}else{v = 3}; Print(v), boolean a]
+File table:
+{}
+--------------------------------------------------------
+][--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{a=false}
+Execution Stack:
+[int v; a = true; if(4<5){v = 2}else{v = 3}; Print(v)]
+File table:
+{}
+--------------------------------------------------------
+][--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{a=false}
+Execution Stack:
+[a = true; if(4<5){v = 2}else{v = 3}; Print(v), int v]
+File table:
+{}
+--------------------------------------------------------
+][--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{a=false, v=0}
+Execution Stack:
+[a = true; if(4<5){v = 2}else{v = 3}; Print(v)]
+File table:
+{}
+--------------------------------------------------------
+][--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{a=false, v=0}
+Execution Stack:
+[if(4<5){v = 2}else{v = 3}; Print(v), a = true]
+File table:
+{}
+--------------------------------------------------------
+][--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{a=true, v=0}
+Execution Stack:
+[if(4<5){v = 2}else{v = 3}; Print(v)]
+File table:
+{}
+--------------------------------------------------------
+][--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{a=true, v=0}
+Execution Stack:
+[Print(v), if(4<5){v = 2}else{v = 3}]
+File table:
+{}
+--------------------------------------------------------
+][--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{a=true, v=0}
+Execution Stack:
+[Print(v), v = 2]
+File table:
+{}
+--------------------------------------------------------
+][--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{a=true, v=2}
+Execution Stack:
+[Print(v)]
+File table:
+{}
+--------------------------------------------------------
+][--------------------------------------------------------
+Output List:
+[2]
+Symbol Table:
+{a=true, v=2}
+Execution Stack:
+[]
+File table:
+{}
+--------------------------------------------------------
+][--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{}
+Execution Stack:
+[boolean a; int v; a = true; if(4<5){v = 2}else{v = 3}; Print(v)]
+File table:
+{}
+--------------------------------------------------------
+][--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{}
+Execution Stack:
+[int v; a = true; if(4<5){v = 2}else{v = 3}; Print(v), boolean a]
+File table:
+{}
+--------------------------------------------------------
+][--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{a=false}
+Execution Stack:
+[int v; a = true; if(4<5){v = 2}else{v = 3}; Print(v)]
+File table:
+{}
+--------------------------------------------------------
+][--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{a=false}
+Execution Stack:
+[a = true; if(4<5){v = 2}else{v = 3}; Print(v), int v]
+File table:
+{}
+--------------------------------------------------------
+][--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{a=false, v=0}
+Execution Stack:
+[a = true; if(4<5){v = 2}else{v = 3}; Print(v)]
+File table:
+{}
+--------------------------------------------------------
+][--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{a=false, v=0}
+Execution Stack:
+[if(4<5){v = 2}else{v = 3}; Print(v), a = true]
+File table:
+{}
+--------------------------------------------------------
+][--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{a=true, v=0}
+Execution Stack:
+[if(4<5){v = 2}else{v = 3}; Print(v)]
+File table:
+{}
+--------------------------------------------------------
+][--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{a=true, v=0}
+Execution Stack:
+[Print(v), if(4<5){v = 2}else{v = 3}]
+File table:
+{}
+--------------------------------------------------------
+][--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{a=true, v=0}
+Execution Stack:
+[Print(v), v = 2]
+File table:
+{}
+--------------------------------------------------------
+][--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{a=true, v=2}
+Execution Stack:
+[Print(v)]
+File table:
+{}
+--------------------------------------------------------
+][--------------------------------------------------------
+Output List:
+[2]
+Symbol Table:
+{a=true, v=2}
+Execution Stack:
+[]
+File table:
+{}
+--------------------------------------------------------
+]

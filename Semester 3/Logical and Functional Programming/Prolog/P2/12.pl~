@@ -1,0 +1,30 @@
+insert_divs(N,N,[]):-!.
+insert_divs(N,DIV,[DIV|R]):-
+    N mod DIV =:= 0,
+    !,
+    DIV1 is DIV+1,
+    insert_divs(N,DIV1,R).
+insert_divs(N,DIV,R):-
+    DIV1 is DIV+1,
+    insert_divs(N,DIV1,R).
+
+
+addAfter([],[]).
+addAfter([H|T],R):-
+    insert_divs(H,2,R),
+    R1 is [H,R],
+    addAfter(T,R1).
+
+insert_div(N, _, L, L) :- N =< 2.
+insert_div(N, N, L, L).
+insert_div(N, Div, L, [Div|R]) :- N mod Div =:= 0, !,
+    NDiv is Div + 1,
+    insert_div(N, NDiv, L, R).
+insert_div(N, Div, L, R) :-
+    NDiv is Div + 1,
+    insert_div(N, NDiv, L, R).
+
+divizori([], []).
+divizori([H|T], [H|R]) :-
+    divizori(T, RD),
+    insert_div(H, 2, RD, R).

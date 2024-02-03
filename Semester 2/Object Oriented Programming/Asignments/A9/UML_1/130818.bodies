@@ -1,0 +1,125 @@
+class UserServices
+!!!145154.cpp!!!	UserServices(inout repo : Repository)
+
+!!!145282.cpp!!!	InitializeTutorialList() : void
+
+	if (tutoriallist == repo.GetArray())
+		return;
+
+	tutoriallist = repo.GetArray();
+	index = 0;
+!!!145410.cpp!!!	AddToWatchList(in tutorial : Tutorial) : void
+
+	//bool found = false;
+	//for (int i = 0; i < watchlist.size(); i++)
+	//	if (watchlist[i] == movie)
+	//		found = true;
+	//if (found == true)
+	//	throw std::exception("Movie alreday in watch list");
+	//else
+	//	watchlist.push_back(movie);
+	//NextMovie();
+
+	tutorials.AddTutorial(tutorial);
+	NextTutorial();
+!!!145538.cpp!!!	FilterByPresenter(in presenter : std::string) : void
+
+	for (int i = 0; i < tutoriallist.size(); i++)
+		if (tutoriallist[i].GetPresenter() != presenter)
+		{
+			tutoriallist.erase(tutoriallist.begin() + i);
+			i--;
+		}
+	index = 0;
+!!!145666.cpp!!!	IsPresenter(in presenter : std::string) : bool
+
+	return repo.FindElementByPresenter(presenter);
+!!!145794.cpp!!!	NextTutorial() : void
+
+	if (index == tutoriallist.size() - 1)
+	{
+		index = 0;
+		return;
+	}
+	index++;
+!!!145922.cpp!!!	RateWatchedTutorial(in title : std::string) : void
+
+	size_t i = repo.FindElementByTitle(title);
+	size_t currentLikes = repo.GetArray()[i].GetLikes() + 1;
+	if (i >= 0)
+	{
+		bool found1 = false;
+		for (size_t j = 0; j < tutoriallist.size() && !found1; j++)
+			if (tutoriallist[j].GetTitle() == title)
+			{
+				found1 = true;
+				repo.UpdateElementLikes(j, currentLikes);
+				tutoriallist[j].SetLikes(currentLikes);
+			}
+	}
+	else
+		throw std::exception("No tutorial with such title");
+
+!!!146050.cpp!!!	WatchTutorial(in title : std::string, in rate : bool) : void
+
+	//bool found = false;
+	//for (int i = 0; i < watchlist.size(); i++)
+	//	if (watchlist[i].GetTitle() == title)
+	//	{
+	//		watchlist.erase(watchlist.begin()+i);
+	//		found = true;
+	//		break;
+	//	}
+	//if (!found)
+	//	throw std::exception("No such movie in your watch list");
+	//if (rate)
+	//		RateWatchedMovie(title);
+	bool found = false;
+	Tutorial m;
+	for (int i = 0; i < tutoriallist.size(); i++)
+		if (tutoriallist[i].GetTitle() == title)
+		{
+			m = tutoriallist[i];
+			found = true;
+			break;
+		}
+	found = false;
+	found = tutorials.DeleteTutorial(m);
+	if (!found)
+		throw std::exception("No such tutorial in your watch list");
+	if (rate)
+		RateWatchedTutorial(title);
+!!!146178.cpp!!!	~UserServices()
+
+	delete writer;
+!!!146306.cpp!!!	WriteData() : void
+
+	writer->WriteToFile(tutorials);
+!!!146434.cpp!!!	GetCurrentTutorial() : Tutorial
+
+	return tutoriallist[index];
+!!!146562.cpp!!!	SeeWatchList() : std::vector<Tutorial>
+
+	return watchlist;
+!!!146690.cpp!!!	GetFileName() : std::string
+
+	return writer->GetFileName();
+!!!146818.cpp!!!	GetWriteMode() : std::string
+
+	return writeMode;
+!!!146946.cpp!!!	SetWriteMode(in newMode : std::string) : void
+
+	if (newMode == "CSV")
+	{
+		writeMode = newMode;
+		writer = new CSVTutorialListWriter("watch_list.csv");
+	}
+	else if (newMode == "HTML")
+	{
+		writeMode = newMode;
+		writer = new HTMLTutorialListWriter("watch_list.html");
+	}
+	else
+	{
+		throw std::exception("Unhandled mode!");
+	}

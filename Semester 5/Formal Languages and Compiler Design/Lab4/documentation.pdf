@@ -1,0 +1,21 @@
+<Automaton> ::= "Q = {" <StateList> "}"
+               "E = {" <Alphabet> "}"
+               "q0 = " <InitialState>
+               "F = {" <FinalStates> "}"
+               "S = {" <Transitions> "}"
+
+<StateList> ::= <State> { "," <State> }
+
+<Alphabet> ::= <Symbol> { "," <Symbol> }
+
+<Transitions> ::= <Transition> { <Transition> }
+
+<Transition> ::= "(" <State> "," <Symbol> ")" "->" <State>
+
+<InitialState> ::= <State>
+
+<FinalStates> ::= <State> { "," <State> }
+
+<State> ::= "A" | "B" | "C"
+
+<Symbol> ::= "0" | "1" | "2"

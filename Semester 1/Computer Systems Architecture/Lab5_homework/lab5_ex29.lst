@@ -1,0 +1,26 @@
+     1                                  bits 32 
+     2                                  global start        
+     3                                  extern exit               
+     4                                  import exit msvcrt.dll    
+     5                                  segment data use32 class=data
+     6 00000000 02FF05FD                        S db 2,-1, 5, -3
+     7                                          l equ ($-S)-1
+     8 00000004 00<rept>                        D times l db 0 
+     9                                  segment code use32 class=code
+    10                                      start:
+    11                                          ;exercise 29
+    12                                      
+    13 00000000 B903000000                      mov ecx, l ; we put the length l in ECX in order to make the loop
+    14 00000005 BE00000000                      mov esi, 0
+    15 0000000A E317                            jecxz Sfarsit      ;if l equals to 0, it jumps to the end of the program (sfarsit)
+    16                                          Repeta:
+    17 0000000C 8A86[00000000]                      mov al, [S+esi]         ;we move the "esi-th" index number of the S string
+    18 00000012 8A9E[01000000]                      mov bl, [S+esi+1]       ;we move the "esi-th"+1 index number of the S string (the next consecutive number of esi)
+    19 00000018 00D8                                add al,bl               ;we add the 2 consecutive numbers
+    20 0000001A 8886[04000000]                      mov [D+esi],al          ;we move the result in the D+esi position
+    21 00000020 46                                  inc esi                 
+    22 00000021 E2E9                            loop Repeta
+    23                                          Sfarsit:                    ;end of the program
+    24                                          ; exit(0)
+    25 00000023 6A00                            push    dword 0      
+    26 00000025 FF15[00000000]                  call    [exit]       

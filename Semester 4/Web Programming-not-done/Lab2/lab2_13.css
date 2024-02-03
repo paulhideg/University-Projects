@@ -1,0 +1,43 @@
+.box {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+    grid-template-areas: 
+    "   .   line-top    .     "
+    "line-left  . line-right"
+    "   . line-bottom  .     ";
+}
+
+.line {
+    height: 100%;
+    background: linear-gradient(black 0%, white 25%, white 75%, black 100%);
+    width: 100%;
+    }
+
+.line.top {
+    grid-area: line-top;
+}
+
+.line.bottom {
+    bottom: 0;
+    left: 0;
+    grid-area: line-bottom;
+}
+
+.line.right {
+    transform: rotate(90deg);
+    top: 0;
+    right: 0;
+    grid-area: line-right;
+}
+
+
+.line.left {
+    transform: rotate(90deg);
+    top: 0;
+    left: 0;
+    grid-area: line-left;
+}

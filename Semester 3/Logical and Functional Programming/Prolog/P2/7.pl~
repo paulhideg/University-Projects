@@ -1,0 +1,45 @@
+%maxList(L:list, M:int, R:int)
+%maxList(i,i,o)
+maxList([],M,M).
+maxList([H|T],M,R):- H > M, !,
+    maxList(T,H,R).
+maxList([_|T],M,R):-
+    maxList(T,M,R).
+
+%maxListWrapper(L:list, R:list)
+%maxListWrapper(i,o)
+maxListWrapper([H|T],R):- maxList(T,H,R).
+
+
+%maxPositions(L:list, MAX:int, P:int,R:list)
+%maxPositions(i,i,i,o)
+maxPositions([],_,_,[]).
+maxPositions([MAX|T],MAX,P,R):-
+    P1 is P+1,
+    maxPositions(T,MAX,P1, R1),
+    R = [P1|R1].
+maxPositions([_|T],MAX,P, R):-
+    P1 is P+1,
+    maxPositions(T,MAX,P1, R).
+
+%maxPositionsWrapper(L:list,R:list)
+%maxPositionsWrapper(i,o)
+maxPositionsWrapper([],[]).
+maxPositionsWrapper([H|T],R):-
+    maxListWrapper([H|T],MAX),
+    maxPositions([H|T],MAX,0,R).
+
+% replaceLists(L:list,R:list)
+% replaceLists(i,o)
+replaceLists([],[]):-!.
+replaceLists([H|T],[H|R]):- not(is_list(H)),!,
+    replaceLists(T,R).
+replaceLists([H|T],R):-
+    maxPositionsWrapper(H,NEW),
+    replaceLists(T,R1),
+    R = [NEW|R1].
+
+
+
+
+

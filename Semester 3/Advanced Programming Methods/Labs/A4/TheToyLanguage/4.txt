@@ -1,0 +1,885 @@
+[Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{}
+Execution Stack:
+[string varf; varf = test.in; open(varf); int varc; read(varf;varc); Print(varc); read(varf;varc); Print(varc); close(varf)]
+File Table:
+{}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{}
+Execution Stack:
+[varf = test.in; open(varf); int varc; read(varf;varc); Print(varc); read(varf;varc); Print(varc); close(varf), string varf]
+File Table:
+{}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{}
+Execution Stack:
+[varf = test.in; open(varf); int varc; read(varf;varc); Print(varc); read(varf;varc); Print(varc); close(varf), string varf]
+File Table:
+{}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{varf=}
+Execution Stack:
+[varf = test.in; open(varf); int varc; read(varf;varc); Print(varc); read(varf;varc); Print(varc); close(varf)]
+File Table:
+{}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{varf=}
+Execution Stack:
+[varf = test.in; open(varf); int varc; read(varf;varc); Print(varc); read(varf;varc); Print(varc); close(varf)]
+File Table:
+{}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{varf=}
+Execution Stack:
+[open(varf); int varc; read(varf;varc); Print(varc); read(varf;varc); Print(varc); close(varf), varf = test.in]
+File Table:
+{}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{varf=}
+Execution Stack:
+[open(varf); int varc; read(varf;varc); Print(varc); read(varf;varc); Print(varc); close(varf), varf = test.in]
+File Table:
+{}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{varf=test.in}
+Execution Stack:
+[open(varf); int varc; read(varf;varc); Print(varc); read(varf;varc); Print(varc); close(varf)]
+File Table:
+{}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{varf=test.in}
+Execution Stack:
+[open(varf); int varc; read(varf;varc); Print(varc); read(varf;varc); Print(varc); close(varf)]
+File Table:
+{}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{varf=test.in}
+Execution Stack:
+[int varc; read(varf;varc); Print(varc); read(varf;varc); Print(varc); close(varf), open(varf)]
+File Table:
+{}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{varf=test.in}
+Execution Stack:
+[int varc; read(varf;varc); Print(varc); read(varf;varc); Print(varc); close(varf), open(varf)]
+File Table:
+{}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{varf=test.in}
+Execution Stack:
+[int varc; read(varf;varc); Print(varc); read(varf;varc); Print(varc); close(varf)]
+File Table:
+{test.in=java.io.BufferedReader@21588809}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{varf=test.in}
+Execution Stack:
+[int varc; read(varf;varc); Print(varc); read(varf;varc); Print(varc); close(varf)]
+File Table:
+{test.in=java.io.BufferedReader@21588809}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{varf=test.in}
+Execution Stack:
+[read(varf;varc); Print(varc); read(varf;varc); Print(varc); close(varf), int varc]
+File Table:
+{test.in=java.io.BufferedReader@21588809}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{varf=test.in}
+Execution Stack:
+[read(varf;varc); Print(varc); read(varf;varc); Print(varc); close(varf), int varc]
+File Table:
+{test.in=java.io.BufferedReader@21588809}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{varf=test.in, varc=0}
+Execution Stack:
+[read(varf;varc); Print(varc); read(varf;varc); Print(varc); close(varf)]
+File Table:
+{test.in=java.io.BufferedReader@21588809}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{varf=test.in, varc=0}
+Execution Stack:
+[read(varf;varc); Print(varc); read(varf;varc); Print(varc); close(varf)]
+File Table:
+{test.in=java.io.BufferedReader@21588809}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{varf=test.in, varc=0}
+Execution Stack:
+[Print(varc); read(varf;varc); Print(varc); close(varf), read(varf;varc)]
+File Table:
+{test.in=java.io.BufferedReader@21588809}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{varf=test.in, varc=0}
+Execution Stack:
+[Print(varc); read(varf;varc); Print(varc); close(varf), read(varf;varc)]
+File Table:
+{test.in=java.io.BufferedReader@21588809}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{varf=test.in, varc=15}
+Execution Stack:
+[Print(varc); read(varf;varc); Print(varc); close(varf)]
+File Table:
+{test.in=java.io.BufferedReader@21588809}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{varf=test.in, varc=15}
+Execution Stack:
+[Print(varc); read(varf;varc); Print(varc); close(varf)]
+File Table:
+{test.in=java.io.BufferedReader@21588809}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{varf=test.in, varc=15}
+Execution Stack:
+[read(varf;varc); Print(varc); close(varf), Print(varc)]
+File Table:
+{test.in=java.io.BufferedReader@21588809}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{varf=test.in, varc=15}
+Execution Stack:
+[read(varf;varc); Print(varc); close(varf), Print(varc)]
+File Table:
+{test.in=java.io.BufferedReader@21588809}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[15]
+Symbol Table:
+{varf=test.in, varc=15}
+Execution Stack:
+[read(varf;varc); Print(varc); close(varf)]
+File Table:
+{test.in=java.io.BufferedReader@21588809}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[15]
+Symbol Table:
+{varf=test.in, varc=15}
+Execution Stack:
+[read(varf;varc); Print(varc); close(varf)]
+File Table:
+{test.in=java.io.BufferedReader@21588809}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[15]
+Symbol Table:
+{varf=test.in, varc=15}
+Execution Stack:
+[Print(varc); close(varf), read(varf;varc)]
+File Table:
+{test.in=java.io.BufferedReader@21588809}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[15]
+Symbol Table:
+{varf=test.in, varc=15}
+Execution Stack:
+[Print(varc); close(varf), read(varf;varc)]
+File Table:
+{test.in=java.io.BufferedReader@21588809}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[15]
+Symbol Table:
+{varf=test.in, varc=50}
+Execution Stack:
+[Print(varc); close(varf)]
+File Table:
+{test.in=java.io.BufferedReader@21588809}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[15]
+Symbol Table:
+{varf=test.in, varc=50}
+Execution Stack:
+[Print(varc); close(varf)]
+File Table:
+{test.in=java.io.BufferedReader@21588809}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[15]
+Symbol Table:
+{varf=test.in, varc=50}
+Execution Stack:
+[close(varf), Print(varc)]
+File Table:
+{test.in=java.io.BufferedReader@21588809}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[15]
+Symbol Table:
+{varf=test.in, varc=50}
+Execution Stack:
+[close(varf), Print(varc)]
+File Table:
+{test.in=java.io.BufferedReader@21588809}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[15, 50]
+Symbol Table:
+{varf=test.in, varc=50}
+Execution Stack:
+[close(varf)]
+File Table:
+{test.in=java.io.BufferedReader@21588809}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[15, 50]
+Symbol Table:
+{varf=test.in, varc=50}
+Execution Stack:
+[close(varf)]
+File Table:
+{test.in=java.io.BufferedReader@21588809}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[15, 50]
+Symbol Table:
+{varf=test.in, varc=50}
+Execution Stack:
+[]
+File Table:
+{}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{}
+Execution Stack:
+[string varf; varf = test.in; open(varf); int varc; read(varf;varc); Print(varc); read(varf;varc); Print(varc); close(varf)]
+File Table:
+{}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{}
+Execution Stack:
+[varf = test.in; open(varf); int varc; read(varf;varc); Print(varc); read(varf;varc); Print(varc); close(varf), string varf]
+File Table:
+{}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{}
+Execution Stack:
+[varf = test.in; open(varf); int varc; read(varf;varc); Print(varc); read(varf;varc); Print(varc); close(varf), string varf]
+File Table:
+{}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{varf=}
+Execution Stack:
+[varf = test.in; open(varf); int varc; read(varf;varc); Print(varc); read(varf;varc); Print(varc); close(varf)]
+File Table:
+{}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{varf=}
+Execution Stack:
+[varf = test.in; open(varf); int varc; read(varf;varc); Print(varc); read(varf;varc); Print(varc); close(varf)]
+File Table:
+{}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{varf=}
+Execution Stack:
+[open(varf); int varc; read(varf;varc); Print(varc); read(varf;varc); Print(varc); close(varf), varf = test.in]
+File Table:
+{}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{varf=}
+Execution Stack:
+[open(varf); int varc; read(varf;varc); Print(varc); read(varf;varc); Print(varc); close(varf), varf = test.in]
+File Table:
+{}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{varf=test.in}
+Execution Stack:
+[open(varf); int varc; read(varf;varc); Print(varc); read(varf;varc); Print(varc); close(varf)]
+File Table:
+{}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{varf=test.in}
+Execution Stack:
+[open(varf); int varc; read(varf;varc); Print(varc); read(varf;varc); Print(varc); close(varf)]
+File Table:
+{}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{varf=test.in}
+Execution Stack:
+[int varc; read(varf;varc); Print(varc); read(varf;varc); Print(varc); close(varf), open(varf)]
+File Table:
+{}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{varf=test.in}
+Execution Stack:
+[int varc; read(varf;varc); Print(varc); read(varf;varc); Print(varc); close(varf), open(varf)]
+File Table:
+{}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{varf=test.in}
+Execution Stack:
+[int varc; read(varf;varc); Print(varc); read(varf;varc); Print(varc); close(varf)]
+File Table:
+{test.in=java.io.BufferedReader@368102c8}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{varf=test.in}
+Execution Stack:
+[int varc; read(varf;varc); Print(varc); read(varf;varc); Print(varc); close(varf)]
+File Table:
+{test.in=java.io.BufferedReader@368102c8}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{varf=test.in}
+Execution Stack:
+[read(varf;varc); Print(varc); read(varf;varc); Print(varc); close(varf), int varc]
+File Table:
+{test.in=java.io.BufferedReader@368102c8}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{varf=test.in}
+Execution Stack:
+[read(varf;varc); Print(varc); read(varf;varc); Print(varc); close(varf), int varc]
+File Table:
+{test.in=java.io.BufferedReader@368102c8}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{varf=test.in, varc=0}
+Execution Stack:
+[read(varf;varc); Print(varc); read(varf;varc); Print(varc); close(varf)]
+File Table:
+{test.in=java.io.BufferedReader@368102c8}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{varf=test.in, varc=0}
+Execution Stack:
+[read(varf;varc); Print(varc); read(varf;varc); Print(varc); close(varf)]
+File Table:
+{test.in=java.io.BufferedReader@368102c8}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{varf=test.in, varc=0}
+Execution Stack:
+[Print(varc); read(varf;varc); Print(varc); close(varf), read(varf;varc)]
+File Table:
+{test.in=java.io.BufferedReader@368102c8}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{varf=test.in, varc=0}
+Execution Stack:
+[Print(varc); read(varf;varc); Print(varc); close(varf), read(varf;varc)]
+File Table:
+{test.in=java.io.BufferedReader@368102c8}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{varf=test.in, varc=15}
+Execution Stack:
+[Print(varc); read(varf;varc); Print(varc); close(varf)]
+File Table:
+{test.in=java.io.BufferedReader@368102c8}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{varf=test.in, varc=15}
+Execution Stack:
+[Print(varc); read(varf;varc); Print(varc); close(varf)]
+File Table:
+{test.in=java.io.BufferedReader@368102c8}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{varf=test.in, varc=15}
+Execution Stack:
+[read(varf;varc); Print(varc); close(varf), Print(varc)]
+File Table:
+{test.in=java.io.BufferedReader@368102c8}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[]
+Symbol Table:
+{varf=test.in, varc=15}
+Execution Stack:
+[read(varf;varc); Print(varc); close(varf), Print(varc)]
+File Table:
+{test.in=java.io.BufferedReader@368102c8}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[15]
+Symbol Table:
+{varf=test.in, varc=15}
+Execution Stack:
+[read(varf;varc); Print(varc); close(varf)]
+File Table:
+{test.in=java.io.BufferedReader@368102c8}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[15]
+Symbol Table:
+{varf=test.in, varc=15}
+Execution Stack:
+[read(varf;varc); Print(varc); close(varf)]
+File Table:
+{test.in=java.io.BufferedReader@368102c8}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[15]
+Symbol Table:
+{varf=test.in, varc=15}
+Execution Stack:
+[Print(varc); close(varf), read(varf;varc)]
+File Table:
+{test.in=java.io.BufferedReader@368102c8}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[15]
+Symbol Table:
+{varf=test.in, varc=15}
+Execution Stack:
+[Print(varc); close(varf), read(varf;varc)]
+File Table:
+{test.in=java.io.BufferedReader@368102c8}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[15]
+Symbol Table:
+{varf=test.in, varc=50}
+Execution Stack:
+[Print(varc); close(varf)]
+File Table:
+{test.in=java.io.BufferedReader@368102c8}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[15]
+Symbol Table:
+{varf=test.in, varc=50}
+Execution Stack:
+[Print(varc); close(varf)]
+File Table:
+{test.in=java.io.BufferedReader@368102c8}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[15]
+Symbol Table:
+{varf=test.in, varc=50}
+Execution Stack:
+[close(varf), Print(varc)]
+File Table:
+{test.in=java.io.BufferedReader@368102c8}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[15]
+Symbol Table:
+{varf=test.in, varc=50}
+Execution Stack:
+[close(varf), Print(varc)]
+File Table:
+{test.in=java.io.BufferedReader@368102c8}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[15, 50]
+Symbol Table:
+{varf=test.in, varc=50}
+Execution Stack:
+[close(varf)]
+File Table:
+{test.in=java.io.BufferedReader@368102c8}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[15, 50]
+Symbol Table:
+{varf=test.in, varc=50}
+Execution Stack:
+[close(varf)]
+File Table:
+{test.in=java.io.BufferedReader@368102c8}
+Heap Table:
+{}
+--------------------------------------------------------
+][Program State with ID:1
+--------------------------------------------------------
+Output List:
+[15, 50]
+Symbol Table:
+{varf=test.in, varc=50}
+Execution Stack:
+[]
+File Table:
+{}
+Heap Table:
+{}
+--------------------------------------------------------
+]

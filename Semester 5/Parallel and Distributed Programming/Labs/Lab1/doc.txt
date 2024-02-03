@@ -1,0 +1,30 @@
+Certainly, here are the rules specifying which mutex protects which invariants in the provided C++ code:
+
+1. **`_accounts` and `accountsMutexes`**:
+   - Invariant: Each account in `_accounts` has its balance and a log of operations.
+   - Mutex: `accountsMutexes` is an array of mutexes, where each mutex corresponds to a specific account.
+   - Rules:
+     - Access to an account's balance, log, and other attributes is protected by the mutex associated with that account.
+     - To read or modify an account's data, you must lock the corresponding mutex using `accountsMutexes[accountID].lock()` and unlock it after the operation with `accountsMutexes[accountID].unlock()`.
+
+2. **`_operations` and `operationMutex`**:
+   - Invariant: The `_operations` list contains information about financial operations, including source and destination accounts, amount, and a serial number.
+   - Mutex: `operationMutex` is used to protect access to the `_operations` list.
+   - Rules:
+     - Access to the `_operations` list is protected by the `operationMutex`.
+     - To add, remove, or iterate through operations, you must lock `operationMutex` using `operationMutex.lock()` and unlock it after the operation with `operationMutex.unlock()`.
+
+3. **`_nextSerialNumber` and `serialNumberMutex`**:
+   - Invariant: `_nextSerialNumber` is used to assign a unique serial number to each operation.
+   - Mutex: `serialNumberMutex` is used to protect access to `_nextSerialNumber`.
+   - Rules:
+     - Access to `_nextSerialNumber` is protected by the `serialNumberMutex`.
+     - To increment and access `_nextSerialNumber`, you must lock `serialNumberMutex` using `serialNumberMutex.lock()` and unlock it after the operation with `serialNumberMutex.unlock()`.
+
+4. **Data Consistency Checks (`checkConsistency`)**:
+   - Invariant: This function checks the consistency of account data by comparing the initial balance with the accumulated transaction amounts.
+   - Mutex: This function locks and unlocks the `accountsMutexes` for each account during consistency checks.
+   - Rules:
+     - Before checking the consistency of an account, the corresponding mutex must be locked using `accountsMutexes[accountID].lock()`, and it should be unlocked after the check with `accountsMutexes[accountID].unlock()`.
+
+These rules and associated mutexes ensure thread safety and data consistency within the program. They protect shared data structures and invariants from race conditions, allowing multiple threads to work with the data without conflicting access.

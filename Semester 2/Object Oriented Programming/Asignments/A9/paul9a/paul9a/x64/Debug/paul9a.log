@@ -1,0 +1,14 @@
+﻿  adminservice.cpp
+  domain.cpp
+  FileRepository.cpp
+  HTMLTable.cpp
+  main.cpp
+  repository.cpp
+  TutorialList.cpp
+D:\1.School\OOP\a9hp\paul9a\paul9a\TutorialList.cpp(30,28): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  TutorialValidator.cpp
+  ui.cpp
+  userservice.cpp
+  validators.cpp
+  Generating Code...
+  paul9a.vcxproj -> D:\1.School\OOP\a9hp\paul9a\x64\Debug\paul9a.exe

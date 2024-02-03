@@ -1,0 +1,36 @@
+format 224
+"paul9a" // UML__1::paul9a
+  revision 1
+  modified_by 2 "paulh"
+  // class settings
+  
+  classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
+  
+  usecasediagramsettings end
+  
+  sequencediagramsettings end
+  
+  collaborationdiagramsettings end
+  
+  objectdiagramsettings end
+  
+  objectcompositediagramsettings end
+  
+  componentdiagramsettings
+   end
+  
+  deploymentdiagramsettings
+   end
+  
+  statediagramsettings
+   end
+  
+  activitydiagramsettings
+   end
+  
+  cpp_h_dir "D:\\1.School\\OOP\\a9hp\\paul9a/"
+  cpp_src_dir "D:\\1.School\\OOP\\a9hp\\paul9a/"
+  package_ref 128258 // paul9a
+end

@@ -1,0 +1,56 @@
+PRODUCT OF 2 VECTORS OF SAME LENGTH - BINARY TREE
+
+#include <iostream>
+#include <vector>
+#include <thread>
+#include <numeric>
+#include <future>
+
+using namespace std;
+
+// Function to compute the scalar product for a portion of the vectors
+int partialScalarProduct(const vector<int>& v1, const vector<int>& v2, size_t start, size_t end) {
+    int result = 0;
+    for (size_t i = start; i < end; ++i) {
+        result += v1[i] * v2[i];
+    }
+    return result;
+}
+
+// Function to perform parallel scalar product computation using a binary tree approach
+int parallelBinaryTreeScalarProduct(const vector<int>& v1, const vector<int>& v2, size_t start, size_t end, size_t numThreads) {
+    size_t n = end - start;
+    int result = 0;
+
+    if (n < 2 * numThreads) {
+        // If the segment size is small, calculate scalar product directly
+        result = partialScalarProduct(v1, v2, start, end);
+    }
+    else {
+        // Divide and conquer using a binary tree approach with threads
+        size_t mid = start + n / 2;
+
+        auto leftFuture = async(std::launch::async, parallelBinaryTreeScalarProduct, cref(v1), cref(v2), start, mid, numThreads);
+        auto rightFuture = async(std::launch::async, parallelBinaryTreeScalarProduct, cref(v1), cref(v2), mid, end, numThreads);
+
+        // Wait for results and combine them
+        result = leftFuture.get() + rightFuture.get();
+    }
+
+    return result;
+}
+
+int main() {
+    // Define vectors directly in the main function
+    vector<int> v1 = { 1, 2, 5, 2 };  // Adjust the values as needed
+    vector<int> v2 = { 2, 6, 2, 3 };  // Adjust the values as needed
+
+    cout << "Generated vectors\n";
+
+    // Calculate scalar product using binary tree approach with threads
+    int product = parallelBinaryTreeScalarProduct(v1, v2, 0, v1.size(), 4);  // Assuming 4 threads
+
+    printf("Result: %d\n", product);
+
+    return 0;
+}

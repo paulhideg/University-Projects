@@ -1,0 +1,12 @@
+very soft-small-delicate
+very soft-medium-easy
+very soft-high-normal
+soft-small-easy
+soft-medium-normal
+soft-high-normal
+normal-small-easy
+normal-medium-normal
+normal-high-intense
+resistant-small-easy
+resistant-medium-normal
+resistant-high-intense

@@ -1,0 +1,59 @@
+class Repository
+!!!135170.cpp!!!	Repository()
+
+!!!135298.cpp!!!	~Repository()
+
+!!!135426.cpp!!!	AddElement(in newTutorial : Tutorial) : void
+
+	this->elementsArray.push_back(newTutorial);
+!!!135554.cpp!!!	RemoveElement(in position : size_t) : void
+
+	this->elementsArray.erase(this->elementsArray.begin() + position);
+!!!135682.cpp!!!	FindElementByTitle(in title : std::string) : size_t
+
+	auto it = std::find_if(this->elementsArray.begin(), this->elementsArray.end(),
+		[title](Tutorial m) { return m.GetTitle() == title; });
+	if (it != this->elementsArray.end())
+	{
+		//std::cout << "Element " << name << " found at position : ";
+		//std::cout << it - this->elementsArray.begin() << " (counting from zero) \n";
+		return it - this->elementsArray.begin();
+	}
+	else
+		//std::cout << "Element not found.\n\n";
+		return -1;
+
+!!!135810.cpp!!!	FindElementByPresenter(in presenter : std::string) : bool
+
+	auto it = std::find_if(this->elementsArray.begin(), this->elementsArray.end(),
+		[presenter](Tutorial m) { return m.GetPresenter() == presenter; });
+	if (it != this->elementsArray.end())
+		return true;
+	else
+		return false;
+!!!135938.cpp!!!	UpdateElementTitle(in position : size_t, in newTitle : std::string) : void
+
+	(this->elementsArray)[position].SetTitle(newTitle);
+!!!136066.cpp!!!	UpdateElementPresenter(in position : size_t, in newPresenter : std::string) : void
+
+	(this->elementsArray)[position].SetPresenter(newPresenter);
+!!!136194.cpp!!!	UpdateElementDuration(in position : size_t, in newDuration : std::string) : void
+
+	(this->elementsArray)[position].SetDuration(newDuration);
+!!!136322.cpp!!!	UpdateElementLikes(in position : size_t, in newLikes : size_t) : void
+
+	(this->elementsArray)[position].SetLikes(newLikes);
+!!!136450.cpp!!!	UpdateElementLink(in position : size_t, in newLink : std::string) : void
+
+	(this->elementsArray)[position].SetLink(newLink);
+!!!136578.cpp!!!	GetSize() : size_t
+
+	return this->elementsArray.size();
+!!!136706.cpp!!!	GetArray() : std::vector<Tutorial>
+
+	return this->elementsArray;
+!!!136834.cpp!!!	operator <<(inout os : std::ostream, in repo : Repository) : std::ostream
+
+	for (auto it : repo.GetArray())
+		os << it;
+	return os;

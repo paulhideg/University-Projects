@@ -1,0 +1,17 @@
+count([],_,0).
+count([H|T],EL,CNT):-
+    H=:=EL,
+    !,
+    count(T,EL,CNT1),
+    CNT is CNT1+1.
+count([_|T],EL,CNT):-
+    count(T,EL,CNT).
+
+
+isSet([],[_|_]).
+isSet([H|T],AUX):-
+    count(AUX,H,CNT),
+    CNT=:=1,
+    !,
+    isSet(T,AUX).
+

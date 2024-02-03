@@ -1,0 +1,16 @@
+prime(2,_):-!.
+prime(3,_):-!.
+prime(N,D):- N mod D =\= 0,
+    D >= N/2, !.
+prime(N,D):- N mod D =\= 0,
+    D1 is D+2,
+    prime(N,D1).
+
+
+doublePrimes([],[]).
+doublePrimes([H|T],[H,H|R]):-
+    prime(H,3),
+    !,
+    doublePrimes(T,R).
+doublePrimes([H|T],[H|R]):-
+    doublePrimes(T,R).

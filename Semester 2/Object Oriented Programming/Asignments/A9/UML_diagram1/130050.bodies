@@ -1,0 +1,44 @@
+class HTMLTutorialListWriter
+!!!141058.cpp!!!	HTMLTutorialListWriter(in fileName : std::string)
+
+	SetFileName(fileName);
+!!!141186.cpp!!!	WriteToFile(in tutorialList : TutorialList) : void
+
+	std::ofstream outputFile;
+	outputFile.open(fileName, std::ios_base::out);
+
+	outputFile << "<!DOCTYPE html>";
+
+	outputFile << "<html>";
+	outputFile << "<head>";
+	outputFile << "<title> Tutorial List </title>";
+	outputFile << "</head>";
+
+	outputFile << "<body>";
+
+	HTMLTable table = HTMLTable();
+	HTMLTable::Row topRow;
+	topRow.AddToRow("Title");
+	topRow.AddToRow("Presenter");
+	topRow.AddToRow("Duration");
+	topRow.AddToRow("Number of likes");
+	topRow.AddToRow("Link");
+	table.AddRow(topRow);
+	for (auto& m : tutorialList.GetList())
+	{
+		HTMLTable::Row newRow;
+		newRow.AddToRow(m.GetTitle());
+		newRow.AddToRow(m.GetPresenter());
+		newRow.AddToRow(m.GetDuration());
+		newRow.AddToRow(std::to_string(m.GetLikes()));
+		newRow.AddToRow(m.GetLink());
+		table.AddRow(newRow);
+	}
+
+	outputFile << table;
+
+	outputFile << "</body>";
+
+	outputFile << "</html>";
+
+	outputFile.close();

@@ -1,0 +1,7 @@
+class TutorialListWriter
+!!!140546.cpp!!!	GetFileName() : std::string
+
+	return fileName;
+!!!140674.cpp!!!	SetFileName(in newFile : std::string) : void
+
+	fileName = newFile;

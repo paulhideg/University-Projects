@@ -1,0 +1,76 @@
+class AdminServices
+!!!128002.cpp!!!	AdminServices(inout repo : Repository)
+
+!!!128130.cpp!!!	AddTutorial(in title : std::string, in presenter : std::string, in duration : std::string, in likes : size_t, in link : std::string) : void
+
+	try {
+		Tutorial newTutorial = Tutorial(title, presenter, duration, likes, link);
+		TutorialValidator::validate(newTutorial);
+
+		bool found = false;
+		for (size_t i = 0; i < this->repository.GetSize() && !found; ++i)
+			if (this->repository.GetArray()[i] == newTutorial) found = true;
+
+		if (found) throw std::exception("A tutorial with the given title already exists!");
+		this->repository.AddElement(newTutorial);
+	}
+	catch (ValidationException& e)
+	{
+		std::cout << e.getMessage() << "\n";
+	}
+!!!128258.cpp!!!	RemoveTutorial(in title : std::string) : void
+
+	size_t position = this->repository.FindElementByTitle(title);
+
+	if (position >= this->repository.GetSize()) throw std::exception("Tutorial not found!");
+	this->repository.RemoveElement(position);
+!!!128386.cpp!!!	UpdateTutorialTitle(in oldTitle : std::string, in newTitle : std::string) : void
+
+	if (!Validator::ValidTutorialTitle(newTitle)) throw std::exception("Invalid tutorial title!");
+	size_t position = this->repository.FindElementByTitle(oldTitle);
+
+	if (position >= this->repository.GetSize()) throw std::exception("Tutorial not found!");
+	this->repository.UpdateElementTitle(position, newTitle);
+!!!128514.cpp!!!	UpdateTutorialPresenter(in title : std::string, in newPresenter : std::string) : void
+
+	if (!Validator::ValidTutorialPresenter(newPresenter)) throw std::exception("Invalid tutorial presenter!");
+	size_t position = this->repository.FindElementByTitle(title);
+
+	if (position >= this->repository.GetSize()) throw std::exception("Tutorial not found!");
+	this->repository.UpdateElementPresenter(position, newPresenter);
+!!!128642.cpp!!!	UpdateTutorialDuration(in title : std::string, in newDuration : std::string) : void
+
+	if (!Validator::ValidTutorialDuration(newDuration)) throw std::exception("Invalid tutorial duration!");
+	size_t position = this->repository.FindElementByTitle(title);
+
+	if (position >= this->repository.GetSize()) throw std::exception("Tutorial not found!");
+	this->repository.UpdateElementDuration(position, newDuration);
+!!!128770.cpp!!!	UpdateTutorialLikes(in title : std::string, in newLikes : size_t) : void
+
+	if (!Validator::ValidTutorialLikes(newLikes)) throw std::exception("Invalid tutorial likes!");
+	size_t position = this->repository.FindElementByTitle(title);
+
+	if (position >= this->repository.GetSize()) throw std::exception("Tutorial not found!");
+	this->repository.UpdateElementLikes(position, newLikes);
+!!!128898.cpp!!!	UpdateTutorialLink(in title : std::string, in newLink : std::string) : void
+
+	if (!Validator::ValidTutorialLink(newLink)) throw std::exception("Invalid tutorial link!");
+	size_t position = this->repository.FindElementByTitle(title);
+
+	if (position >= this->repository.GetSize()) throw std::exception("Tutorial not found!");
+	this->repository.UpdateElementLink(position, newLink);
+!!!129026.cpp!!!	GetRepo() : Repository
+
+	return this->repository;
+!!!129154.cpp!!!	InitializeRepo() : void
+
+	//AddMovie("City Lights", "comedy", 1931, 820249, "https://www.youtube.com/watch?v=7vl7F8S4cpQ");
+	//AddMovie("Rear Window", "thriller", 1954, 578456, "https://www.youtube.com/watch?v=6kCcZCMYw38");
+	//AddMovie("Casablanca", "drama", 1942, 785565, "https://www.youtube.com/watch?v=BkL9l7qovsE");
+	//AddMovie("The Godfather", "crime", 1972, 654269, "https://www.youtube.com/watch?v=sY1S34973zA");
+	//AddMovie("The Lord of the Rings", "action", 2003, 74685564, "https://www.youtube.com/watch?v=r5X-hFf6Bwo");
+	//AddMovie("The Dark Knight", "action", 2008, 98426458, "https://www.youtube.com/watch?v=EXeTwQWrcwY");
+	//AddMovie("Inception", "action", 2010, 4567515, "https://www.youtube.com/watch?v=YoHD9XEInc0"); 
+	//AddMovie("Venom", "action", 2018, 98551555, "https://www.youtube.com/watch?v=u9Mv98Gr5pY");
+	//AddMovie("Rush Hour", "comedy", 1998, 82221525, "https://www.youtube.com/watch?v=JMiFsFQcFLE");
+	//AddMovie("It", "thrailler", 2017, 6584455, "https://www.youtube.com/watch?v=7no56Zw1e20");

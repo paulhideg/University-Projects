@@ -1,0 +1,424 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+        <meta charset="utf-8"/>
+	    <title>UI.cpp</title>
+	    <link href="../../third-party/google-code-prettify/prettify-CppCoverage.css" type="text/css" rel="stylesheet" />
+	    <script type="text/javascript" src="../../third-party/google-code-prettify/prettify.js"></script>
+	</head>
+    <body onload="prettyPrint()">
+        <h4></h4>
+        <pre class="prettyprint lang-cpp linenums">
+#include "Ui.h"
+
+<span style = "background-color:#fdd">void UserInterface::ui_add() {</span>
+
+    char link[61], title[41], presenter[41], duration[41], likes_number[41];
+    unsigned int new_likes_number;
+
+<span style = "background-color:#fdd">    std::cout &lt;&lt; "Link:\n";
+    std::cin.getline(link, 61);
+    if (link[0] == '\0')
+        throw UserError("Invalid link\n");</span>
+
+<span style = "background-color:#fdd">    std::cout &lt;&lt; "Title:\n";
+    std::cin.getline(title, 41);
+    if (title[0] == '\0')
+        throw UserError("Invalid title\n");</span>
+
+<span style = "background-color:#fdd">    std::cout &lt;&lt; "Presenter:\n";
+    std::cin.getline(presenter, 41);
+    if (presenter[0] == '\0')
+        throw UserError("Invalid presenter\n");</span>
+
+<span style = "background-color:#fdd">    std::cout &lt;&lt; "Duration (mm:ss) :\n";
+    std::cin.getline(duration, 41);
+    if (duration[0] == '\0')
+        throw UserError("Invalid duration\n");</span>
+
+<span style = "background-color:#fdd">    std::cout &lt;&lt; "Number of likes:\n";
+    std::cin.getline(likes_number, 41);
+    if (likes_number[0] == '\0')
+        throw UserError("Invalid number of likes\n");
+    new_likes_number = std::stoi(likes_number);</span>
+
+<span style = "background-color:#fdd">    this-&gt;tutorial_service.add_tutorial(link, title, presenter, duration, new_likes_number);
+}</span>
+
+<span style = "background-color:#fdd">void UserInterface::ui_delete() {</span>
+
+    char link[41];
+<span style = "background-color:#fdd">    std::cout &lt;&lt; "Link:\n";
+    std::cin.getline(link, 41);
+    if (link[0] == '\0')
+        throw UserError("Invalid link\n");
+    this-&gt;tutorial_service.remove_tutorial(link);
+}</span>
+
+<span style = "background-color:#fdd">void UserInterface::ui_update() {</span>
+
+    char link[61], title[41], presenter[41], duration[41], likes_number[41];
+    unsigned int new_likes_number;
+
+<span style = "background-color:#fdd">    std::cout &lt;&lt; "Link:\n";
+    std::cin.getline(link, 61);
+    if (link[0] == '\0')
+        throw UserError("Invalid link\n");</span>
+
+<span style = "background-color:#fdd">    std::cout &lt;&lt; "New title:\n";
+    std::cin.getline(title, 41);
+    if (title[0] == '\0')
+        throw UserError("Invalid title\n");</span>
+
+<span style = "background-color:#fdd">    std::cout &lt;&lt; "New presenter:\n";
+    std::cin.getline(presenter, 41);
+    if (presenter[0] == '\0')
+        throw UserError("Invalid presenter\n");</span>
+
+<span style = "background-color:#fdd">    std::cout &lt;&lt; "New duration (mm:ss) :\n";
+    std::cin.getline(duration, 41);
+    if (duration[0] == '\0')
+        throw UserError("Invalid duration\n");</span>
+
+<span style = "background-color:#fdd">    std::cout &lt;&lt; "New number of likes:\n";
+    std::cin.getline(likes_number, 41);
+    if (likes_number[0] == '\0')
+        throw UserError("Invalid number of likes\n");
+    new_likes_number = std::stoi(likes_number);</span>
+
+<span style = "background-color:#fdd">    this-&gt;tutorial_service.update_tutorial(link, title, presenter, duration, new_likes_number);
+    std::cout &lt;&lt; "Tutorial upddated successfully\n";
+}</span>
+
+<span style = "background-color:#fdd">void UserInterface::ui_list() {</span>
+
+<span style = "background-color:#fdd">    Tutorial* tutorials = this-&gt;tutorial_service.list_tutorials();
+    for (int i = 0; i &lt;= this-&gt;tutorial_service.get_number_tutorials() - 1; i++)
+        std::cout &lt;&lt; tutorials[i];
+}</span>
+
+<span style = "background-color:#fdd">void UserInterface::ui_user_show_tutorials() {</span>
+
+    char command[41], presenter[41];
+
+<span style = "background-color:#fdd">    while (true)</span>
+    {
+        try {
+<span style = "background-color:#fdd">            std::cout &lt;&lt; "Please enter a presenter:\n";
+            std::cin.getline(presenter, 41);</span>
+
+<span style = "background-color:#fdd">            if (presenter[0] == '\0')
+                throw UserError("Invalid presenter\n");
+            break;</span>
+        }
+<span style = "background-color:#fdd">        catch (UserError&amp; valid_error) {
+            std::cout &lt;&lt; valid_error.get_message() &lt;&lt; std::endl;
+        }
+        catch (const std::invalid_argument&amp; ia) {
+            std::cout &lt;&lt; "Invalid presenter" &lt;&lt; std::endl;
+        }
+    }</span>
+
+<span style = "background-color:#fdd">    if (this-&gt;tutorial_service.get_number_tutorials_for_presenter(presenter) == this-&gt;user_tutorial_service.get_number_tutorials_for_presenter(presenter))</span>
+    {
+<span style = "background-color:#fdd">        std::cout &lt;&lt; "All tutorials from this presenter are already in your list of events\n";
+        return;</span>
+    }
+
+<span style = "background-color:#fdd">    std::cout &lt;&lt; "Did you like this tutorial?:\n";
+    std::cout &lt;&lt; "If so, you can add it to your watchlist:\n\n";
+    std::cout &lt;&lt; "'add' - Add event to your list\n";
+    std::cout &lt;&lt; "If not, feel free to ignore this event:\n";
+    std::cout &lt;&lt; "'next' - Ignore this event\n\n";
+    std::cout &lt;&lt; "'exit' - Exit this menu\n\n";</span>
+
+    int i;
+    bool valid1, valid2;
+
+<span style = "background-color:#fdd">    Tutorial* tutorials = this-&gt;tutorial_service.list_tutorials();
+    for (i = 0; i &lt;= this-&gt;tutorial_service.get_number_tutorials() - 1; i++)</span>
+    {
+
+<span style = "background-color:#fdd">        valid2 = true;
+        if (tutorials[i].get_presenter() != presenter)
+            valid2 = false;</span>
+
+<span style = "background-color:#fdd">        valid1 = true;
+        Tutorial* user_tutorials = this-&gt;user_tutorial_service.list_tutorials();</span>
+
+<span style = "background-color:#fdd">        if (valid2)</span>
+        {
+<span style = "background-color:#fdd">            for (int j = 0; j &lt;= this-&gt;user_tutorial_service.get_number_tutorials() - 1; j++)
+                if (tutorials[i].get_link() == user_tutorials[j].get_link())</span>
+                {
+<span style = "background-color:#fdd">                    valid1 = false;
+                    break;
+                }</span>
+        }
+
+<span style = "background-color:#fdd">        if (valid1 &amp;&amp; valid2)</span>
+        {
+<span style = "background-color:#fdd">            std::cout &lt;&lt; tutorials[i];
+            system(std::string("start " + tutorials[i].get_link()).c_str());
+            while (true)</span>
+            {
+<span style = "background-color:#fdd">                std::cout &lt;&lt; "Please enter your option:\n";
+                std::cin.getline(command, 41);
+                if (!strcmp(command, "add"))</span>
+                {
+<span style = "background-color:#fdd">                    this-&gt;user_tutorial_service.add_tutorial(tutorials[i].get_link(),</span>
+                        tutorials[i].get_title(),
+                        tutorials[i].get_presenter(),
+                        tutorials[i].get_duration(),
+                        tutorials[i].get_likes_number());
+<span style = "background-color:#fdd">                    command[0] = '\0';
+                    if (this-&gt;tutorial_service.get_number_tutorials_for_presenter(presenter) == this-&gt;user_tutorial_service.get_number_tutorials_for_presenter(presenter))</span>
+                    {
+<span style = "background-color:#fdd">                        std::cout &lt;&lt; "All tutorials available from this presenter are already in your list of tutorials\n";
+                        return;</span>
+                    }
+<span style = "background-color:#fdd">                    break;
+                }
+                else if (!strcmp(command, "next"))</span>
+                {
+<span style = "background-color:#fdd">                    command[0] = '\0';
+                    break;
+                }
+                else if (!strcmp(command, "exit"))
+                    return;</span>
+                else
+                {
+<span style = "background-color:#fdd">                    std::cout &lt;&lt; "Invalid command\n";
+                    command[0] = '\0';</span>
+                }
+<span style = "background-color:#fdd">            }</span>
+        }
+<span style = "background-color:#fdd">        if (i == this-&gt;tutorial_service.get_number_tutorials() - 1)
+            i = 0;
+    }
+    std::cout &lt;&lt; "All tutorials available from this presenter are already in your list of tutorials\n";
+}</span>
+
+<span style = "background-color:#fdd">void UserInterface::ui_user_my_tutorials() {</span>
+
+    char command[41];
+
+<span style = "background-color:#fdd">    if (this-&gt;user_tutorial_service.get_number_tutorials() == 0)</span>
+    {
+<span style = "background-color:#fdd">        std::cout &lt;&lt; "You have no tutorial in your watch list\n";
+        return;</span>
+    }
+
+<span style = "background-color:#fdd">    Tutorial* user_tutorials = this-&gt;user_tutorial_service.list_tutorials();
+    for (int i = 0; i &lt;= this-&gt;user_tutorial_service.get_number_tutorials() - 1; i++)
+        std::cout &lt;&lt; user_tutorials[i];</span>
+
+<span style = "background-color:#fdd">    while (true)</span>
+    {
+        try {
+<span style = "background-color:#fdd">            std::cout &lt;&lt; "\nPlease enter your option:\n\n";
+            std::cout &lt;&lt; "'delete' - Remove a tutorial\n\n";
+            std::cout &lt;&lt; "'exit' - Exit this menu\n";
+            std::cin.getline(command, 41);
+            if (!strcmp(command, "delete"))</span>
+            {
+                char link[61];
+                char command2[41];
+<span style = "background-color:#fdd">                std::cout &lt;&lt; "Link:\n";
+                std::cin.getline(link, 61);</span>
+                
+<span style = "background-color:#fdd">                int i = 0;
+                Tutorial* tutorials = this-&gt;tutorial_service.list_tutorials();
+                for (i = 0; i &lt;= this-&gt;tutorial_service.get_number_tutorials() - 1; i++)
+                    if (tutorials[i].get_link() == link)
+                        std::cout &lt;&lt; "\nDid you like this tutorial?:\n";
+                        std::cout &lt;&lt; "'yes' / 'no'\n";
+                        std::cin.getline(command2, 41);
+                        if (!strcmp(command2, "yes"))</span>
+                        {
+                            //TODO increasing like number not working
+                            //tutorials[i].set_likes_number(tutorials[i].get_likes_number() + 1);
+
+                            /*std::string title, presenter, duration;
+                            unsigned int new_likes_number;
+                            title = tutorials[i].get_link();
+                            presenter = tutorials[i].get_presenter();
+                            duration = tutorials[i].get_duration();
+                            new_likes_number = tutorials[i].get_likes_number() + 1;
+                            this-&gt;tutorial_service.update_tutorial(link,title,presenter,duration,new_likes_number);*/
+                            
+<span style = "background-color:#fdd">                            std::cout &lt;&lt; "Tutorial successfully liked!\n";
+                            std::cout &lt;&lt; "Tutorial successfully removed from your watchlist!\n";
+                        }
+                        else if (!strcmp(command2, "no"))</span>
+                        {
+<span style = "background-color:#fdd">                            std::cout &lt;&lt; "Tutorial successfully removed from your watchlist!\n";
+                        }</span>
+                        else
+                        {
+<span style = "background-color:#fdd">                            std::cout &lt;&lt; "Invalid choice\n";
+                            std::cout &lt;&lt; "Tutorial successfully removed from your watchlist!\n";</span>
+                        }
+<span style = "background-color:#fdd">                this-&gt;user_tutorial_service.remove_tutorial(link);</span>
+
+<span style = "background-color:#fdd">                break;
+            }
+            else if (!strcmp(command, "exit"))
+                return;</span>
+            else
+            {
+<span style = "background-color:#fdd">                std::cout &lt;&lt; "Invalid command\n";
+                command[0] = '\0';</span>
+            }
+        }
+<span style = "background-color:#fdd">        catch (RepoError&amp; repo_error) {
+            std::cout &lt;&lt; repo_error.get_message() &lt;&lt; std::endl;
+        }
+        catch (ValidError&amp; valid_error) {
+            std::cout &lt;&lt; valid_error.get_message() &lt;&lt; std::endl;
+        }
+        catch (UserError&amp; user_error) {
+            std::cout &lt;&lt; user_error.get_message() &lt;&lt; std::endl;
+        }
+    }
+}</span>
+
+<span style = "background-color:#fdd">void UserInterface::print_admin_menu() {</span>
+
+<span style = "background-color:#fdd">    std::cout &lt;&lt; "\nHere is a list of your options (Admin Mode):\n\n";
+    std::cout &lt;&lt; "'add': Add a tutorial\n";
+    std::cout &lt;&lt; "'delete': Delete a tutorial\n";
+    std::cout &lt;&lt; "'update': Update an tutorial\n";
+    std::cout &lt;&lt; "'list': List all tutorials\n";
+    std::cout &lt;&lt; "'exit': Exit admin mode\n";
+}</span>
+
+<span style = "background-color:#fdd">void UserInterface::print_user_menu() {</span>
+
+<span style = "background-color:#fdd">    std::cout &lt;&lt; "\nHere is a list of your options (User Mode):\n\n";
+    std::cout &lt;&lt; "'show tutorials': Lists all available tutorials for a presenter of your choosing\n";
+    std::cout &lt;&lt; "'my tutorials': Lists all tutorials you're interested in\n";
+    std::cout &lt;&lt; "'exit' - Exit user mode\n";
+}</span>
+
+void UserInterface::run()
+<span style = "background-color:#fdd">{</span>
+    char command[41], user_command[41], admin_command[41];
+<span style = "background-color:#fdd">    this-&gt;tutorial_service.populate_array();
+    std::cout &lt;&lt; "Welcome to the Tutorials Planner!\n";
+    std::cout &lt;&lt; "Please enter a option: \n\n";
+    std::cout &lt;&lt; "'admin' - To enter admin mode\n";
+    std::cout &lt;&lt; "'user' - To enter user mode\n";
+    std::cout &lt;&lt; "'exit' - Exit planner\n";
+    while (true)</span>
+    {
+<span style = "background-color:#fdd">        std::cout &lt;&lt; "\nPlease enter a mode (Admin or User):\n";
+        std::cin.getline(command, 41);
+        if (!strcmp(command, "user"))</span>
+        {
+<span style = "background-color:#fdd">            while (true)</span>
+            {
+<span style = "background-color:#fdd">                this-&gt;print_user_menu();
+                std::cout &lt;&lt; "Please enter your option:\n";
+                std::cin.getline(user_command, 41);</span>
+                try {
+<span style = "background-color:#fdd">                    if (!strcmp(user_command, "show tutorials"))</span>
+                    {
+<span style = "background-color:#fdd">                        this-&gt;ui_user_show_tutorials();
+                        user_command[0] = '\0';
+                    }
+                    else if (!strcmp(user_command, "my tutorials"))</span>
+                    {
+<span style = "background-color:#fdd">                        this-&gt;ui_user_my_tutorials();
+                        user_command[0] = '\0';
+                    }
+                    else if (!strcmp(user_command, "exit"))</span>
+                    {
+<span style = "background-color:#fdd">                        user_command[0] = '\0';
+                        break;
+                    }</span>
+                    else
+                    {
+<span style = "background-color:#fdd">                        std::cout &lt;&lt; "Invalid command\n";
+                        user_command[0] = '\0';</span>
+                    }
+                }
+<span style = "background-color:#fdd">                catch (RepoError&amp; repo_error) {
+                    std::cout &lt;&lt; repo_error.get_message() &lt;&lt; std::endl;
+                }
+                catch (ValidError&amp; valid_error) {
+                    std::cout &lt;&lt; valid_error.get_message() &lt;&lt; std::endl;
+                }
+                catch (UserError&amp; user_error) {
+                    std::cout &lt;&lt; user_error.get_message() &lt;&lt; std::endl;
+                }
+            }
+        }
+        else if (!strcmp(command, "admin"))</span>
+        {
+<span style = "background-color:#fdd">            this-&gt;print_admin_menu();
+            while (true) {
+                std::cout &lt;&lt; "Please enter your option:\n";
+                std::cin.getline(admin_command, 41);</span>
+                try {
+<span style = "background-color:#fdd">                    if (!strcmp(admin_command, "add")) {
+                        this-&gt;ui_add();
+                        admin_command[0] = '\0';
+                    }
+                    else if (!strcmp(admin_command, "delete")) {
+                        this-&gt;ui_delete();
+                        admin_command[0] = '\0';
+                    }
+                    else if (!strcmp(admin_command, "update")) {
+                        this-&gt;ui_update();
+                        admin_command[0] = '\0';
+                    }
+                    else if (!strcmp(admin_command, "list")) {
+                        this-&gt;ui_list();
+                        std::cout &lt;&lt; std::endl;
+                        admin_command[0] = '\0';
+                    }
+                    else if (!strcmp(admin_command, "exit"))
+                        break;</span>
+                    else
+<span style = "background-color:#fdd">                        std::cout &lt;&lt; "Invalid command!\n";</span>
+                }
+<span style = "background-color:#fdd">                catch (RepoError&amp; repo_error) {
+                    std::cout &lt;&lt; repo_error.get_message() &lt;&lt; std::endl;
+                }
+                catch (ValidError&amp; valid_error) {
+                    std::cout &lt;&lt; valid_error.get_message() &lt;&lt; std::endl;
+                }
+                catch (UserError&amp; user_error) {
+                    std::cout &lt;&lt; user_error.get_message() &lt;&lt; std::endl;
+                }
+                catch (const std::invalid_argument&amp; ia) {
+                    std::cout &lt;&lt; "Invalid number of people" &lt;&lt; std::endl;
+                }
+            }
+            command[0] = '\0';
+        }
+        else if (!strcmp(command, "exit"))
+            return;</span>
+        else
+        {
+<span style = "background-color:#fdd">            std::cout &lt;&lt; "Invalid mode!\n";
+            command[0] = '\0';</span>
+        }
+<span style = "background-color:#fdd">    }
+}</span></pre>
+        <hr />
+        <table width="100%">
+            <thead>
+                <tr>
+                    <th align="center">
+                        <small>Generated by</small>
+                        <a href="https://github.com/OpenCppCoverage/OpenCppCoverage/releases">
+                            <strong>OpenCppCoverage (Version: 0.9.9.0)</strong>
+                        </a>
+                    </th>
+                </tr>
+            </thead>
+        </table>
+    </body>
+</html>

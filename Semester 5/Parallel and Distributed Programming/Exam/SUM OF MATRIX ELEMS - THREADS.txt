@@ -1,0 +1,63 @@
+SUM OF MATRIX ELEMS - THREADS
+#include <iostream>
+#include <vector>
+#include <thread>
+#include <future>
+#include <chrono>
+
+int nonrecursiveMatrixSum(const std::vector<std::vector<int>>& matrix, size_t beginRow, size_t endRow, size_t beginCol, size_t endCol) {
+    int sum = 0;
+    for (size_t i = beginRow; i < endRow; ++i) {
+        for (size_t j = beginCol; j < endCol; ++j) {
+            sum += matrix[i][j];
+        }
+    }
+    return sum;
+}
+
+int recursiveMatrixSum(const std::vector<std::vector<int>>& matrix, size_t beginRow, size_t endRow, size_t beginCol, size_t endCol, size_t nrThreads) {
+    if (endRow == beginRow + 1 && endCol == beginCol + 1) {
+        return matrix[beginRow][beginCol];
+    }
+
+    size_t midRow = (beginRow + endRow) / 2;
+    size_t midCol = (beginCol + endCol) / 2;
+
+    if (nrThreads <= 1) {
+        return recursiveMatrixSum(matrix, beginRow, midRow, beginCol, midCol, 1) +
+               recursiveMatrixSum(matrix, midRow, endRow, beginCol, midCol, 1) +
+               recursiveMatrixSum(matrix, beginRow, midRow, midCol, endCol, 1) +
+               recursiveMatrixSum(matrix, midRow, endRow, midCol, endCol, 1);
+    }
+
+    std::future<int> f1 = std::async(std::launch::async, &recursiveMatrixSum, matrix, beginRow, midRow, beginCol, midCol, nrThreads / 2);
+    std::future<int> f2 = std::async(std::launch::async, &recursiveMatrixSum, matrix, midRow, endRow, beginCol, midCol, nrThreads / 2);
+    std::future<int> f3 = std::async(std::launch::async, &recursiveMatrixSum, matrix, beginRow, midRow, midCol, endCol, nrThreads / 2);
+    int s4 = recursiveMatrixSum(matrix, midRow, endRow, midCol, endCol, nrThreads - (nrThreads / 2));
+
+    return f1.get() + f2.get() + f3.get() + s4;
+}
+
+int main() {
+    // Initialize matrix manually
+    std::vector<std::vector<int>> matrix = {
+            {1, 2, 3, 4},
+            {5, 6, 7, 8},
+            {9, 10, 11, 12},
+            {13, 14, 15, 16}
+    };
+
+    size_t numRows = matrix.size();
+    size_t numCols = (numRows > 0) ? matrix[0].size() : 0;
+    size_t nrThreads = 4;  // Set the number of threads
+
+    std::chrono::high_resolution_clock::time_point beginTime = std::chrono::high_resolution_clock::now();
+    int sum = recursiveMatrixSum(matrix, 0, numRows, 0, numCols, nrThreads);
+    std::chrono::high_resolution_clock::time_point endTime = std::chrono::high_resolution_clock::now();
+
+    std::cout << "Sum of matrix elements: " << sum << std::endl;
+    std::cout << "Used time = " << std::chrono::duration_cast<std::chrono::microseconds>(endTime - beginTime).count() << "us\n";
+
+    return 0;
+}
+    

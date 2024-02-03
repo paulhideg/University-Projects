@@ -1,0 +1,55 @@
+class FileRepository
+!!!132610.cpp!!!	FileRepository(in path : std::string, in initialize : bool = false)
+
+	ReadData();
+!!!132738.cpp!!!	AddElement(in newTutorial : Tutorial) : void
+
+	Repository::AddElement(newTutorial);
+	WriteData();
+!!!132866.cpp!!!	RemoveElement(in position : size_t) : void
+
+	Repository::RemoveElement(position);
+	WriteData();
+!!!132994.cpp!!!	UpdateElementTitle(in position : size_t, in newTitle : std::string) : void
+
+	Repository::UpdateElementTitle(position, newTitle);
+	WriteData();
+!!!133122.cpp!!!	UpdateElementPresenter(in position : size_t, in newPresenter : std::string) : void
+
+	Repository::UpdateElementPresenter(position, newPresenter);
+	WriteData();
+!!!133250.cpp!!!	UpdateElementDuration(in position : size_t, in newDuration : std::string) : void
+
+	Repository::UpdateElementDuration(position, newDuration);
+	WriteData();
+!!!133378.cpp!!!	UpdateElementLikes(in position : size_t, in newLikes : size_t) : void
+
+	Repository::UpdateElementLikes(position, newLikes);
+	WriteData();
+!!!133506.cpp!!!	UpdateElementLink(in position : size_t, in newLink : std::string) : void
+
+	Repository::UpdateElementLink(position, newLink);
+	WriteData();
+!!!133634.cpp!!!	IsInitializable() : bool
+
+	return initialize;
+!!!133762.cpp!!!	ReadData() : void
+
+	std::ifstream inputFile;
+	inputFile.open(filePath, std::ios::in);
+
+	Tutorial next;
+	while (inputFile >> next)
+	{
+		Repository::AddElement(next);
+	}
+	inputFile.close();
+!!!133890.cpp!!!	WriteData() : void
+
+	std::ofstream outputFile;
+	outputFile.open(filePath, std::ios::out);
+
+	for (const Tutorial& d : Repository::GetArray())
+		outputFile << d;
+
+	outputFile.close();

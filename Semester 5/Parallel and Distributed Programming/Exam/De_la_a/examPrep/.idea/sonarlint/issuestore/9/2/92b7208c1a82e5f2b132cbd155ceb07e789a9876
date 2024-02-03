@@ -1,0 +1,6 @@
+
+\
+java:S1118":Add a private constructor to hide the implicit public one.(¶ã©½ûÿÿÿÿ8ØÖ‡Ó1
+{
+java:S2142="^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(üŸ´Â8İÖ‡Ó1
+Z	java:S106<"9Replace this use of System.out or System.err by a logger.(òşÚúøÿÿÿÿ8İÖ‡Ó1

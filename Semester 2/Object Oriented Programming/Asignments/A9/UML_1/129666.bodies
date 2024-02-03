@@ -1,0 +1,23 @@
+class TutorialList
+!!!139778.cpp!!!	TutorialList()
+
+!!!139906.cpp!!!	AddTutorial(in tut : Tutorial) : void
+
+	auto pos = std::find(tutorialList.begin(), tutorialList.end(), tut);
+
+	if (pos != tutorialList.end()) throw std::exception("Tutorial already in tutorial list!");
+	tutorialList.push_back(tut);
+!!!140034.cpp!!!	DeleteTutorial(in tut : Tutorial) : int
+
+	auto pos = std::find(tutorialList.begin(), tutorialList.end(), tut);
+	if (pos >= tutorialList.end()) return false;
+	else {
+		tutorialList.erase(pos);
+		return true;
+	}
+!!!140162.cpp!!!	GetSize(in tutorial : Tutorial) : int
+
+	return tutorialList.size();
+!!!140290.cpp!!!	GetList() : std::vector<Tutorial>
+
+	return tutorialList;

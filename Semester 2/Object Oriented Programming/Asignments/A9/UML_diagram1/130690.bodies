@@ -1,0 +1,442 @@
+class Console
+!!!141954.cpp!!!	Console(inout adminServices : AdminServices, inout userservices : UserServices)
+
+	adminServices.InitializeRepo();
+!!!142082.cpp!!!	Start() : void
+
+	SelectWriteMode();
+	SelectMode();
+!!!142210.cpp!!!	SelectMode() : void
+
+	bool done = false;
+
+	while (!done)
+	{
+		std::cout << "Open application in:\n";
+		std::cout << "1.Administrator mode\n";
+		std::cout << "2.User mode\n";
+		std::string mode;
+		std::cin >> mode;
+		if (mode.size() != 1)
+		{
+			std::cout << "Invalid command!\n";
+			return;
+		}
+
+		switch (mode[0])
+		{
+		case '1':
+		{
+			MainLoopAdministrator();
+			break;
+		}
+		case '2':
+		{
+			MainLoopUser();
+			break;
+		}
+		default:
+		{
+			std::cout << "Invalid command!\n";
+			done = true;
+			break;
+		}
+		}
+	}
+!!!142338.cpp!!!	SelectWriteMode() : void
+
+	std::cout << "Please select how the data will be saved: \n";
+	std::cout << "1. CSV\n";
+	std::cout << "2. HTML\n";
+
+	std::string mode;
+	std::cin >> mode;
+
+	if (mode.size() != 1)
+	{
+		std::cout << "Invalid mode!\n";
+		exit(1);
+	}
+
+	switch (mode[0])
+	{
+	case '1':
+	{
+		userServices.SetWriteMode("CSV");
+		return;
+	}
+	case '2':
+	{
+		userServices.SetWriteMode("HTML");
+		return;
+	}
+	default:
+	{
+		std::cout << "Invalid mode!\n";
+		exit(1);
+	}
+	}
+!!!142466.cpp!!!	MainLoopUser() : void
+
+	std::string command;
+	bool done = false;
+
+	while (!done)
+	{
+		PrintUserMenu();
+		std::cout << "Choose an option: ";
+		std::cin >> command;
+		if (command.size() != 1)
+			std::cout << "Invalid command!\n";
+		else
+		{
+			try
+			{
+				switch (command[0])
+				{
+				case '1':
+				{
+					WatchListNoFilter();
+					break;
+				}
+				case '2':
+				{
+					WatchListFilter();
+					break;
+				}
+				case '3':
+				{
+					PrintWatchList();
+					break;
+				}
+				case '4':
+				{
+					UserWatchTutorial();
+					break;
+				}
+				case '5':
+				{
+					done = true;
+					break;
+				}
+				default:
+				{
+					std::cout << "Invalid command!\n";
+					break;
+				}
+				}
+
+			}
+			catch (std::exception& e)
+			{
+				std::cout << e.what() << '\n';
+			}
+		}
+	}
+!!!142594.cpp!!!	MainLoopAdministrator() : void
+
+	std::string command;
+	bool done = false;
+
+
+	while (!done)
+	{
+		PrintAdminMenu();
+		std::cout << "Command:\n";
+		std::cin >> command;
+		if (command.size() != 1)
+			std::cout << "Invalid command!\n";
+
+		else
+		{
+			try
+			{
+				switch (command[0])
+				{
+				case '1':
+				{
+					AddTutorial();
+					break;
+				}
+				case '2':
+				{
+					RemoveTutorial();
+					break;
+				}
+				case '3':
+				{
+					UpdateTutorial();
+					break;
+				}
+				case '4':
+				{
+					PrintAllTutorials();
+					break;
+				}
+				case '5':
+				{
+					done = true;
+					break;
+				}
+				default:
+				{
+					std::cout << "Invalid command!\n";
+					break;
+				}
+				}
+			}
+			catch (std::exception& e)
+			{
+				std::cout << e.what() << '\n';
+			}
+
+		}
+	}
+!!!142722.cpp!!!	AddTutorial() : void
+
+	std::string title, presenter, duration, link;
+	size_t likes;
+	std::cout << "Title: ";
+	std::cin >> title;
+	std::cout << "Presenter: ";
+	std::cin >> presenter;
+	std::cout << "Duration: ";
+	std::cin >> duration;
+	std::cout << "Number of likes: ";
+	std::cin >> likes;
+	std::cout << "Link: ";
+	std::cin >> link;
+
+	this->adminServices.AddTutorial(title, presenter, duration, likes, link);
+!!!142850.cpp!!!	RemoveTutorial() : void
+
+	std::string title;
+	std::cout << "Title of the tutorial you wish to remove: ";
+	std::cin >> title;
+
+	this->adminServices.RemoveTutorial(title);
+!!!142978.cpp!!!	UpdateTutorial() : void
+
+	std::string title;
+	std::cout << "Title of the tutorial you wish to update\n";
+	std::cin >> title;
+	std::cout << "What would you like to modify?\n"
+		<< "1. title | 2. presenter | 3. duration | 4. likes | 5. link\n";
+
+	std::string updateAttribute;
+	std::cin >> updateAttribute;
+
+	if (updateAttribute.size() != 1)
+	{
+		std::cout << "Invalid command!\n";
+		return;
+	}
+
+	switch (updateAttribute[0])
+	{
+	case '1':
+	{
+		std::string newTitle;
+		std::cout << "Please input the new title\n";
+		std::cin >> newTitle;
+		UpdateTutorialTitle(title, newTitle);
+		break;
+	}
+	case '2':
+	{
+		std::string newPresenter;
+		std::cout << "Please input the new presenter\n";
+		std::cin >> newPresenter;
+		UpdateTutorialPresenter(title, newPresenter);
+		break;
+	}
+	case '3':
+	{
+		std::string newDuration;
+		std::cout << "Please input the new duration\n";
+		std::cin >> newDuration;
+		UpdateTutorialDuration(title, newDuration);
+		break;
+	}
+	case '4':
+	{
+		size_t newLikes;
+		std::cout << "Please input the new number of likes\n";
+		std::cin >> newLikes;
+		UpdateTutorialLikes(title, newLikes);
+		break;
+	}
+	case '5':
+	{
+		std::string newLink;
+		std::cout << "Please input the new link\n";
+		std::cin >> newLink;
+		UpdateTutorialLink(title, newLink);
+		break;
+	}
+	default:
+	{
+		std::cout << "Invalid attribute!\n";
+		break;
+	}
+	}
+!!!143106.cpp!!!	UpdateTutorialTitle(in oldTitle : std::string, in newTitle : std::string) : void
+
+	this->adminServices.UpdateTutorialTitle(oldTitle, newTitle);
+!!!143234.cpp!!!	UpdateTutorialPresenter(in title : std::string, in newPresenter : std::string) : void
+
+	this->adminServices.UpdateTutorialPresenter(title, newPresenter);
+!!!143362.cpp!!!	UpdateTutorialDuration(in title : std::string, in newDuration : std::string) : void
+
+	this->adminServices.UpdateTutorialDuration(title, newDuration);
+!!!143490.cpp!!!	UpdateTutorialLikes(in title : std::string, in newLikes : size_t) : void
+
+	this->adminServices.UpdateTutorialLikes(title, newLikes);
+!!!143618.cpp!!!	UpdateTutorialLink(in title : std::string, in newLink : std::string) : void
+
+	this->adminServices.UpdateTutorialLink(title, newLink);
+!!!143746.cpp!!!	PrintAllTutorials() : void
+
+	std::cout << adminServices.GetRepo();
+!!!143874.cpp!!!	WatchListNoFilter() : void
+
+	std::cout << "\t1. Add to watch list\n";
+	std::cout << "\t2. Next tutorial\n";
+	std::cout << "\t3. Exit\n";
+
+	bool exit = false;
+	UserInitializeTutorialList();
+
+	while (!exit)
+	{
+		std::cout << userServices.GetCurrentTutorial();
+
+		//std::string command_link = "start " + userServices.GetCurrentMovie().GetTrailer();
+		//system(command_link.c_str());
+
+		std::cout << "\n\tCommand: ";
+		int command = 0;
+		while (command >= 4 || 0 >= command)
+		{
+			std::cin >> command;
+			if (command >= 4 || 0 >= command)
+				std::cout << "Invalid command\n";
+		}
+		if (command == 1)
+			AddTutorialToWatchList();
+		if (command == 2)
+			DoNotAddTutorialToWatchList();
+		if (command == 3)
+			exit = true;
+	}
+!!!144002.cpp!!!	WatchListFilter() : void
+
+	std::cout << "\t1. Add to watch list\n";
+	std::cout << "\t2. Next tutorial\n";
+	std::cout << "\t3. Exit\n";
+
+
+	bool exit = false;
+	UserInitializeTutorialList();
+	FilterByPresenter();
+
+	while (!exit)
+	{
+		std::cout << userServices.GetCurrentTutorial();
+		std::cout << "\n\tCommand: ";
+		int command = 0;
+		while (command >= 4 || 0 >= command)
+		{
+			std::cin >> command;
+			if (command >= 4 || 0 >= command)
+				std::cout << "Invalid command\n";
+		}
+		if (command == 1)
+			AddTutorialToWatchList();
+		if (command == 2)
+			DoNotAddTutorialToWatchList();
+		if (command == 3)
+			exit = true;
+	}
+!!!144130.cpp!!!	PrintWatchList() : void
+
+	//std::vector<Movie> list = userServices.SeeWatchList();
+	//if (list.size() == 0)
+	//	std::cout << "No movies in watch list";
+	//else
+	//	for (int i = 1; i < list.size(); ++i)
+	//		std::cout << list[i];
+
+	if (userServices.GetWriteMode() == "CSV")
+	{
+		userServices.WriteData();
+
+		std::string command = "notepad " + userServices.GetFileName();
+
+		system("D:");
+		system("cd 1.School\\OOP\\a9hp\\paul9a\\tutorialdatabase");
+		system(command.c_str());
+	}
+	else
+	{
+		userServices.WriteData();
+
+		system("D:");
+		system("cd 1.School\\OOP\\a9hp\\paul9a\\tutorialdatabase");
+		system(userServices.GetFileName().c_str());
+	}
+!!!144258.cpp!!!	AddTutorialToWatchList() : void
+
+	userServices.AddToWatchList(userServices.GetCurrentTutorial());
+!!!144386.cpp!!!	DoNotAddTutorialToWatchList() : void
+
+	userServices.NextTutorial();
+!!!144514.cpp!!!	FilterByPresenter() : void
+
+	bool found = false;
+
+	while (!found)
+	{
+		std::string presenter;
+		std::cout << "Choose presenter: ";
+		std::cin >> presenter;
+		found = userServices.IsPresenter(presenter);
+		if (!found)
+			std::cout << "No tutorial with this presenter!\n";
+		else
+			userServices.FilterByPresenter(presenter);
+	}
+!!!144642.cpp!!!	UserInitializeTutorialList() : void
+
+	userServices.InitializeTutorialList();
+!!!144770.cpp!!!	UserWatchTutorial() : void
+
+	std::cout << "Title of the tutorial you watched: ";
+	std::string title;
+	std::cin.ignore(1000, '\n');
+	std::getline(std::cin, title);
+
+	std::cout << "Do you want to like this tutorial? (yes/no)";
+	std::string rate;
+	std::cin >> rate;
+
+	bool yes = false;
+	if (rate == "yes" || rate == "y")
+		yes = true;
+
+
+	userServices.WatchTutorial(title, yes);
+!!!144898.cpp!!!	PrintAdminMenu() : void
+
+	std::cout << "\n1.Add a new tutorial\n";
+	std::cout << "2.Remove a tutorial by title\n";
+	std::cout << "3.Update an existing tutorial\n";
+	std::cout << "4.Print all available tutorials\n";
+	std::cout << "5.Exit\n\n";
+!!!145026.cpp!!!	PrintUserMenu() : void
+
+	std::cout << "\n1. See all tutorials\n";
+	std::cout << "2. Filter by presenter\n";
+	std::cout << "3. See watch list\n";
+	std::cout << "4. Mark tutorial as watched and rate it\n";
+	std::cout << "5. Exit\n\n";

@@ -1,0 +1,42 @@
+class Validator
+!!!147842.cpp!!!	ValidTutorialAttributes(in title : std::string, in presenter : std::string, in duration : std::string, in likes : size_t, in link : std::string) : bool
+
+	return ValidTutorialTitle(title) && ValidTutorialPresenter(presenter) && ValidTutorialDuration(duration) && ValidTutorialLikes(likes) && ValidTutorialLink(link);
+!!!147970.cpp!!!	ValidTutorialTitle(in title : std::string) : bool
+
+	return !title.empty();
+!!!148098.cpp!!!	ValidTutorialPresenter(in presenter : std::string) : bool
+
+	return !presenter.empty();
+!!!148226.cpp!!!	ValidTutorialDuration(in duration : std::string) : bool
+
+    if (duration.empty())
+        return 0;
+
+    if (duration.length() != 5)
+        return 0;
+
+    std::string minutes, seconds;
+
+    if (duration[2] != ':')
+        return 0;
+
+    if (duration[0] == '0' && duration[1] == '0')
+    {
+        if (duration[3] == '0' && duration[4] == '0')
+            return 0;
+    }
+
+    if (duration[3] < '0' || duration[3] > '5')
+        return 0;
+
+    if (!(std::isdigit(duration[0])) || !(std::isdigit(duration[1])) || !(std::isdigit(duration[3])) || !(std::isdigit(duration[4])))
+        return 0;
+
+    return 1;
+!!!148354.cpp!!!	ValidTutorialLikes(in likes : size_t) : bool
+
+	return likes >= 0;
+!!!148482.cpp!!!	ValidTutorialLink(in link : std::string) : bool
+
+	return !link.empty();

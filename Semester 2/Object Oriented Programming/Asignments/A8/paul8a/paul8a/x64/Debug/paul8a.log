@@ -1,0 +1,14 @@
+﻿  domain.cpp
+  main.cpp
+  repository.cpp
+D:\1.School\OOP\a8hp\paul8a\paul8a\repository.cpp(9,30): warning C4244: 'return': conversion from '__int64' to 'int', possible loss of data
+D:\1.School\OOP\a8hp\paul8a\paul8a\repository.cpp(44,38): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  service.cpp
+D:\1.School\OOP\a8hp\paul8a\paul8a\service.cpp(61,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\1.School\OOP\a8hp\paul8a\paul8a\service.cpp(70,27): warning C4101: 'repo_error': unreferenced local variable
+  tests.cpp
+  UI.cpp
+D:\1.School\OOP\a8hp\paul8a\paul8a\UI.cpp(106,45): warning C4101: 'ia': unreferenced local variable
+D:\1.School\OOP\a8hp\paul8a\paul8a\UI.cpp(384,53): warning C4101: 'ia': unreferenced local variable
+  Generating Code...
+  paul8a.vcxproj -> D:\1.School\OOP\a8hp\paul8a\x64\Debug\paul8a.exe

@@ -1,0 +1,8 @@
+toNumber([],R,R).
+toNumber([H|T],P,R):-
+    P1 is P*10+H,
+    toNumber(T,P1,R).
+
+predecessor(L,R):-
+    toNumber(L,0,AUX),
+    R is AUX-1.

@@ -1,0 +1,16 @@
+class CSVTutorialListWriter
+!!!140802.cpp!!!	CSVTutorialListWriter(in fileName : std::string)
+
+	SetFileName(fileName);
+!!!140930.cpp!!!	WriteToFile(in tutorialList : TutorialList) : void
+
+	std::ofstream outputFile;
+	outputFile.open(fileName, std::ios_base::out);
+
+	for (auto& m : tutorialList.GetList())
+	{
+		outputFile << m.GetTitle() << ',' << m.GetPresenter() << ',' << m.GetDuration() << ',' << m.GetLikes() << ',' << m.GetLink();
+		outputFile << '\n';
+	}
+
+	outputFile.close();

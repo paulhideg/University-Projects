@@ -1,0 +1,6 @@
+class ValidationException
+!!!141314.cpp!!!	ValidationException(in _message : std::string)
+
+!!!141442.cpp!!!	getMessage() : std::string
+
+	return this->message;

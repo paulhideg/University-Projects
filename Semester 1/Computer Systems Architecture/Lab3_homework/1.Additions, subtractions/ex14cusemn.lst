@@ -1,0 +1,39 @@
+     1                                  bits 32 
+     2                                  global start        
+     3                                  extern exit               
+     4                                  import exit msvcrt.dll    
+     5                                  segment data use32 class=data
+     6                                          ;variables:
+     7 00000000 03                              a db 3h
+     8 00000001 0500                            b dw 5h
+     9 00000003 06000000                        c dd 6h
+    10 00000007 0800000000000000                d dq 8h
+    11                                  
+    12                                  segment code use32 class=code
+    13                                      start:
+    14                                          ;exercise 14:   c-b-(a+a)-b
+    15                                          
+    16 00000000 8B1D[03000000]                  mov EBX,[c]     ;EBX=c
+    17 00000006 66A1[01000000]                  mov AX,[b]      ;AX=b
+    18 0000000C 98                              cwde            ;AX -> EAX=b
+    19 0000000D 29C3                            sub EBX,EAX     ;c-b
+    20                                          
+    21 0000000F B002                            mov AL,2h
+    22 00000011 8A35[00000000]                  mov DH,[a]      ;DH=a
+    23 00000017 F6E6                            mul DH          ;AX=2*a=a+a
+    24 00000019 98                              cwde            ;EAX=a+a
+    25                                          
+    26 0000001A 29C3                            sub EBX,EAX     ;(c-b)-(a+a)
+    27                                          
+    28 0000001C 89D8                            mov EAX,EBX     ;EAX=(c-b)-(a+a)
+    29 0000001E 99                              cdq             ;EDX:EAX=(c-b)-(a+a)
+    30                                          
+    31 0000001F 8B1D[07000000]                  mov EBX,dword[d]    ;EBX=d
+    32 00000025 8B0D[0B000000]                  mov ECX,dword[d+4]  ;ECX=d
+    33                                          
+    34 0000002B 29DA                            sub EDX,EBX     ;EDX=[c-b-(a+a)]-b
+    35 0000002D 29C8                            sub EAX,ECX     ;EAX=[c-b-(a+a)]-b
+    36                                          
+    37                                          
+    38 0000002F 6A00                            push    dword 0      
+    39 00000031 FF15[00000000]                  call    [exit]       

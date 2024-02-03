@@ -1,0 +1,14 @@
+insert([],_,_,_,[]):-!.
+insert([],POS,N,EL,[EL]):-
+    POS>=N,
+    !.
+insert([H|T],POS,N,EL,[EL,H|R]):-
+    POS=:=N,
+    !,
+    POS1 is POS+1,
+    insert(T,POS1,N,EL,R).
+insert([H|T],POS,N,EL,[H|R]):-
+    POS1 is POS+1,
+    insert(T,POS1,N,EL,R).
+
+

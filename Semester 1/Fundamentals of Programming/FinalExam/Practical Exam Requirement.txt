@@ -1,0 +1,31 @@
+You are the mighty hammurabi, elected to office for a five year term as ruler of Summeria. 
+Each year, you must decide your capital city's land management policy, make sure that your people do not starve,
+and plant next year's crops. The currency is represented by units of grain. The game lasts for 5 turns. Each turn is 1 year.
+
+Each year, yoour trusted advisor reports the current situation, in the format at the bottom of the page.
+Use the data from Year 1 below when starting the game.
+
+Each year, you decide how many acres of land to buy or sell, 
+how many units of grain to feed your population with,
+and how many acres of land are planted with grain.
+You cannot buy more land than you have grain for, you cannot sell more land than you have, 
+you cannot feed people with grain you don't have, you cannot plant more acres than you have,
+you cannot plant grain you do not have.
+
+The next steps happen without your intervention:
+3. Land is bought or sold at the given price, and the stock of grain is updated.
+Each year, land prices vary between 15 and 25 grain per acre (random).
+
+4. Grain used to feed the population is subtracted from the stock. Each person needs 20 units of grain to survive.
+People who do not receive this amount starve.
+If half your population starves during the year, the game is over.
+If no one starved, between 0 and 10 people (random) come to the city.
+
+5. Grain is harvested. Each person can harvest at most 10 acres. Each year, the harvest is random between 1 and 6
+units of grain per acre.
+
+6.  Each year, there is a 20% chance of a rat infestation. Rats eat at most 10% of stored grain.
+
+When the 5 years are up:
+7. The game ends. If you have over 100 population and over 1000 acres, display a congratulation message.
+Otherwise display a loss message.
