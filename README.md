@@ -35,7 +35,7 @@
         <li><a href="https://github.com/paulhideg/University-Projects/tree/main/Semester%204/Artificial%20Intelligence">Artificial Intelligence</a></li>
         <li><a href="https://github.com/paulhideg/University-Projects/tree/main/Semester%204/Database%20Management%20Systems">Database Management Systems</a></li>
         <li><a href="https://github.com/paulhideg/University-Projects/tree/main/Semester%204/MPP-not-done">Software Engineering</a></li>
-        <li><a href="https://github.com/paulhideg/University-Projects/tree/main/Semester%204/Software%20Engineering-not-done">Systems for Design and Implementation</a></li>
+        <li><a href="https://github.com/paulhideg/University-Projects/tree/main/Semester%204/Software%20Engineering">Systems for Design and Implementation</a></li>
         <li><a href="https://github.com/paulhideg/University-Projects/tree/main/Semester%204/Web%20Programming-not-done">Web Programming</a></li>
       </ul>
     </li>
@@ -46,7 +46,7 @@
       <li>:open_file_folder:5th Semester
     <ul>
       <li><a href="https://github.com/paulhideg/University-Projects/tree/main/Semester%205/Formal%20Languages%20and%20Compiler%20Design">Formal Languages and Compiler Design</a></li>
-      <li><a href="">Mobile Applications</a></li>
+      <li><a href="https://github.com/paulhideg/University-Projects/tree/main/Semester%205/Mobile%20Applications">Mobile Applications</a></li>
       <li><a href="https://github.com/paulhideg/University-Projects/tree/main/Semester%205/Parallel%20and%20Distributed%20Programming">Parallel and Distributed Programming</a></li>
       <li><a href="https://github.com/paulhideg/University-Projects/tree/main/Semester%205/Public%20Key%20Criptography">Public Key Cryptography</a></li>
       <li><a href="https://github.com/paulhideg/University-Projects/tree/main/Semester%205/Specialized%20Protocols%20in%20Computer%20Networks">Specialized Protocols in Computer Networks</a></li>

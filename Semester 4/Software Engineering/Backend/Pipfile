@@ -1,0 +1,25 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+flask = "*"
+flask-restful = "*"
+requests = "*"
+flask-sqlalchemy = "*"
+flask-marshmallow = "*"
+autopep8 = "*"
+marshmallow-sqlalchemy = "*"
+pylint = "*"
+gunicorn = "*"
+flask-cors = "*"
+flask-swagger-ui = "*"
+mysqlclient = "*"
+faker = "*"
+
+[dev-packages]
+autopep8 = "*"
+
+[requires]
+python_version = "3.11"
