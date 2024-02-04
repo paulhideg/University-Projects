@@ -1,4 +1,5 @@
 !!have downloaded and installed npm and nodejs
+(https://github.com/brinzaalina/ShareItems)
 1. clone exam repo (https://github.com/dancojocar/exam-2024-26a)
 2. in 'server' folder run in terminal:
 2.1 npm install
