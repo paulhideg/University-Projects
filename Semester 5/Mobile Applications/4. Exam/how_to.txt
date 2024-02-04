@@ -1,0 +1,9 @@
+!!have downloaded and installed npm and nodejs
+1. clone exam repo (https://github.com/dancojocar/exam-2024-26a)
+2. in 'server' folder run in terminal:
+2.1 npm install
+2.2 npm start
+3. have wifi turned on phone and laptop and connected to same wifi
+4. in android studio project terminal run: 
+4.1 adb reverse tcp:2325 tcp:2325  (the port of the server)
+4.2 replace server port in project with the given one
