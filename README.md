@@ -34,8 +34,7 @@
       <ul>
         <li><a href="https://github.com/paulhideg/University-Projects/tree/main/Semester%204/Artificial%20Intelligence">Artificial Intelligence</a></li>
         <li><a href="https://github.com/paulhideg/University-Projects/tree/main/Semester%204/Database%20Management%20Systems">Database Management Systems</a></li>
-        <li><a href="https://github.com/paulhideg/University-Projects/tree/main/Semester%204/MPP-not-done">Software Engineering</a></li>
-        <li><a href="https://github.com/paulhideg/University-Projects/tree/main/Semester%204/Software%20Engineering">Systems for Design and Implementation</a></li>
+        <li><a href="[https://github.com/paulhideg/University-Projects/tree/main/Semester%204/MPP-not-done](https://github.com/paulhideg/University-Projects/tree/main/Semester%204/Software%20Engineering)">Software Engineering</a></li>
         <li><a href="https://github.com/paulhideg/University-Projects/tree/main/Semester%204/Web%20Programming-not-done">Web Programming</a></li>
       </ul>
     </li>
