@@ -32,7 +32,7 @@
     </li>
     <li>:open_file_folder:4th Semester
       <ul>
-        <li><a href="https://github.com/paulhideg/University-Projects/tree/main/Semester%204/Artificial%20Intelligence](https://github.com/913-Hideg-Paul/University-Projects/tree/main/Semester%204/Artificial%20Intelligence">Artificial Intelligence</a></li>
+        <li><a href="https://github.com/paulhideg/University-Projects/tree/main/Semester%204/Artificial%20Intelligence">Artificial Intelligence</a></li>
         <li><a href="https://github.com/paulhideg/University-Projects/tree/main/Semester%204/Database%20Management%20Systems">Database Management Systems</a></li>
         <li><a href="https://github.com/paulhideg/University-Projects/tree/main/Semester%204/Software%20Engineering">Software Engineering</a></li>
         <li><a href="https://github.com/paulhideg/University-Projects/tree/main/Semester%204/Web%20Programming-not-done">Web Programming</a></li>
