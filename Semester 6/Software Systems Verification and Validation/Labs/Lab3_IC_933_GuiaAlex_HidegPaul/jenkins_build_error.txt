@@ -1,0 +1,164 @@
+Started by user Student
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/933_GuiaAlex_HidegPaul
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/933_GuiaAlex_HidegPaul/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/913-Hideg-Paul/SSVV.git # timeout=10
+Fetching upstream changes from https://github.com/913-Hideg-Paul/SSVV.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.39.2'
+ > git fetch --tags --force --progress -- https://github.com/913-Hideg-Paul/SSVV.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+Checking out Revision 61111175c9c3a877b913db0caa87cf76e8163bb6 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 61111175c9c3a877b913db0caa87cf76e8163bb6 # timeout=10
+Commit message: "white box testing lab3 inclass"
+ > git rev-list --no-walk 61111175c9c3a877b913db0caa87cf76e8163bb6 # timeout=10
+[933_GuiaAlex_HidegPaul] $ mvn compile
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m----------------< [0;36mgroupId:MonitorizareTemeLaboratorV02[0;1m >----------------[m
+[[1;34mINFO[m] [1mBuilding MonitorizareTemeLaboratorV02 1.0-SNAPSHOT[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mMonitorizareTemeLaboratorV02[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/jenkins_home/workspace/933_GuiaAlex_HidegPaul/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.1:compile[m [1m(default-compile)[m @ [36mMonitorizareTemeLaboratorV02[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  4.499 s
+[[1;34mINFO[m] Finished at: 2024-03-29T06:24:11Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+Preparing TestLink client API.
+Using TestLink URL: http://host.docker.internal:8090/lib/api/xmlrpc/v1/xmlrpc.php
+
+Found 2 automated test cases in TestLink.
+
+Sorting automated test cases by TestLink test plan execution order.
+
+Executing single Build Steps.
+
+Merging build environment variables with data retrieved from TestLink.
+
+[933_GuiaAlex_HidegPaul] $ mvn verify
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m----------------< [0;36mgroupId:MonitorizareTemeLaboratorV02[0;1m >----------------[m
+[[1;34mINFO[m] [1mBuilding MonitorizareTemeLaboratorV02 1.0-SNAPSHOT[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mMonitorizareTemeLaboratorV02[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/jenkins_home/workspace/933_GuiaAlex_HidegPaul/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.1:compile[m [1m(default-compile)[m @ [36mMonitorizareTemeLaboratorV02[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mMonitorizareTemeLaboratorV02[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/jenkins_home/workspace/933_GuiaAlex_HidegPaul/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.1:testCompile[m [1m(default-testCompile)[m @ [36mMonitorizareTemeLaboratorV02[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36mMonitorizareTemeLaboratorV02[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mMonitorizareTemeLaboratorV02[0;1m ---[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  6.870 s
+[[1;34mINFO[m] Finished at: 2024-03-29T06:24:20Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+Merging build environment variables with data retrieved from TestLink.
+
+[933_GuiaAlex_HidegPaul] $ /bin/bash /tmp/jenkins8953728168642631415.sh
+RUN_TESTS_DISPLAY_URL=http://localhost:8080/job/933_GuiaAlex_HidegPaul/11/display/redirect?page=tests
+HOSTNAME=35c49c1d15c6
+JENKINS_UC_EXPERIMENTAL=https://updates.jenkins.io/experimental
+JENKINS_SERVER_COOKIE=27b70941f96f3dd0
+JAVA_HOME=/opt/java/openjdk
+JENKINS_INCREMENTALS_REPO_MIRROR=https://repo.jenkins-ci.org/incrementals
+RUN_CHANGES_DISPLAY_URL=http://localhost:8080/job/933_GuiaAlex_HidegPaul/11/display/redirect?page=changes
+TESTLINK_TESTCASE_TOTAL=2
+COPY_REFERENCE_FILE_LOG=/var/jenkins_home/copy_reference_file.log
+PWD=/var/jenkins_home/workspace/933_GuiaAlex_HidegPaul
+HUDSON_HOME=/var/jenkins_home
+BUILD_URL=http://localhost:8080/job/933_GuiaAlex_HidegPaul/11/
+JENKINS_SLAVE_AGENT_PORT=50000
+JOB_URL=http://localhost:8080/job/933_GuiaAlex_HidegPaul/
+BUILD_NUMBER=11
+JENKINS_VERSION=2.440.1
+BUILD_DISPLAY_NAME=#11
+HOME=/var/jenkins_home
+LANG=C.UTF-8
+JENKINS_URL=http://localhost:8080/
+JOB_BASE_NAME=933_GuiaAlex_HidegPaul
+JOB_NAME=933_GuiaAlex_HidegPaul
+RUN_DISPLAY_URL=http://localhost:8080/job/933_GuiaAlex_HidegPaul/11/display/redirect
+JOB_DISPLAY_URL=http://localhost:8080/job/933_GuiaAlex_HidegPaul/display/redirect
+WORKSPACE=/var/jenkins_home/workspace/933_GuiaAlex_HidegPaul
+JENKINS_UC=https://updates.jenkins.io
+GIT_PREVIOUS_COMMIT=61111175c9c3a877b913db0caa87cf76e8163bb6
+HUDSON_URL=http://localhost:8080/
+NODE_NAME=built-in
+HUDSON_SERVER_COOKIE=27b70941f96f3dd0
+TESTLINK_TESTPROJECT_NAME=Project_GuiaAlex_HidegPaul
+GIT_URL=https://github.com/913-Hideg-Paul/SSVV.git
+SHLVL=1
+BUILD_TAG=jenkins-933_GuiaAlex_HidegPaul-11
+EXECUTOR_NUMBER=1
+HUDSON_COOKIE=d2c4aa44-c2dc-4210-b48b-d0887576c23c
+JENKINS_HOME=/var/jenkins_home
+TESTLINK_TESTPLAN_NAME=933_GuiaAlex_HidegPaul_TestPlan
+REF=/usr/share/jenkins/ref
+GIT_COMMIT=61111175c9c3a877b913db0caa87cf76e8163bb6
+NODE_LABELS=built-in
+WORKSPACE_TMP=/var/jenkins_home/workspace/933_GuiaAlex_HidegPaul@tmp
+PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+RUN_ARTIFACTS_DISPLAY_URL=http://localhost:8080/job/933_GuiaAlex_HidegPaul/11/display/redirect?page=artifacts
+CI=true
+GIT_BRANCH=origin/master
+BUILD_ID=11
+TESTLINK_BUILD_NAME=build_11
+_=/usr/bin/printenv
+mv: cannot stat './target/surefire-reports/TEST-.xml': No such file or directory
+Executing iterative Build Steps.
+
+Looking for the test results of TestLink test cases.
+
+Looking for test results in JUnit methods by its name.
+
+FATAL: hudson.AbortException: No test report files were found. Configuration error?
+hudson.plugins.testlink.result.ResultSeekerException: hudson.AbortException: No test report files were found. Configuration error?
+	at hudson.plugins.testlink.result.JUnitMethodNameResultSeeker.seek(JUnitMethodNameResultSeeker.java:112)
+	at hudson.plugins.testlink.TestLinkBuilder.perform(TestLinkBuilder.java:260)
+	at hudson.tasks.BuildStepMonitor$1.perform(BuildStepMonitor.java:20)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.perform(AbstractBuild.java:818)
+	at hudson.model.Build$BuildExecution.build(Build.java:199)
+	at hudson.model.Build$BuildExecution.doRun(Build.java:164)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.run(AbstractBuild.java:526)
+	at hudson.model.Run.execute(Run.java:1895)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:44)
+	at hudson.model.ResourceController.execute(ResourceController.java:101)
+	at hudson.model.Executor.run(Executor.java:442)
+Caused by: hudson.AbortException: No test report files were found. Configuration error?
+	at hudson.tasks.junit.JUnitParser$ParseResultCallable.invoke(JUnitParser.java:193)
+	at hudson.FilePath.act(FilePath.java:1236)
+	at hudson.FilePath.act(FilePath.java:1219)
+	at hudson.tasks.junit.JUnitParser.parseResult(JUnitParser.java:125)
+	at hudson.tasks.junit.JUnitParser.parseResult(JUnitParser.java:118)
+	at hudson.tasks.junit.JUnitParser.parseResult(JUnitParser.java:50)
+	at hudson.tasks.test.TestResultParser.parse(TestResultParser.java:157)
+	at hudson.tasks.junit.JUnitParser.parse(JUnitParser.java:110)
+	at hudson.plugins.testlink.result.JUnitMethodNameResultSeeker.seek(JUnitMethodNameResultSeeker.java:89)
+	... 10 more
+ERROR: An error occured while trying to retrieve the test results: hudson.AbortException: No test report files were found. Configuration error?
+Archiving artifacts
+Finished: FAILURE

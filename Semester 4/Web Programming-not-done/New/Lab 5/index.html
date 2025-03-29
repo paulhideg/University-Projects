@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modal Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+  </head>
+  <body>
+    <script type="text/javascript" href="script.js">
+      $(document).ready(function () {
+        $("#openModal").click(function () {
+          $("#modal").removeClass("hidden"); // Show modal
+          $("#overlay").removeClass("hidden"); // Show overlay
+          index = 1;
+          $("#modalField1").val($("#field1").val());
+          $("#modalField2").val($("#field2").val());
+          $("#modalField3").val($("#field3").val());
+          $("#modalField4").val($("#field4").val());
+          $("#mainForm input").prop("disabled", true); // Disable main form inputs
+        });
+
+        $("#closeModal").click(function () {
+          $("#modal").addClass("hidden"); // Hide modal
+          $("#overlay").addClass("hidden"); // Hide overlay
+          $("#mainForm input").prop("disabled", false); // Enable main form inputs
+        });
+
+        $("#modalForm").submit(function (event) {
+          event.preventDefault();
+
+          var modalValues = "";
+          $("#modalForm input").each(function () {
+            modalValues += $(this).val() + " ";
+          });
+
+          modalValues = modalValues.trim();
+          $("#result").val(modalValues);
+        });
+      });
+    </script>
+    <h1>Main Form</h1>
+    <form id="mainForm">
+      <label for="field1">Field 1:</label>
+      <input type="text" id="field1" name="field1" required /><br />
+      <label for="field2">Field 2:</label>
+      <input type="text" id="field2" name="field2" required /><br />
+      <label for="field3">Field 3:</label>
+      <input type="text" id="field3" name="field3" required /><br />
+      <label for="field4">Field 4:</label>
+      <input type="text" id="field4" name="field4" required /><br />
+      <label for="field5">Field 5:</label>
+      <input type="text" id="field5" name="field5" required /><br />
+      <button type="button" id="openModal">Open Modal</button>
+      <br />
+      <label for="result">Result:</label>
+      <input type="text" id="result" name="result" readonly />
+    </form>
+
+    <div id="modal" class="hidden">
+      <h2>Modal Input</h2>
+      <form id="modalForm">
+        <label for="modalField1">Field 1:</label>
+        <input type="text" id="modalField1" name="modalField1" /><br />
+        <label for="modalField2">Field 2:</label>
+        <input type="text" id="modalField2" name="modalField2" /><br />
+        <label for="modalField3">Field 3:</label>
+        <input type="text" id="modalField3" name="modalField3" /><br />
+        <label for="modalField4">Field 4:</label>
+        <input type="text" id="modalField4" name="modalField4" /><br />
+        <button type="submit" id="closeModal">Close Modal</button>
+      </form>
+    </div>
+
+    <div id="overlay" class="hidden"></div>
+
+    <!-- <script src="script.js"></script> -->
+  </body>
+</html>

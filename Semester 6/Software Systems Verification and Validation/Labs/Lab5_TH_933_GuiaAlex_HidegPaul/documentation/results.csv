@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Search by keyword olx","Search decatlhon by keyword test DDT","SUCCESS","2024-05-16T16:22:37.3408475+03:00[Europe/Bucharest]","0.0","35.7"
+"Search by keyword story","Searching by keyword banana should display the corresponding article","SUCCESS","2024-05-16T16:23:09.6958091+03:00[Europe/Bucharest]","0.0","6.12"
+"Search by keyword story","Searching by ambiguious keyword should display the disambiguation page","PENDING","2024-05-16T16:23:16.2223796+03:00[Europe/Bucharest]","0.0","0.11"
+"Search by keyword story","Searching by keyword apple should display the corresponding article","SUCCESS","2024-05-16T16:23:16.419371+03:00[Europe/Bucharest]","0.0","3.81"

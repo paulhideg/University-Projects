@@ -1,0 +1,33 @@
+table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+  margin: auto;
+  margin-top: 10vw;
+}
+
+td,
+th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+tr {
+  background-color: white;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04aa6d;
+  color: white;
+}
+
+th:hover {
+  cursor: pointer;
+}
