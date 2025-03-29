@@ -1,0 +1,4 @@
+Project: initial project, using mockapi, basic CRUD frontend using react. WITHOUT sort, pagination, pie-chart
+Project Backup: a Project Backup
+Project2: new react frontend, without API, with inmemory repo, WITH sort, pagination, pie-chart, 
+Project2.1: same new react frontend, integrated with 'backend'
