@@ -36,6 +36,7 @@
         <li><a href="https://github.com/paulhideg/University-Projects/tree/main/Semester%204/Database%20Management%20Systems">Database Management Systems</a></li>
         <li><a href="https://github.com/paulhideg/University-Projects/tree/main/Semester%204/Software%20Engineering">Software Engineering</a></li>
         <li><a href="https://github.com/paulhideg/University-Projects/tree/main/Semester%204/Web%20Programming-not-done">Web Programming</a></li>
+        <li><a href="https://github.com/paulhideg/University-Projects/tree/main/Semester%204/Systems%20for%20Design%20and%20Implementation">Systems for Design and Implementation</a></li>
       </ul>
     </li>
   </ul>
@@ -52,6 +53,10 @@
     </ul>
       </li>
       <li>:open_file_folder:6th Semester
+        <ul>
+      <li><a href="https://github.com/paulhideg/University-Projects/tree/main/Semester%206/Blockchain%20Smart%20Contracts/Project">Blockchain Smart Contracts</a></li>
+      <li><a href="https://github.com/paulhideg/University-Projects/tree/main/Semester%206/Software%20Systems%20Verification%20and%20Validation">Software Systems Verification and Validation</a></li>
+    </ul>
       </li>
     </ul>
   </li>
